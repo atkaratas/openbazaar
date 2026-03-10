@@ -1,4 +1,47 @@
+'use client'
+import { useState } from 'react'
+
 export default function PendingSellersPage() {
+  // Satıcıları bir state (durum) içine alalım ki onaylayınca ekrandan kaybolsunlar (Gerçekçi UI hissi)
+  const [sellers, setSellers] = useState([
+    {
+      id: 1,
+      name: 'Ege İncir & Zeytin A.Ş.',
+      vkn: '1029384756',
+      category: 'Kuru Gıda / Yağlar',
+      docs: ['FDA_Approval.pdf', 'Halal_Cert_2026.pdf'],
+      stripe: 'Verified',
+      status: 'ready'
+    },
+    {
+      id: 2,
+      name: 'Anadolu Süt Ürünleri',
+      vkn: '9988776655',
+      category: 'Süt ve Süt Ürünleri',
+      docs: [],
+      stripe: 'Pending',
+      status: 'missing',
+      coldChain: true
+    }
+  ])
+
+  const handleApprove = (id: number, name: string) => {
+    alert(`✅ ${name} firmasının tüm gümrük evrakları onaylandı. Satıcı mağazası global yayına açıldı!`)
+    setSellers(sellers.filter(s => s.id !== id))
+  }
+
+  const handleReject = (id: number, name: string) => {
+    const reason = prompt(`${name} firmasını reddetme sebebinizi girin (Örn: Evraklar sahte/eksik):`)
+    if (reason) {
+      alert(`❌ Firma reddedildi ve sistemden uzaklaştırıldı. Sebep: ${reason}`)
+      setSellers(sellers.filter(s => s.id !== id))
+    }
+  }
+
+  const openDoc = (docName: string) => {
+    alert(`📄 [SİMÜLASYON] ${docName} adlı belge PDF Görüntüleyici'de açılıyor... (Gerçek sistemde AWS S3'ten çekilecek)`)
+  }
+
   return (
     <div className="max-w-7xl mx-auto">
       <div className="mb-8">
@@ -15,63 +58,59 @@ export default function PendingSellersPage() {
           <div className="col-span-2 text-right">Aksiyon</div>
         </div>
 
-        {/* Örnek Bekleyen Satıcı Satırı 1 */}
-        <div className="grid grid-cols-12 gap-4 p-6 items-center border-b border-slate-100 hover:bg-slate-50 transition-colors">
-          <div className="col-span-3">
-            <p className="font-bold text-slate-900">Ege İncir & Zeytin A.Ş.</p>
-            <p className="text-xs text-slate-500 font-mono mt-1">VKN: 1029384756</p>
+        {sellers.length === 0 && (
+          <div className="p-8 text-center text-slate-500 font-medium">
+            Şu an onay bekleyen hiçbir firma yok. Her şey temiz.
           </div>
-          <div className="col-span-2">
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-emerald-100 text-emerald-800">
-              Kuru Gıda / Yağlar
-            </span>
-          </div>
-          <div className="col-span-3 flex flex-wrap gap-2">
-            <span className="inline-flex items-center px-2 py-1 rounded text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200 cursor-pointer hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 transition-all">
-              📄 FDA_Approval.pdf
-            </span>
-            <span className="inline-flex items-center px-2 py-1 rounded text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200 cursor-pointer hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 transition-all">
-              📄 Halal_Cert_2026.pdf
-            </span>
-          </div>
-          <div className="col-span-2">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-green-50 text-green-700 border border-green-200">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span> Verified (Bağlı)
-            </span>
-          </div>
-          <div className="col-span-2 flex justify-end gap-2">
-            <button className="px-3 py-1.5 bg-white border border-rose-200 text-rose-600 rounded text-sm font-bold shadow-sm hover:bg-rose-50 transition-colors">Reddet</button>
-            <button className="px-4 py-1.5 bg-blue-600 text-white rounded text-sm font-bold shadow-sm hover:bg-blue-700 transition-colors">Tüm Evrakları Onayla</button>
-          </div>
-        </div>
+        )}
 
-        {/* Örnek Bekleyen Satıcı Satırı 2 (Eksik Evrak) */}
-        <div className="grid grid-cols-12 gap-4 p-6 items-center border-b border-slate-100 hover:bg-slate-50 transition-colors opacity-75">
-          <div className="col-span-3">
-            <p className="font-bold text-slate-900">Anadolu Süt Ürünleri</p>
-            <p className="text-xs text-slate-500 font-mono mt-1">VKN: 9988776655</p>
-            <p className="text-xs font-bold text-rose-500 mt-1">⚠️ Soğuk Zincir Gerektirir</p>
-          </div>
-          <div className="col-span-2">
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-blue-100 text-blue-800">
-              Süt ve Süt Ürünleri
-            </span>
-          </div>
-          <div className="col-span-3">
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-rose-100 text-rose-800">
-              Belge Yüklenmedi (Bekleniyor)
-            </span>
-          </div>
-          <div className="col-span-2">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Pending (Eksik)
-            </span>
-          </div>
-          <div className="col-span-2 flex justify-end gap-2">
-            <button className="px-4 py-1.5 bg-slate-100 text-slate-400 rounded text-sm font-bold border border-slate-200 cursor-not-allowed">İşlem Yapılamaz</button>
-          </div>
-        </div>
+        {sellers.map(seller => (
+          <div key={seller.id} className={`grid grid-cols-12 gap-4 p-6 items-center border-b border-slate-100 transition-colors ${seller.status === 'missing' ? 'opacity-75 bg-slate-50/50' : 'hover:bg-slate-50'}`}>
+            <div className="col-span-3">
+              <p className="font-bold text-slate-900">{seller.name}</p>
+              <p className="text-xs text-slate-500 font-mono mt-1">VKN: {seller.vkn}</p>
+              {seller.coldChain && <p className="text-xs font-bold text-rose-500 mt-1">⚠️ Soğuk Zincir Gerektirir</p>}
+            </div>
+            
+            <div className="col-span-2">
+              <span className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium ${seller.status === 'ready' ? 'bg-emerald-100 text-emerald-800' : 'bg-blue-100 text-blue-800'}`}>
+                {seller.category}
+              </span>
+            </div>
+            
+            <div className="col-span-3 flex flex-wrap gap-2">
+              {seller.docs.length > 0 ? (
+                seller.docs.map(doc => (
+                  <button onClick={() => openDoc(doc)} key={doc} className="inline-flex items-center px-2 py-1 rounded text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200 cursor-pointer hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 transition-all shadow-sm">
+                    📄 {doc}
+                  </button>
+                ))
+              ) : (
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-rose-100 text-rose-800">
+                  Belge Yüklenmedi
+                </span>
+              )}
+            </div>
 
+            <div className="col-span-2">
+              <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium border ${seller.stripe === 'Verified' ? 'bg-green-50 text-green-700 border-green-200' : 'bg-amber-50 text-amber-700 border-amber-200'}`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${seller.stripe === 'Verified' ? 'bg-green-500' : 'bg-amber-500'}`}></span> 
+                {seller.stripe === 'Verified' ? 'Verified (Bağlı)' : 'Pending (Eksik)'}
+              </span>
+            </div>
+
+            <div className="col-span-2 flex justify-end gap-2">
+              {seller.status === 'ready' ? (
+                <>
+                  <button onClick={() => handleReject(seller.id, seller.name)} className="px-3 py-1.5 bg-white border border-rose-200 text-rose-600 rounded text-sm font-bold shadow-sm hover:bg-rose-50 transition-colors">Reddet</button>
+                  <button onClick={() => handleApprove(seller.id, seller.name)} className="px-4 py-1.5 bg-blue-600 text-white rounded text-sm font-bold shadow-sm hover:bg-blue-700 transition-colors">Tüm Evrakları Onayla</button>
+                </>
+              ) : (
+                <button className="px-4 py-1.5 bg-slate-100 text-slate-400 rounded text-sm font-bold border border-slate-200 cursor-not-allowed">İşlem Yapılamaz</button>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   )
