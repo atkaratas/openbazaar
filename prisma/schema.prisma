@@ -169,3 +169,24 @@ model ErpSyncLog {
   message     String?
   createdAt   DateTime @default(now())
 }
+
+// --- REINFORCEMENT LEARNING (RL) TELEMETRİ SİSTEMİ ---
+// Sitenin kendi kendine öğrenmesi için ajanların "Ödül (Reward)" ve "Ceza" mekanizması.
+
+model RlEventLog {
+  id          String   @id @default(uuid())
+  sessionId   String   // Ziyaretçi ID (Anonim veya Kayıtlı)
+  action      String   // Örn: "VIEW_PRODUCT", "ADD_TO_CART", "ABANDON_CART", "PURCHASE"
+  targetId    String   // Ürün ID veya UI Bileşeni ID (Örn: "hero_banner_b2b")
+  
+  // RL Modeli için ağırlıklar
+  rewardScore Decimal  @db.Decimal(5, 2) @default(0) // Satın almada +10, sepette bırakmada -2, tıklamada +0.1
+  
+  // A/B Test varyasyonları için
+  uiVariant   String?  // Örn: "green_button", "blue_button"
+  
+  createdAt   DateTime @default(now())
+}
+
+// Product tablosuna RL Optimizasyon puanı eklenecek
+// model Product { ... rlRankScore Decimal @default(0) ... }
