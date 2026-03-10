@@ -1,55 +1,8 @@
 import Link from 'next/link'
 import ProductCard from '@/components/storefront/ProductCard'
+import clonedData from '@/data/cloned_catalog.json'
 
 export default function HomePage() {
-  // Malatya Pazarı simülasyon verileri
-  const mockProducts = [
-    {
-      id: '1',
-      title: { tr: 'Kavrulmuş Antep Fıstığı (Duble Boy) 1 KG', en: 'Roasted Pistachios (Double Size) 1 KG' },
-      price: 24.50, // EUR bazında simülasyon (yaklaşık 850 TL)
-      currency: 'EUR',
-      storeId: 'store_1',
-      storeName: 'Malatya Pazarı Palancı',
-      image: 'https://malatyapazaripalanci.com.tr/productimages/102941/original/antep-fistigi-kavrulmus-250-gr-0489.jpg',
-      certifications: ['HALAL', 'ISO'],
-      isColdChain: false
-    },
-    {
-      id: '2',
-      title: { tr: 'Jumbo Gün Kurusu Kayısı 1 KG', en: 'Jumbo Sun-Dried Apricots 1 KG' },
-      price: 12.90, // EUR (yaklaşık 450 TL)
-      currency: 'EUR',
-      storeId: 'store_1',
-      storeName: 'Malatya Pazarı Palancı',
-      image: 'https://malatyapazaripalanci.com.tr/productimages/102941/original/gun-kurusu-kayisi-250-gr-0504.jpg',
-      certifications: ['ORGANIC', 'HALAL'],
-      isColdChain: false
-    },
-    {
-      id: '3',
-      title: { tr: 'Kavrulmuş Tuzlu Badem 500g', en: 'Roasted Salted Almonds 500g' },
-      price: 7.20, // EUR (yaklaşık 250 TL)
-      currency: 'EUR',
-      storeId: 'store_1',
-      storeName: 'Malatya Pazarı Palancı',
-      image: 'https://malatyapazaripalanci.com.tr/productimages/102941/original/badem-kavrulmus-250-gr-0498.jpg',
-      certifications: ['HALAL'],
-      isColdChain: false
-    },
-    {
-      id: '4',
-      title: { tr: 'Geleneksel Çifte Kavrulmuş Lokum 500g', en: 'Double Roasted Turkish Delight 500g' },
-      price: 5.50, // EUR (yaklaşık 180 TL)
-      currency: 'EUR',
-      storeId: 'store_1',
-      storeName: 'Malatya Pazarı Palancı',
-      image: 'https://malatyapazaripalanci.com.tr/productimages/102941/original/cifte-kavrulmus-lokum-250-gr-0471.jpg',
-      certifications: ['HALAL', 'FDA'],
-      isColdChain: false
-    }
-  ]
-
   return (
     <div className="flex flex-col items-center justify-center">
       
@@ -76,7 +29,7 @@ export default function HomePage() {
         <div className="flex justify-between items-end mb-8">
           <div>
             <h2 className="text-3xl font-bold text-gray-900">En Çok Satan İhracat Ürünleri</h2>
-            <p className="text-gray-500 mt-1">Malatya Pazarı Palancı ve diğer premium tedarikçilerden.</p>
+            <p className="text-gray-500 mt-1">Malatya Pazarı Palancı ve diğer premium tedarikçilerden hortumlandı.</p>
           </div>
           <Link href="/product/ornek-urun" className="text-emerald-600 font-bold hover:underline">
             Tümünü Gör →
@@ -84,7 +37,7 @@ export default function HomePage() {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {mockProducts.map(product => (
+          {clonedData.slice(0, 8).map((product: any) => (
             <ProductCard key={product.id} product={product} locale="tr" />
           ))}
         </div>

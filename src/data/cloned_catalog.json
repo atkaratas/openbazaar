@@ -1,0 +1,79 @@
+[
+  {
+    "id": "100",
+    "title": {
+      "tr": "Kavrulmuş Antep Fıstığı 1KG",
+      "en": "Roasted Pistachios 1KG"
+    },
+    "price": 24.5,
+    "currency": "EUR",
+    "storeName": "Malatya Pazarı",
+    "image": "https://malatyapazaripalanci.com.tr/productimages/102941/original/antep-fistigi-kavrulmus-250-gr-0489.jpg"
+  },
+  {
+    "id": "101",
+    "title": {
+      "tr": "Çiğ Badem İçi 500g",
+      "en": "Raw Almonds 500g"
+    },
+    "price": 12.0,
+    "currency": "EUR",
+    "storeName": "Malatya Pazarı",
+    "image": "https://malatyapazaripalanci.com.tr/productimages/102941/original/badem-kavrulmus-250-gr-0498.jpg"
+  },
+  {
+    "id": "102",
+    "title": {
+      "tr": "Gün Kurusu Jumbo Kayısı 1KG",
+      "en": "Sun-Dried Jumbo Apricots 1KG"
+    },
+    "price": 15.5,
+    "currency": "EUR",
+    "storeName": "Malatya Pazarı",
+    "image": "https://malatyapazaripalanci.com.tr/productimages/102941/original/gun-kurusu-kayisi-250-gr-0504.jpg"
+  },
+  {
+    "id": "103",
+    "title": {
+      "tr": "Çifte Kavrulmuş Fıstıklı Lokum",
+      "en": "Double Roasted Pistachio Delight"
+    },
+    "price": 8.9,
+    "currency": "EUR",
+    "storeName": "Malatya Pazarı",
+    "image": "https://malatyapazaripalanci.com.tr/productimages/102941/original/cifte-kavrulmus-lokum-250-gr-0471.jpg"
+  },
+  {
+    "id": "104",
+    "title": {
+      "tr": "Kavrulmuş Fındık 500g",
+      "en": "Roasted Hazelnuts 500g"
+    },
+    "price": 9.5,
+    "currency": "EUR",
+    "storeName": "Malatya Pazarı",
+    "image": "https://malatyapazaripalanci.com.tr/productimages/102941/original/findik-kavrulmus-250-gr-0500.jpg"
+  },
+  {
+    "id": "105",
+    "title": {
+      "tr": "Sarı Leblebi 1KG",
+      "en": "Roasted Yellow Chickpeas 1KG"
+    },
+    "price": 4.0,
+    "currency": "EUR",
+    "storeName": "Malatya Pazarı",
+    "image": "https://malatyapazaripalanci.com.tr/productimages/102941/original/sari-leblebi-250-gr-0520.jpg"
+  },
+  {
+    "id": "106",
+    "title": {
+      "tr": "Kabuklu Ceviz 1KG",
+      "en": "Walnuts In Shell 1KG"
+    },
+    "price": 11.2,
+    "currency": "EUR",
+    "storeName": "Malatya Pazarı",
+    "image": "https://malatyapazaripalanci.com.tr/productimages/102941/original/ceviz-ici-250-gr-0478.jpg"
+  }
+]
