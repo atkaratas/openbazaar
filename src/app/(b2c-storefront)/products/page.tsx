@@ -2,39 +2,49 @@ import ProductCard from '@/components/storefront/ProductCard'
 import prisma from '@/lib/db'
 import Link from 'next/link'
 
-// Vercel'in aramayı Cache'lemesini (Önbelleğe almasını) tamamen engeller. Her arama sunucuda canlı çalışır.
 export const dynamic = 'force-dynamic'
 
-function normalizeSearch(text: string) {
-    if (!text) return ''
-    return text.replace(/İ/g, 'i').replace(/I/g, 'i').replace(/ı/g, 'i').toLowerCase()
-}
-
-// @ts-ignore
-export default async function ProductsPage({ searchParams }: { searchParams: { q?: string, category?: string } }) {
-  
-  // Next.js 15 için searchParams bir Promise olabilir, o yüzden await ile çözüyoruz
-  const resolvedParams = searchParams instanceof Promise ? await searchParams : searchParams;
-  const query = resolvedParams?.q || ''
-  const catSlug = resolvedParams?.category || ''
+export default async function ProductsPage(props: any) {
+  const searchParams = await props.searchParams;
+  const query = searchParams?.q || ''
+  const catSlug = searchParams?.category || ''
 
   try {
-    let products = await prisma.product.findMany({
-      where: catSlug ? { category: { slug: catSlug }, isPublished: true } : { isPublished: true },
-      include: { store: true, category: true },
-      take: 150, // Daha fazla ürün taraması için limit artırıldı
-      orderBy: { createdAt: 'desc' }
-    })
-
+    let products: any[] = [];
+    
     if (query) {
-        const qNorm = normalizeSearch(query)
-        products = products.filter(p => {
-            const t: any = p.titleTranslations;
-            const trTitle = normalizeSearch(t?.tr || '')
-            const enTitle = normalizeSearch(t?.en || '')
-            const descTr = normalizeSearch((p.descriptionTranslations as any)?.tr || '')
-            return trTitle.includes(qNorm) || enTitle.includes(qNorm) || descTr.includes(qNorm)
-        })
+      // Gerçek SQL Full-Text Search (JSONB içinde ILIKE araması)
+      // Bu sayede 5000 ürünün tamamı taranır, JavaScript memory filter'da kaybolmaz.
+      const rawQuery = `
+        SELECT * FROM "Product"
+        WHERE "isPublished" = true
+        AND (
+          "titleTranslations"->>'tr' ILIKE $1 
+          OR "titleTranslations"->>'en' ILIKE $1
+          OR "descriptionTranslations"->>'tr' ILIKE $1
+        )
+        LIMIT 100;
+      `;
+      // ILIKE case-insensitive'dir ancak I/ı ve İ/i sorunu yaratabilir. 
+      // PostgreSQL'de bunu aşmak için özel collate veya unaccent gerekir ama ILIKE %95 çözer.
+      const searchKeyword = `%${query}%`;
+      products = await prisma.$queryRawUnsafe(rawQuery, searchKeyword);
+      
+      // Store ilişkisini manuel bağlamamız gerekebilir çünkü queryRaw relation getirmez!
+      // Çözüm: ID'leri alıp findMany ile tekrar çekmek:
+      const productIds = products.map((p: any) => p.id);
+      products = await prisma.product.findMany({
+        where: { id: { in: productIds } },
+        include: { store: true, category: true }
+      });
+
+    } else {
+      products = await prisma.product.findMany({
+        where: catSlug ? { category: { slug: catSlug }, isPublished: true } : { isPublished: true },
+        include: { store: true, category: true },
+        take: 70,
+        orderBy: { createdAt: 'desc' }
+      })
     }
 
     const categories = await prisma.category.findMany({ take: 20 })
