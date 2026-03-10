@@ -8,17 +8,37 @@ export default function CheckoutPage() {
   const { items, getTotal } = useCart()
   const [isProcessing, setIsProcessing] = useState(false)
 
-  // Sepette soğuk zincir gerektiren ürün var mı? (Lojistik filtresi)
   const requiresColdChain = items.some(item => (item as any).isColdChain)
 
   const handlePayment = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsProcessing(true)
-    // Şimdilik test olduğu için 2 sn sonra onay popup'ı verelim (Stripe API eksik diye build kırılmasın)
-    setTimeout(() => {
+    
+    try {
+      // Gerçek Stripe API'sine (Kendi yazdığımız route) İstek Atıyoruz
+      const response = await fetch('/api/checkout/stripe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: items,
+          currency: 'EUR'
+        }),
+      })
+
+      const data = await response.json()
+
+      if (data.url) {
+        // Stripe'ın güvenli ödeme sayfasına (Checkout Session) yönlendir
+        window.location.href = data.url
+      } else {
+        alert("Stripe API Hatası: " + (data.error || "Bilinmeyen Hata. Lütfen Vercel'deki STRIPE_SECRET_KEY anahtarını kontrol edin."))
+        setIsProcessing(false)
+      }
+    } catch (error) {
+      console.error(error)
+      alert("Ödeme ağ geçidine bağlanılamadı.")
       setIsProcessing(false)
-      alert("✅ Ödeme Başarılı! Siparişiniz satıcıya (Marmara Birlik) ve DHL sistemine otomatik iletildi.")
-    }, 2000) 
+    }
   }
 
   return (
@@ -34,10 +54,7 @@ export default function CheckoutPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
-          {/* SOL KOLON: Formlar (Adres, Kargo, Kredi Kartı) */}
           <div className="lg:col-span-7 space-y-8">
-            
-            {/* 1. Teslimat Adresi */}
             <section className="bg-white p-8 rounded-3xl shadow-lg border border-slate-200">
               <h2 className="text-xl font-black text-slate-900 mb-6 flex items-center gap-3">
                 <span className="bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm shadow-md">1</span>
@@ -67,34 +84,22 @@ export default function CheckoutPage() {
                   <label className="block text-sm font-bold text-slate-800 mb-1.5">Açık Adres (Street Address)</label>
                   <input type="text" placeholder="House number and street name" className="w-full border-2 border-slate-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 text-base p-3 bg-white text-slate-900 font-bold placeholder-slate-400" />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-bold text-slate-800 mb-1.5">Şehir (City)</label>
-                    <input type="text" className="w-full border-2 border-slate-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 text-base p-3 bg-white text-slate-900 font-bold placeholder-slate-400" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-slate-800 mb-1.5">Posta Kodu (ZIP Code)</label>
-                    <input type="text" className="w-full border-2 border-slate-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 text-base p-3 bg-white text-slate-900 font-bold placeholder-slate-400" />
-                  </div>
-                </div>
               </form>
             </section>
 
-            {/* 2. Kargo Seçeneği */}
             <section className="bg-white p-8 rounded-3xl shadow-lg border border-slate-200">
               <h2 className="text-xl font-black text-slate-900 mb-6 flex items-center gap-3">
                 <span className="bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm shadow-md">2</span>
                 Lojistik Seçimi
               </h2>
               <div className="space-y-4">
-                
                 {requiresColdChain ? (
                   <div className="p-5 border-2 border-blue-500 bg-blue-50 rounded-xl flex justify-between items-center cursor-pointer shadow-sm">
                     <div className="flex items-center gap-4">
                       <Truck className="text-blue-600" size={28} />
                       <div>
                         <p className="font-black text-blue-900 text-lg">DHL Express Thermal (Soğuk Zincir)</p>
-                        <p className="text-sm font-medium text-blue-700 mt-1">Sepetinizdeki gıdalar ısı sensörlü kutularda uçar. (1-2 İş Günü)</p>
+                        <p className="text-sm font-medium text-blue-700 mt-1">Sepetinizdeki gıdalar ısı sensörlü kutularda uçar.</p>
                       </div>
                     </div>
                     <span className="font-black text-blue-900 text-xl">€ 45.00</span>
@@ -111,22 +116,11 @@ export default function CheckoutPage() {
                       </div>
                       <span className="font-black text-slate-900 text-xl">€ 24.50</span>
                     </label>
-                    <label className="p-5 border-2 border-slate-200 rounded-xl flex justify-between items-center cursor-pointer hover:bg-slate-50 transition-colors opacity-70">
-                      <div className="flex items-center gap-4">
-                        <input type="radio" name="shipping" className="text-slate-600 focus:ring-slate-500 h-5 w-5" />
-                        <div>
-                          <p className="font-bold text-slate-700 text-lg">Standart Posta (PTT)</p>
-                          <p className="text-sm font-medium text-slate-500 mt-1">Kara/Deniz yolu ile yavaş teslimat. (7-14 İş Günü)</p>
-                        </div>
-                      </div>
-                      <span className="font-bold text-slate-700 text-xl">€ 9.90</span>
-                    </label>
                   </>
                 )}
               </div>
             </section>
 
-            {/* 3. Ödeme */}
             <section className="bg-white p-8 rounded-3xl shadow-lg border border-slate-200">
               <h2 className="text-xl font-black text-slate-900 mb-6 flex items-center gap-3">
                 <span className="bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm shadow-md">3</span>
@@ -135,19 +129,17 @@ export default function CheckoutPage() {
               <div className="p-8 border-2 border-dashed border-slate-300 bg-slate-50 rounded-2xl text-center flex flex-col items-center justify-center">
                 <CreditCard size={48} className="text-slate-400 mb-4" />
                 <p className="text-base font-bold text-slate-800 mb-2">Stripe Güvenli Ödeme Ağı</p>
-                <p className="text-sm font-medium text-slate-500 max-w-md mx-auto">Kart numarası ve 3D Secure işlemleri doğrudan Stripe sunucularında gerçekleşir. Veritabanımızda kredi kartı verisi ASLA tutulmaz.</p>
+                <p className="text-sm font-medium text-slate-500 max-w-md mx-auto">"Ödemeyi Tamamla" butonuna bastığınızda, 3D Secure işlemleri için Stripe'ın küresel ödeme sayfasına yönlendirileceksiniz.</p>
               </div>
             </section>
 
           </div>
 
-          {/* SAĞ KOLON: Sipariş Özeti (Order Summary) */}
           <div className="lg:col-span-5">
             <div className="bg-slate-900 p-8 rounded-3xl shadow-2xl border border-slate-800 sticky top-24 text-white">
               <h2 className="text-xl font-black mb-6 border-b border-slate-800 pb-4">Sipariş Özeti</h2>
               
-              {/* Sepet Kalemleri */}
-              <div className="space-y-4 mb-6 max-h-72 overflow-y-auto pr-2 custom-scrollbar">
+              <div className="space-y-4 mb-6 max-h-72 overflow-y-auto pr-2">
                 {items.length === 0 ? (
                   <p className="text-sm text-slate-400 font-medium text-center py-4">Sepetiniz boş.</p>
                 ) : (
@@ -169,7 +161,6 @@ export default function CheckoutPage() {
                 )}
               </div>
 
-              {/* Fiyat Hesaplamaları */}
               <div className="border-t border-slate-800 pt-6 space-y-4">
                 <div className="flex justify-between text-sm text-slate-300 font-medium">
                   <span>Ara Toplam (Subtotal)</span>
@@ -197,16 +188,11 @@ export default function CheckoutPage() {
                 disabled={items.length === 0 || isProcessing}
                 className="w-full py-5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-lg rounded-2xl shadow-[0_0_20px_rgba(5,150,105,0.4)] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2"
               >
-                {isProcessing ? 'Güvenli Bağlantı Kuruluyor...' : 'Ödemeyi Tamamla (Pay Now)'}
+                {isProcessing ? 'Stripe Sunucusuna Bağlanıyor...' : 'Ödemeyi Tamamla (Pay Now)'}
               </button>
 
-              <div className="mt-6 flex items-center justify-center gap-3 text-slate-500">
-                <ShieldCheck size={20} />
-                <span className="text-xs font-bold uppercase tracking-wider">PCI-DSS Uyumlu Güvenli Ödeme</span>
-              </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
