@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export', // Vercel'de dinamik server-side rendering (SSR) ve API'ler için bu KALKMALIDIR.
-  // basePath: '/openbazaar', // Vercel kendi domainini vereceği için bu da KALKMALIDIR.
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'malatyapazaripalanci.com.tr',
+      },
+    ],
   },
   typescript: {
     ignoreBuildErrors: true,
