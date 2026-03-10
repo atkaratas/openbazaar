@@ -16,38 +16,45 @@ export default function ProductDetailClient({ product }: { product: any }) {
     setTimeout(() => setAdded(false), 2000)
   }
 
-  const b2bPrice = (product.price * 0.75).toFixed(2) // %25 Toptan indirimi simülasyonu
+  // Güvenli değişkenler (Eğer veritabanından eksik veri geldiyse UI çökmesin diye)
+  const safePrice = Number(product?.price) || 0
+  const safeB2bPrice = (safePrice * 0.75).toFixed(2)
+  const safeTitle = product?.title?.tr || product?.title?.en || 'Bilinmeyen Ürün'
+  const safeDesc = product?.description?.tr || product?.description?.en || 'Açıklama bulunmuyor.'
+  const safeUnit = product?.unitType || 'KG'
+  const safeStock = product?.stock || 0
+  const safeStoreName = product?.storeName || 'OpenBazaar Satıcısı'
+  const safeImage = product?.image || '/placeholder-food.jpg'
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-12">
       <div className="bg-gray-100 rounded-3xl aspect-square flex items-center justify-center overflow-hidden shadow-inner">
-        <img src={product.image} alt="Product" className="w-full h-full object-cover" />
+        <img src={safeImage} alt="Product" className="w-full h-full object-cover" />
       </div>
 
       <div className="flex flex-col justify-center">
-        <div className="text-sm font-bold text-emerald-600 mb-2 uppercase tracking-wider">{product.storeName}</div>
-        <h1 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">{product.title['tr']}</h1>
-        <p className="text-slate-500 mb-8">{product.description['tr']}</p>
+        <div className="text-sm font-bold text-emerald-600 mb-2 uppercase tracking-wider">{safeStoreName}</div>
+        <h1 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">{safeTitle}</h1>
+        <p className="text-slate-500 mb-8">{safeDesc}</p>
         
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-8">
           <div className="bg-white border-2 border-emerald-500 px-6 py-4 rounded-2xl shadow-sm w-full md:w-auto">
             <span className="text-xs text-emerald-600 block font-bold uppercase mb-1">B2C (Perakende)</span>
-            <span className="text-3xl font-black text-slate-900">€ {product.price.toFixed(2)} <span className="text-sm font-medium text-slate-500">/ {product.unitType}</span></span>
+            <span className="text-3xl font-black text-slate-900">€ {safePrice.toFixed(2)} <span className="text-sm font-medium text-slate-500">/ {safeUnit}</span></span>
           </div>
           <div className="bg-slate-50 border border-slate-200 px-6 py-4 rounded-2xl w-full md:w-auto">
-            <span className="text-xs text-slate-500 block font-bold uppercase mb-1">B2B (Toptan - Min 50 {product.unitType})</span>
-            <span className="text-2xl font-black text-slate-700">€ {b2bPrice} <span className="text-sm font-medium text-slate-500">/ {product.unitType}</span></span>
+            <span className="text-xs text-slate-500 block font-bold uppercase mb-1">B2B (Toptan - Min 50 {safeUnit})</span>
+            <span className="text-2xl font-black text-slate-700">€ {safeB2bPrice} <span className="text-sm font-medium text-slate-500">/ {safeUnit}</span></span>
           </div>
         </div>
 
-        {/* Adet Çoğaltma (Quantity Selector) */}
         <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center border-2 border-slate-200 rounded-xl bg-white overflow-hidden">
                 <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="px-4 py-3 text-slate-600 font-bold hover:bg-slate-100">-</button>
                 <span className="px-4 font-black text-lg w-12 text-center text-slate-900">{quantity}</span>
                 <button onClick={() => setQuantity(quantity + 1)} className="px-4 py-3 text-slate-600 font-bold hover:bg-slate-100">+</button>
             </div>
-            <span className="text-sm font-medium text-slate-500">Stok: {product.stock} {product.unitType} mevcut</span>
+            <span className="text-sm font-medium text-slate-500">Stok: {safeStock} {safeUnit} mevcut</span>
         </div>
 
         <div className="space-y-3 mb-8">
@@ -69,21 +76,20 @@ export default function ProductDetailClient({ product }: { product: any }) {
           </button>
         </div>
 
-        {/* RFQ MODAL - UI Contrast Fixed */}
         {showQuoteModal && (
             <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
                 <div className="bg-white p-8 rounded-3xl max-w-md w-full shadow-2xl border border-slate-200">
                     <h3 className="font-black text-2xl mb-2 text-slate-900">Teklif İste</h3>
-                    <p className="text-sm text-slate-600 font-medium mb-6">{product.storeName} firmasına yüksek adetli alımlar için doğrudan teklif gönderin.</p>
+                    <p className="text-sm text-slate-600 font-medium mb-6">{safeStoreName} firmasına yüksek adetli alımlar için doğrudan teklif gönderin.</p>
                     
                     <div className="space-y-5">
                       <div>
-                        <label className="block text-sm font-bold text-slate-800 mb-1">Hedef Miktar (Adet/Koli)</label>
+                        <label className="block text-sm font-bold text-slate-800 mb-1">Hedef Miktar ({safeUnit})</label>
                         <input type="number" defaultValue={500} className="w-full border border-slate-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500 p-3 bg-white text-slate-900 font-bold text-lg shadow-sm" />
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-bold text-slate-800 mb-1">Hedef Fiyatınız (Birim Başına - Opsiyonel)</label>
+                        <label className="block text-sm font-bold text-slate-800 mb-1">Hedef Fiyatınız (Birim Başına)</label>
                         <div className="relative rounded-md shadow-sm">
                           <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 font-bold">€</span>
                           <input type="number" placeholder="Örn: 28.00" className="w-full pl-10 border border-slate-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500 p-3 bg-white text-slate-900 font-bold placeholder-slate-400" />
@@ -100,7 +106,6 @@ export default function ProductDetailClient({ product }: { product: any }) {
                         <button className="flex-1 bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-lg hover:bg-emerald-700 transition" onClick={() => { alert('Teklifiniz Satıcıya (B2B) İletildi!'); setShowQuoteModal(false); }}>Teklifi Gönder</button>
                       </div>
                     </div>
-
                 </div>
             </div>
         )}
