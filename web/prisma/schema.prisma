@@ -1,0 +1,171 @@
+// --- KOD ADI: TGM (Turk Global Market) ÇEKİRDEK VERİTABANI ŞEMASI v2 ---
+// B2C, Çoklu Dil (JSON) ve Çoklu Para Birimi destekli yapı.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  BUYER
+  SELLER
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+// 1. KULLANICILAR
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  passwordHash  String
+  role          Role      @default(BUYER)
+  name          String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  store         Store?    
+  orders        Order[]   
+  reviews       Review[]
+}
+
+// 2. MAĞAZALAR (İhracatçılar)
+model Store {
+  id              String    @id @default(uuid())
+  name            String    @unique
+  description     String?
+  logoUrl         String?
+  taxId           String?   
+  stripeAccountId String?   
+  isVerified      Boolean   @default(false)
+  ownerId         String    @unique
+  createdAt       DateTime  @default(now())
+
+  owner           User      @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  products        Product[]
+}
+
+// 3. KATEGORİLER (Çoklu Dil Destekli)
+model Category {
+  id               String     @id @default(uuid())
+  slug             String     @unique // URL için (örn: e-bikes)
+  nameTranslations Json       // { "en": "E-Bikes", "tr": "Elektrikli Bisiklet", "ar": "..." }
+  parentId         String?
+  parent           Category?  @relation("SubCategories", fields: [parentId], references: [id])
+  children         Category[] @relation("SubCategories")
+  products         Product[]
+}
+
+// 4. ÜRÜNLER (B2C, Çoklu Dil, Ana Para Birimi)
+model Product {
+  id                      String    @id @default(uuid())
+  slug                    String    @unique
+  titleTranslations       Json      // { "en": "Leather Jacket", "tr": "Deri Ceket" }
+  descriptionTranslations Json      // { "en": "High quality...", "tr": "Yüksek kalite..." }
+  
+  // Fiyatlandırma: Satıcı ürünü kendi yerel veya hedef para birimiyle girer (Örn: 1000 TRY veya 50 EUR).
+  // Sistem bunu anlık kurla müşteriye (USD, GBP vb.) çevirerek gösterir.
+  basePrice               Decimal   @db.Decimal(10, 2) 
+  baseCurrency            String    @default("TRY") 
+  
+  stock                   Int       @default(0)
+  images                  String[]  
+  isPublished             Boolean   @default(false)
+
+  storeId                 String
+  store                   Store     @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  categoryId              String
+  category                Category  @relation(fields: [categoryId], references: [id])
+
+  orderItems              OrderItem[]
+  reviews                 Review[]
+  createdAt               DateTime  @default(now())
+  updatedAt               DateTime  @updatedAt
+}
+
+// 5. SİPARİŞLER (Gerçekleşen Kur ve Tutarın Kaydı)
+model Order {
+  id              String      @id @default(uuid())
+  buyerId         String
+  buyer           User        @relation(fields: [buyerId], references: [id])
+  status          OrderStatus @default(PENDING)
+  
+  // Alıcının ödediği nihai para birimi ve tutar (Örn: Müşteri 100 EUR ödedi)
+  totalAmount     Decimal     @db.Decimal(10, 2)
+  paymentCurrency String      @default("USD")
+  exchangeRate    Decimal?    @db.Decimal(10, 4) // Sipariş anındaki kur (Geçmişe dönük muhasebe için şart)
+
+  shippingAddress Json        
+  stripePaymentId String?     
+  
+  items           OrderItem[]
+  createdAt       DateTime    @default(now())
+}
+
+// 6. SİPARİŞ KALEMLERİ
+model OrderItem {
+  id              String  @id @default(uuid())
+  orderId         String
+  order           Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId       String
+  product         Product @relation(fields: [productId], references: [id])
+  quantity        Int
+  
+  // O anki satılan fiyat (Birim x Miktar)
+  priceAtPurchase Decimal @db.Decimal(10, 2) 
+}
+
+// 7. DEĞERLENDİRMELER
+model Review {
+  id        String   @id @default(uuid())
+  rating    Int      
+  comment   String?
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  buyerId   String
+  buyer     User     @relation(fields: [buyerId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+// 8. LOJİSTİK VE KARGO (Shipping)
+model Shipment {
+  id              String   @id @default(uuid())
+  orderId         String
+  storeId         String
+  trackingCode    String?
+  carrier         String   // Örn: DHL, UPS
+  shippingCost    Decimal  @db.Decimal(10, 2)
+  status          String   @default("PREPARING") // PREPARING, IN_TRANSIT, DELIVERED
+  createdAt       DateTime @default(now())
+}
+
+// 9. CÜZDAN / MAĞAZA KREDİSİ (Wallet)
+model Wallet {
+  id        String   @id @default(uuid())
+  userId    String   @unique
+  balance   Decimal  @default(0) @db.Decimal(10, 2)
+  currency  String   @default("USD")
+  updatedAt DateTime @updatedAt
+}
+
+// 10. ERP ENTEGRASYON KAYITLARI (Sync Logs)
+model ErpSyncLog {
+  id          String   @id @default(uuid())
+  storeId     String
+  entityType  String   // Örn: "PRODUCT", "ORDER", "INVENTORY"
+  entityId    String
+  status      String   // "SUCCESS", "FAILED"
+  message     String?
+  createdAt   DateTime @default(now())
+}

@@ -1,0 +1,19 @@
+{
+  "project_name": "OpenBazaar (Global Gıda)",
+  "status": "Aşama 25 - Docker Config ve DB Seed (Tohumlama) Betikleri Yazıldı",
+  "last_updated": "2026-03-10",
+  "current_focus": "Proje Localde Çalışmaya Hazır",
+  "pending_tasks": [
+    "Next.js kurulumu",
+    "Veritabanı bağlantısı",
+    "Auth mekanizması",
+    "PIM (Katalog) veritabanı ayrıştırması",
+    "ElasticSearch cluster kurulumu (veya Algolia)",
+    "Kargo/Lojistik kural motoru",
+    "Next.js PWA manifest ve service worker konfigürasyonu",
+    "Mobil Push Bildirim (Firebase) entegrasyonu",
+    "Stripe API Kurulumu",
+    "ElasticSearch Entegrasyonu",
+    "Kampanya (Banner) Yönetim UI"
+  ]
+}
