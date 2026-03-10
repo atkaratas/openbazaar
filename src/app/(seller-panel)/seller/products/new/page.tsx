@@ -1,3 +1,5 @@
+'use client'
+
 export default function NewProductPage() {
   return (
     <div className="max-w-5xl mx-auto">
@@ -7,8 +9,8 @@ export default function NewProductPage() {
           <p className="text-sm text-gray-500 mt-1">OpenBazaar global kataloğuna (PIM) ihracat ürünü girişi.</p>
         </div>
         <div className="flex gap-3">
-          <button className="px-4 py-2 bg-white border border-gray-300 rounded-md text-gray-700 text-sm font-medium hover:bg-gray-50">Taslak Kaydet</button>
-          <button className="px-4 py-2 bg-emerald-600 rounded-md text-white text-sm font-medium shadow-sm hover:bg-emerald-700">Onaya Gönder</button>
+          <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="px-4 py-2 bg-white border border-gray-300 rounded-md text-gray-700 text-sm font-medium hover:bg-gray-50">Taslak Kaydet</button>
+          <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="px-4 py-2 bg-emerald-600 rounded-md text-white text-sm font-medium shadow-sm hover:bg-emerald-700">Onaya Gönder</button>
         </div>
       </div>
 

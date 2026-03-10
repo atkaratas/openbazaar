@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 export default function Navbar() {
@@ -22,7 +24,7 @@ export default function Navbar() {
                 placeholder="Ürün, kategori veya marka arayın..." 
                 className="w-full w-full bg-gray-100 border-transparent rounded-full py-2 pl-4 pr-10 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
               />
-              <button className="absolute right-3 top-2 text-gray-400 hover:text-blue-500">
+              <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="absolute right-3 top-2 text-gray-400 hover:text-blue-500">
                 🔍
               </button>
             </div>

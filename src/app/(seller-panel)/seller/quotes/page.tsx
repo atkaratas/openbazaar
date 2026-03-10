@@ -1,3 +1,5 @@
+'use client'
+
 export default function SellerQuotesPage() {
   return (
     <div className="max-w-6xl mx-auto">
@@ -34,8 +36,8 @@ export default function SellerQuotesPage() {
             </div>
             <textarea rows={2} placeholder="Kabul / Ret notunuz..." className="w-full border-gray-300 rounded-md focus:ring-blue-500 text-sm p-2 border bg-white mb-3"></textarea>
             <div className="flex gap-2">
-              <button className="flex-1 bg-white border border-rose-200 text-rose-600 text-xs font-bold py-2 rounded-md hover:bg-rose-50">Reddet</button>
-              <button className="flex-1 bg-blue-600 text-white text-xs font-bold py-2 rounded-md hover:bg-blue-700">Teklifi İlet</button>
+              <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="flex-1 bg-white border border-rose-200 text-rose-600 text-xs font-bold py-2 rounded-md hover:bg-rose-50">Reddet</button>
+              <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="flex-1 bg-blue-600 text-white text-xs font-bold py-2 rounded-md hover:bg-blue-700">Teklifi İlet</button>
             </div>
           </div>
 

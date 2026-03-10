@@ -1,3 +1,5 @@
+'use client'
+
 import { BarChart3, Users, DollarSign, Globe2, PackageX, TrendingUp } from 'lucide-react'
 
 export default function AdminDashboardPage() {
@@ -15,7 +17,7 @@ export default function AdminDashboardPage() {
             <option>Bu Ay</option>
             <option>Tüm Zamanlar</option>
           </select>
-          <button className="bg-slate-900 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-slate-800 transition">Rapor İndir</button>
+          <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="bg-slate-900 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-slate-800 transition">Rapor İndir</button>
         </div>
       </div>
 

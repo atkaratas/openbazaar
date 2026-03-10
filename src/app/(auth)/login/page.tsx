@@ -69,11 +69,11 @@ export default function LoginPage() {
           </div>
 
           <div className="mt-6 space-y-3">
-            <button className="w-full flex items-center justify-center gap-2 border-2 border-gray-200 text-slate-700 font-bold py-3 rounded-lg hover:bg-gray-50 transition-colors">
+            <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="w-full flex items-center justify-center gap-2 border-2 border-gray-200 text-slate-700 font-bold py-3 rounded-lg hover:bg-gray-50 transition-colors">
               <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="w-5 h-5" />
               Google ile Devam Et
             </button>
-            <button className="w-full flex items-center justify-center gap-2 bg-slate-950 text-white font-bold py-3 rounded-lg hover:bg-slate-800 transition-colors">
+            <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="w-full flex items-center justify-center gap-2 bg-slate-950 text-white font-bold py-3 rounded-lg hover:bg-slate-800 transition-colors">
               <img src="https://www.svgrepo.com/show/511330/apple-173.svg" alt="Apple" className="w-5 h-5 invert" />
               Apple ile Devam Et
             </button>

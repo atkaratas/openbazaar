@@ -28,7 +28,7 @@ export default function ProductDetailPage() {
         </div>
 
         <div className="space-y-3 mb-8">
-          <button className="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 shadow-md">
+          <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 shadow-md">
             Sepete Ekle (Perakende Alım)
           </button>
           
@@ -72,7 +72,7 @@ export default function ProductDetailPage() {
                 
                 <div className="flex gap-3 pt-4">
                   <button onClick={() => setShowQuoteModal(false)} className="flex-1 bg-white border border-gray-300 text-gray-700 py-2.5 rounded-lg font-bold hover:bg-gray-50">İptal</button>
-                  <button className="flex-1 bg-emerald-600 text-white py-2.5 rounded-lg font-bold hover:bg-emerald-700 shadow-md">Teklifi Gönder</button>
+                  <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="flex-1 bg-emerald-600 text-white py-2.5 rounded-lg font-bold hover:bg-emerald-700 shadow-md">Teklifi Gönder</button>
                 </div>
               </div>
             </div>

@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 export default function SellerLayout({
@@ -37,7 +39,7 @@ export default function SellerLayout({
           <h1 className="text-xl font-semibold text-gray-800">Ürün Yönetimi</h1>
           <div className="flex items-center gap-4">
             <span className="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-0.5 rounded border border-amber-200">2 Bekleyen Sertifika Onayı</span>
-            <button className="text-gray-500 hover:text-gray-700">🔔</button>
+            <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="text-gray-500 hover:text-gray-700">🔔</button>
           </div>
         </header>
         <div className="p-8">

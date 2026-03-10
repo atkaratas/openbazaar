@@ -1,3 +1,5 @@
+'use client'
+
 export default function AdminProductsAudit() {
   return (
     <div className="max-w-7xl mx-auto space-y-6">
@@ -6,7 +8,7 @@ export default function AdminProductsAudit() {
           <h2 className="text-2xl font-black text-slate-900">Katalog & Ürün Denetimi</h2>
           <p className="text-sm text-slate-500 mt-1">Satıcıların yüklediği yeni ürünlerin içerik, çeviri ve fiyat kontrolleri.</p>
         </div>
-        <button className="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition">
+        <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition">
           Toplu Onayla (AI Scan)
         </button>
       </div>
@@ -26,8 +28,8 @@ export default function AdminProductsAudit() {
             <p className="text-xl font-black text-emerald-600">€ 18.50</p>
           </div>
           <div className="flex gap-2 ml-4">
-             <button className="px-4 py-2 border border-rose-200 text-rose-600 rounded-lg text-sm font-bold hover:bg-rose-50">Reddet</button>
-             <button className="px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-bold hover:bg-slate-800">Yayına Al</button>
+             <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="px-4 py-2 border border-rose-200 text-rose-600 rounded-lg text-sm font-bold hover:bg-rose-50">Reddet</button>
+             <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-bold hover:bg-slate-800">Yayına Al</button>
           </div>
         </div>
       </div>
