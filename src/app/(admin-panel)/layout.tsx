@@ -10,16 +10,16 @@ export default function AdminLayout({
       
       {/* Sol Menü (Koyu Lacivert / Kurumsal) */}
       <aside className="w-72 bg-slate-950 text-slate-300 flex flex-col shadow-2xl">
-        <div className="h-20 flex items-center px-8 bg-black border-b border-slate-800">
+        <Link href="/" className="h-20 flex items-center px-8 bg-black border-b border-slate-800 hover:opacity-80 transition">
           <span className="text-2xl font-black text-white tracking-widest uppercase">
             OPEN<span className="text-blue-500">BAZAAR</span>
             <span className="block text-xs text-slate-500 font-mono tracking-normal mt-1">Control Tower</span>
           </span>
-        </div>
+        </Link>
         
         <nav className="flex-1 px-4 py-8 space-y-2 overflow-y-auto">
           <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 px-4">Operasyon Merkezi</div>
-          <Link href="/admin/dashboard" className="block px-4 py-3 rounded-lg bg-blue-600/10 text-blue-400 font-semibold border border-blue-500/20">📈 Kokpit (Analytics)</Link>
+          <Link href="/admin/dashboard" className="block px-4 py-3 rounded-lg hover:bg-slate-900 hover:text-white transition-all">📈 Kokpit (Analytics)</Link>
           
           <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-6 mb-2 px-4">Tedarik & Gümrük</div>
           <Link href="/admin/sellers/pending" className="block px-4 py-3 rounded-lg hover:bg-slate-900 hover:text-white transition-all flex justify-between items-center">
@@ -35,6 +35,10 @@ export default function AdminLayout({
             <span>⚖️ İtirazlar (Disputes)</span>
             <span className="bg-amber-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">3</span>
           </Link>
+
+          <div className="pt-6 mt-6 border-t border-slate-800">
+            <Link href="/" className="block px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-900 hover:text-white transition-all">← Ana Vitrine Dön</Link>
+          </div>
         </nav>
         
         <div className="p-6 bg-slate-900 border-t border-slate-800">
