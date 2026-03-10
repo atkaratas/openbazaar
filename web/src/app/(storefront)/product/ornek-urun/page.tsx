@@ -56,7 +56,7 @@ export default function ProductDetailPage() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Hedef Miktar (Adet/Koli)</label>
-                  <input type="number" defaultValue="500" className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-2.5 border bg-gray-50" />
+                  <input type="number" defaultValue={500} className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-2.5 border bg-gray-50" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Hedef Fiyatınız (Birim Başına - Opsiyonel)</label>

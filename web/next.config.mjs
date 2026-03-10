@@ -1,16 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // GitHub Pages için statik HTML üretme modu
-  output: 'export',
-  // Eğer özel alan adı (Custom Domain) yoksa ve https://username.github.io/openbazaar gibi bir alt yolda çalışacaksa:
-  // basePath: '/openbazaar',
-  
-  // Statik modda çalışmayan Next.js Image Optimizasyonunu kapat
+  // output: 'export', // Vercel'de dinamik server-side rendering (SSR) ve API'ler için bu KALKMALIDIR.
+  // basePath: '/openbazaar', // Vercel kendi domainini vereceği için bu da KALKMALIDIR.
   images: {
     unoptimized: true,
   },
-  
-  // Tailwind ve App Router kullanıyoruz, build sırasında TS/Lint hatalarını (Test ortamı olduğu için) geçici olarak es geçebiliriz
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -18,5 +12,4 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   }
 };
-
 export default nextConfig;
