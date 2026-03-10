@@ -10,3 +10,14 @@ To https://github.com/atkaratas/openbazaar.git
    f38cefd..7cee7d2  main -> main
 To https://github.com/atkaratas/openbazaar.git
    7cee7d2..48d1e1b  main -> main
+To https://github.com/atkaratas/openbazaar.git
+   1ce1145..2d2280c  main -> main
+[DEV-LOOP] Sürekli geliştirme ve push motoru aktif edildi...
+[SHADOW] src/components/layout/Footer.tsx inşa edildi ve GitHub'a pushlandı -> feat(ui): add corporate B2B footer with trust badges
+[SHADOW] src/app/(storefront)/about/page.tsx inşa edildi ve GitHub'a pushlandı -> feat(pages): build about us page for brand storytelling
+[SHADOW] src/app/(storefront)/contact/page.tsx inşa edildi ve GitHub'a pushlandı -> feat(pages): build global contact form and HQ map
+[SHADOW] src/app/(seller-panel)/seller/settings/page.tsx inşa edildi ve GitHub'a pushlandı -> feat(seller): implement basic store settings UI
+[SHADOW] src/app/(admin-panel)/admin/finance/page.tsx inşa edildi ve GitHub'a pushlandı -> feat(admin): build Stripe commission and payout overview UI
+[SHADOW] src/app/(admin-panel)/admin/disputes/page.tsx inşa edildi ve GitHub'a pushlandı -> feat(admin): add customer dispute resolution table
+[SHADOW] src/app/(storefront)/faq/page.tsx inşa edildi ve GitHub'a pushlandı -> feat(pages): add global shipping and customs FAQ page
+[DEV-LOOP] Planlanan tüm geliştirme blokları başarıyla Vercel'e aktarıldı.

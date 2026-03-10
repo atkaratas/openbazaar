@@ -1,6 +1,6 @@
 'use client'
 
-import { BarChart3, Users, DollarSign, Globe2, PackageX, TrendingUp } from 'lucide-react'
+import { BarChart3, Users, DollarSign, Globe2, PackageX, TrendingUp, ShieldCheck } from 'lucide-react'
 
 export default function AdminDashboardPage() {
   return (

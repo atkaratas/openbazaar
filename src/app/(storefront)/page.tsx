@@ -25,12 +25,16 @@ export default function HomePage() {
       {/* Gıda Kategorileri Grid */}
       <section className="max-w-7xl mx-auto py-16 px-4 w-full">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">Öne Çıkan Gıda Kategorileri</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 gap-6">
           {[
-            { name: 'Zeytinyağı & Soslar', icon: '🫒', link: '/product/ornek-urun' },
-            { name: 'Kuruyemiş & Atıştırmalık', icon: '🌰', link: '/product/ornek-urun' },
-            { name: 'Geleneksel Tatlılar', icon: '🍯', link: '/product/ornek-urun' },
-            { name: 'Baharat & Otlar', icon: '🌶️', link: '/product/ornek-urun' }
+            { name: 'Premium Kuruyemiş', icon: '🌰', link: '/category/kuruyemis' },
+            { name: 'Kuru Meyve & Kayısı', icon: '🍑', link: '/category/kurumeyve' },
+            { name: 'Geleneksel Lokum', icon: '🍬', link: '/category/lokum' },
+            { name: 'Ramazan Özel', icon: '🌙', link: '/category/ramazan-ozel' },
+            { name: 'Antep Fıstığı', icon: '🥜', link: '/category/antep-fistigi' },
+            { name: 'Ceviz & Badem', icon: '🥜', link: '/category/ceviz' },
+            { name: 'Yöresel Kahveler', icon: '☕', link: '/category/kahve' },
+            { name: 'Baharat & Salça', icon: '🌶️', link: '/category/baharat' }
           ].map((cat, i) => (
             <Link href={cat.link} key={i} className="bg-white h-48 rounded-2xl shadow-sm border border-emerald-100 flex flex-col items-center justify-center text-gray-700 hover:shadow-md hover:border-emerald-300 transition-all cursor-pointer">
               <span className="text-4xl mb-4">{cat.icon}</span>
