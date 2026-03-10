@@ -52,3 +52,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Kayıt sırasında bir hata oluştu.' }, { status: 500 })
   }
 }
+// Fix log 19324
