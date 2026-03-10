@@ -47,7 +47,7 @@ export default function BuyerRegisterPage() {
           </div>
 
           <div className="pt-4">
-            <button type="button" className="w-full bg-emerald-600 text-white font-bold py-3.5 rounded-lg shadow-md hover:bg-emerald-700 transition-colors">
+            <button type="button" onClick={() => { alert("Backend henüz bağlanmadı. Form tasarımı onaylandıysa API yazılacak."); window.location.href="/login" }} className="w-full bg-emerald-600 text-white font-bold py-3.5 rounded-lg shadow-md hover:bg-emerald-700 transition-colors">
               Hesabı Oluştur
             </button>
           </div>

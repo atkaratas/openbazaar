@@ -58,7 +58,7 @@ export default function SellerRegisterPage() {
           </div>
 
           <div className="pt-4">
-            <button type="button" className="w-full bg-emerald-600 text-white font-bold py-3.5 rounded-lg shadow-md hover:bg-emerald-700 transition-colors">
+            <button type="button" onClick={() => { alert("Tedarikçi formu onay bekliyor havuzuna gönderildi (Simülasyon)."); window.location.href="/admin/sellers/pending" }} className="w-full bg-emerald-600 text-white font-bold py-3.5 rounded-lg shadow-md hover:bg-emerald-700 transition-colors">
               Başvuruyu Tamamla (Onaya Gönder)
             </button>
           </div>
