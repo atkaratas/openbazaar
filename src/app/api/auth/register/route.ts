@@ -4,10 +4,21 @@ import { Role } from '@prisma/client'
 
 export const dynamic = 'force-dynamic'
 
+// Basit bir XSS temizleme fonksiyonu örneği
+const sanitizeInput = (input: string) => {
+  if (!input) return input;
+  return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json()
-    const { email, password, role, companyName, taxId } = body
+    // XSS Koruması: Girdileri sanitize ediyoruz
+    const email = sanitizeInput(body.email)
+    const password = body.password // Şifre hash'leneceği için sanitize edilmez
+    const role = sanitizeInput(body.role)
+    const companyName = sanitizeInput(body.companyName)
+    const taxId = sanitizeInput(body.taxId)
 
     if (!email || !password) {
       return NextResponse.json({ error: 'E-posta ve şifre zorunludur.' }, { status: 400 })
@@ -54,5 +65,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Kayıt sırasında bir hata oluştu.' }, { status: 500 })
   }
 }
-// Fix log 19324
+
 // Fix log 9548
+// Fix log 24351
