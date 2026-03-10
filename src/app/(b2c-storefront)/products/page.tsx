@@ -2,27 +2,38 @@ import ProductCard from '@/components/storefront/ProductCard'
 import prisma from '@/lib/db'
 import Link from 'next/link'
 
+// Vercel'in aramayı Cache'lemesini (Önbelleğe almasını) tamamen engeller. Her arama sunucuda canlı çalışır.
+export const dynamic = 'force-dynamic'
+
+function normalizeSearch(text: string) {
+    if (!text) return ''
+    return text.replace(/İ/g, 'i').replace(/I/g, 'i').replace(/ı/g, 'i').toLowerCase()
+}
+
 // @ts-ignore
 export default async function ProductsPage({ searchParams }: { searchParams: { q?: string, category?: string } }) {
   
-  const query = searchParams.q || ''
-  const catSlug = searchParams.category || ''
+  // Next.js 15 için searchParams bir Promise olabilir, o yüzden await ile çözüyoruz
+  const resolvedParams = searchParams instanceof Promise ? await searchParams : searchParams;
+  const query = resolvedParams?.q || ''
+  const catSlug = resolvedParams?.category || ''
 
   try {
     let products = await prisma.product.findMany({
       where: catSlug ? { category: { slug: catSlug }, isPublished: true } : { isPublished: true },
       include: { store: true, category: true },
-      take: 70,
+      take: 150, // Daha fazla ürün taraması için limit artırıldı
       orderBy: { createdAt: 'desc' }
     })
 
     if (query) {
-        const qNorm = query.toLocaleLowerCase('tr-TR')
+        const qNorm = normalizeSearch(query)
         products = products.filter(p => {
             const t: any = p.titleTranslations;
-            const trTitle = (t?.tr || '').toLocaleLowerCase('tr-TR')
-            const enTitle = (t?.en || '').toLocaleLowerCase('en-US')
-            return trTitle.includes(qNorm) || enTitle.includes(qNorm)
+            const trTitle = normalizeSearch(t?.tr || '')
+            const enTitle = normalizeSearch(t?.en || '')
+            const descTr = normalizeSearch((p.descriptionTranslations as any)?.tr || '')
+            return trTitle.includes(qNorm) || enTitle.includes(qNorm) || descTr.includes(qNorm)
         })
     }
 
@@ -39,7 +50,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: { q
       image: (p.images && p.images.length > 0) ? p.images[0] : 'https://malatyapazaripalanci.com.tr/productimages/102941/original/antep-fistigi-kavrulmus-250-gr-0489.jpg',
       certifications: ['HALAL', 'FDA'],
       isColdChain: p.isColdChain || false,
-      unitType: ((p.titleTranslations as any)?.tr || '').toLocaleLowerCase('tr-TR').includes('zeytinyağı') ? 'Teneke' : 'KG'
+      unitType: ((p.titleTranslations as any)?.tr || '').toLowerCase().includes('zeytinyağı') ? 'Teneke' : 'KG'
     }))
 
     return (
@@ -53,7 +64,6 @@ export default async function ProductsPage({ searchParams }: { searchParams: { q
           </div>
         </div>
 
-        {/* Aktif Filtre Rozetleri (Active Filters) */}
         {(catSlug || query) && (
           <div className="flex gap-2 mb-8">
             <span className="text-sm font-bold text-slate-500">Aktif Filtreler:</span>
@@ -76,13 +86,11 @@ export default async function ProductsPage({ searchParams }: { searchParams: { q
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 sticky top-24">
               <h3 className="font-black text-slate-900 mb-4 uppercase tracking-wider text-sm border-b pb-2">Kategori Ağacı</h3>
               <ul className="space-y-3 text-sm font-medium">
-                {/* Seçili bir kategori yoksa hepsini göster, varsa SADECE onu ve alt dallarını göster mantığı */}
                 {!catSlug && <li><span className="text-gray-400 cursor-not-allowed">Lütfen Yandan Seçim Yapın</span></li>}
                 
                 {categories.map((cat: any) => {
                   const isActive = catSlug === cat.slug;
-                  // Kullanıcı "o dal hariç hepsi gitsin" dediği için, eğer bir kategori seçiliyse diğerlerini sönük (veya tamamen gizli) yapalım
-                  if (catSlug && !isActive) return null; // Seçili olmayanları GİZLE
+                  if (catSlug && !isActive) return null; 
 
                   return (
                     <li key={cat.id}>
@@ -106,7 +114,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: { q
               {mappedProducts.length === 0 ? (
                   <div className="p-12 text-center bg-white rounded-2xl border border-slate-200 shadow-sm">
                       <span className="text-4xl">🔍</span>
-                      <h3 className="text-lg font-bold text-slate-700 mt-4">Bu kategoride henüz ürün bulunamadı.</h3>
+                      <h3 className="text-lg font-bold text-slate-700 mt-4">Aradığınız kriterde ürün bulunamadı.</h3>
                   </div>
               ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -120,6 +128,6 @@ export default async function ProductsPage({ searchParams }: { searchParams: { q
       </div>
     )
   } catch (error: any) {
-    return <div className="p-20 text-center text-rose-600 font-bold">Veritabanı bağlantı hatası: {error.message}</div>
+    return <div className="p-20 text-center text-rose-600 font-bold bg-rose-50 rounded-xl m-10">Veritabanı bağlantı hatası: {error.message}</div>
   }
 }
