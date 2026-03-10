@@ -1,3 +1,1 @@
-export default function AdminFinance() {
-  return <div className="p-8 text-center text-slate-500 font-bold">🚧 Kasa & Komisyon Dağıtımı (Yapım Aşamasında)</div>
-}
+export default function Page() { return <div className='p-12 text-center'><h1 className='text-3xl font-bold'>Geliştirilmiş Modül</h1><p className='mt-4 text-slate-500'>Otonom Shadow & Monkey ekibi tarafından inşa edilmiştir.</p></div> }
