@@ -52,3 +52,9 @@ To https://github.com/atkaratas/openbazaar.git
 --- Döngü Tetiklendi: 2026-03-11 02:20:22 ---
 [2026-03-11 02:20:22] [MONKEY] Satıcı kayıt formu dolduruluyor (Firma_18831)...
 [2026-03-11 02:20:22] [MONKEY] Form başarıyla iletildi ve veritabanına yazıldı (HTTP 200).
+--- Döngü Tetiklendi: 2026-03-11 02:22:24 ---
+[2026-03-11 02:22:24] [MONKEY] Satıcı kayıt formu dolduruluyor (Firma_27564)...
+[2026-03-11 02:22:24] [MONKEY] Form başarıyla iletildi ve veritabanına yazıldı (HTTP 200).
+--- Döngü Tetiklendi: 2026-03-11 02:24:27 ---
+[2026-03-11 02:24:27] [MONKEY] Satıcı kayıt formu dolduruluyor (Firma_24989)...
+[2026-03-11 02:24:27] [MONKEY] Form başarıyla iletildi ve veritabanına yazıldı (HTTP 200).

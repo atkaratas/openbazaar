@@ -26,7 +26,7 @@ export default async function ProductsPage({ searchParams }: { searchParams: { q
   let products = await prisma.product.findMany({
     where: catSlug ? { categoryId: catSlug, isPublished: true } : { isPublished: true },
     include: { store: true, category: true },
-    take: 24,
+    take: 100,
     orderBy: { createdAt: 'desc' }
   })
 

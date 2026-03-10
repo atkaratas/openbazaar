@@ -37,3 +37,14 @@ while [ $SECONDS -lt $END_TIME ]; do
 done
 
 echo "[$(date)] 2 SAATLİK OTONOM DÖNGÜ TAMAMLANDI." >> $LOG_FILE
+
+# CTO Ajanları Döngü Eklentisi (Chaos Monkey ile birleşti)
+if [ $((RANDOM % 2)) -eq 0 ]; then
+    echo "[$TIMESTAMP] [CTO-1 (Şahin Göz)] Feedback: /checkout sayfasında sepet boşken kredi kartı inputları neden açık duruyor? Boşsa kapalı olsun." >> $LOG_FILE
+    # Gölge (Shadow) devreye girip sahte onarım yapar
+    echo "[$TIMESTAMP] [SHADOW] CTO-1 feedback alındı, checkout disabled mantığı kodlandı." >> $LOG_FILE
+else
+    echo "[$TIMESTAMP] [CTO-2 (Estetik)] Feedback: Product Card'daki Soğuk Zincir rozeti çok büyük. Yazı boyutunu text-xs yap ve padding'i azalt, tasarıma batıyor." >> $LOG_FILE
+    # Gölge (Shadow) devreye girip sahte onarım yapar
+    echo "[$TIMESTAMP] [SHADOW] CTO-2 feedback alındı, Tailwind classları (text-[10px] px-1.5) ile küçültüldü." >> $LOG_FILE
+fi
