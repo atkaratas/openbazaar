@@ -1,8 +1,43 @@
 'use client'
 
+import { useState } from 'react'
 import { ShieldCheck, Building2, Globe } from 'lucide-react'
 
 export default function SellerRegisterPage() {
+  const [formData, setFormData] = useState({
+    companyName: '',
+    taxId: '',
+    email: '',
+    password: '',
+    category: 'Kuru Gıda'
+  })
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, role: 'SELLER' })
+      })
+      
+      if (res.ok) {
+        setMessage('✅ Başvurunuz alındı! Yönetici onayından sonra giriş yapabilirsiniz.')
+        setTimeout(() => window.location.href = '/login', 3000)
+      } else {
+        const errorData = await res.json()
+        setMessage('❌ Hata: ' + errorData.error)
+      }
+    } catch (err) {
+      setMessage('❌ Sistemsel bir hata oluştu.')
+    }
+    setLoading(false)
+  }
+
   return (
     <div className="min-h-screen bg-emerald-900 flex flex-col md:flex-row">
       
@@ -24,31 +59,54 @@ export default function SellerRegisterPage() {
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Tedarikçi Başvurusu</h2>
         <p className="text-sm text-gray-500 mb-8">Formu doldurun, belgelerinizi yükleyin ve ihracata başlayın.</p>
 
-        <form className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Şirket Ünvanı</label>
-              <input type="text" className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-2.5 border bg-gray-50" />
+              <label className="block text-sm font-bold text-slate-800 mb-1">Şirket Ünvanı</label>
+              <input 
+                required
+                type="text" 
+                onChange={e => setFormData({...formData, companyName: e.target.value})}
+                className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-3 border bg-white text-slate-900 font-medium placeholder-gray-400" 
+              />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Vergi Numarası (VKN)</label>
-              <input type="text" className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-2.5 border bg-gray-50" />
+              <label className="block text-sm font-bold text-slate-800 mb-1">Vergi Numarası (VKN)</label>
+              <input 
+                required
+                type="text" 
+                onChange={e => setFormData({...formData, taxId: e.target.value})}
+                className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-3 border bg-white text-slate-900 font-medium" 
+              />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">E-Posta (Kurumsal)</label>
-            <input type="email" className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-2.5 border bg-gray-50" />
+            <label className="block text-sm font-bold text-slate-800 mb-1">E-Posta (Kurumsal)</label>
+            <input 
+              required
+              type="email" 
+              onChange={e => setFormData({...formData, email: e.target.value})}
+              className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-3 border bg-white text-slate-900 font-medium" 
+            />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Şifre</label>
-              <input type="password" className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-2.5 border bg-gray-50" />
+              <label className="block text-sm font-bold text-slate-800 mb-1">Şifre</label>
+              <input 
+                required
+                type="password" 
+                onChange={e => setFormData({...formData, password: e.target.value})}
+                className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-3 border bg-white text-slate-900 font-bold tracking-widest" 
+              />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Ana Kategori</label>
-              <select className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-2.5 border bg-gray-50">
+              <label className="block text-sm font-bold text-slate-800 mb-1">Ana Kategori</label>
+              <select 
+                onChange={e => setFormData({...formData, category: e.target.value})}
+                className="w-full border-gray-300 rounded-md focus:ring-emerald-500 p-3 border bg-white text-slate-900 font-medium"
+              >
                 <option>Kuru Gıda</option>
                 <option>Zeytinyağı & Soslar</option>
                 <option>Atıştırmalık & Tatlı</option>
@@ -57,9 +115,19 @@ export default function SellerRegisterPage() {
             </div>
           </div>
 
+          {message && (
+            <div className={`p-3 rounded-md text-sm font-bold ${message.includes('✅') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+              {message}
+            </div>
+          )}
+
           <div className="pt-4">
-            <button type="button" onClick={() => { alert("Tedarikçi formu onay bekliyor havuzuna gönderildi (Simülasyon)."); window.location.href="/admin/sellers/pending" }} className="w-full bg-emerald-600 text-white font-bold py-3.5 rounded-lg shadow-md hover:bg-emerald-700 transition-colors">
-              Başvuruyu Tamamla (Onaya Gönder)
+            <button 
+              type="submit" 
+              disabled={loading}
+              className="w-full bg-emerald-600 text-white font-bold py-4 rounded-lg shadow-md hover:bg-emerald-700 transition-colors text-lg disabled:bg-emerald-300"
+            >
+              {loading ? 'Kayıt Yapılıyor...' : 'Başvuruyu Tamamla (Onaya Gönder)'}
             </button>
           </div>
         </form>
