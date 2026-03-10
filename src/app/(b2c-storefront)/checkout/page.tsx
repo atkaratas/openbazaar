@@ -2,10 +2,10 @@
 
 import { useState } from 'react'
 import { useCart } from '@/store/useCart'
-import { ShieldCheck, Truck, CreditCard, Lock } from 'lucide-react'
+import { ShieldCheck, Truck, CreditCard, Lock, Trash2, Plus, Minus } from 'lucide-react'
 
 export default function CheckoutPage() {
-  const { items, getTotal } = useCart()
+  const { items, getTotal, removeItem, updateQuantity } = useCart()
   const [isProcessing, setIsProcessing] = useState(false)
 
   const requiresColdChain = items.some(item => (item as any).isColdChain)
@@ -118,23 +118,59 @@ export default function CheckoutPage() {
             <div className="bg-slate-900 p-8 rounded-3xl shadow-2xl border border-slate-800 sticky top-24 text-white">
               <h2 className="text-xl font-black mb-6 border-b border-slate-800 pb-4">Sipariş Özeti</h2>
               
-              <div className="space-y-4 mb-6 max-h-72 overflow-y-auto pr-2">
+              <div className="space-y-4 mb-6 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
                 {items.length === 0 ? (
                   <p className="text-sm text-slate-400 font-medium text-center py-4">Sepetiniz boş.</p>
                 ) : (
                   items.map(item => (
-                    <div key={item.id} className="flex gap-4 items-center bg-slate-800/50 p-3 rounded-xl border border-slate-800">
-                      <div className="w-16 h-16 bg-white rounded-lg overflow-hidden flex-shrink-0">
-                        <img src={item.image || '/placeholder-food.jpg'} alt="" className="w-full h-full object-cover" />
+                    <div key={item.id} className="flex flex-col gap-3 bg-slate-800/50 p-4 rounded-xl border border-slate-700 relative group">
+                      
+                      {/* Ürünü Kaldır Butonu */}
+                      <button 
+                        onClick={() => removeItem(item.id)}
+                        className="absolute -top-2 -right-2 bg-rose-500 hover:bg-rose-600 text-white p-1.5 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                        title="Sepetten Çıkar"
+                      >
+                        <Trash2 size={14} />
+                      </button>
+
+                      <div className="flex gap-4 items-center">
+                        <div className="w-16 h-16 bg-white rounded-lg overflow-hidden flex-shrink-0">
+                          <img src={item.image || '/placeholder-food.jpg'} alt="" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-sm font-bold text-white line-clamp-2 leading-tight">{item.title['en'] || item.title['tr']}</p>
+                          <p className="text-xs text-slate-400 mt-1">Satıcı: {item.storeName}</p>
+                        </div>
                       </div>
-                      <div className="flex-1 flex flex-col justify-center">
-                        <p className="text-sm font-bold text-white line-clamp-1">{item.title['en'] || item.title['tr']}</p>
-                        <p className="text-xs text-slate-400 mt-1">Satıcı: {item.storeName}</p>
-                        <p className="text-xs font-bold text-emerald-400 mt-1">Adet: {item.quantity} x €{item.price.toFixed(2)}</p>
+
+                      <div className="flex items-center justify-between border-t border-slate-700/50 pt-3 mt-1">
+                        
+                        {/* Adet Seçici */}
+                        <div className="flex items-center gap-3 bg-slate-900 rounded-lg p-1 border border-slate-700">
+                          <button 
+                            onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                            className="p-1 hover:bg-slate-700 rounded text-slate-400 hover:text-white transition-colors"
+                          >
+                            <Minus size={14} />
+                          </button>
+                          <span className="text-sm font-black w-6 text-center">{item.quantity}</span>
+                          <button 
+                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            className="p-1 hover:bg-slate-700 rounded text-slate-400 hover:text-white transition-colors"
+                          >
+                            <Plus size={14} />
+                          </button>
+                        </div>
+
+                        <div className="text-right">
+                          <p className="text-xs text-slate-400 line-through">Birim: €{item.price.toFixed(2)}</p>
+                          <p className="font-black text-emerald-400 text-lg">
+                            €{(item.price * item.quantity).toFixed(2)}
+                          </p>
+                        </div>
                       </div>
-                      <div className="font-black text-white text-lg">
-                        €{(item.price * item.quantity).toFixed(2)}
-                      </div>
+
                     </div>
                   ))
                 )}
@@ -147,7 +183,7 @@ export default function CheckoutPage() {
                 </div>
                 <div className="flex justify-between text-sm text-slate-300 font-medium">
                   <span>Uluslararası Kargo (Shipping)</span>
-                  <span>€{requiresColdChain ? '45.00' : '24.50'}</span>
+                  <span>€{items.length === 0 ? '0.00' : (requiresColdChain ? '45.00' : '24.50')}</span>
                 </div>
                 <div className="flex justify-between text-sm text-emerald-400 font-bold bg-emerald-900/30 p-2 rounded-lg">
                   <span>Gümrük Vergisi (DDP)</span>
@@ -158,7 +194,7 @@ export default function CheckoutPage() {
               <div className="border-t border-slate-800 mt-6 pt-6 flex justify-between items-center mb-8">
                 <span className="text-lg font-bold text-slate-300">Genel Toplam</span>
                 <span className="text-4xl font-black text-white">
-                  €{(getTotal() + (requiresColdChain ? 45 : 24.5)).toFixed(2)}
+                  €{items.length === 0 ? '0.00' : (getTotal() + (requiresColdChain ? 45 : 24.5)).toFixed(2)}
                 </span>
               </div>
 

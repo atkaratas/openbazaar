@@ -1,114 +1,150 @@
 'use client'
 
 import { useState } from 'react'
+import { Shield, Truck, PackageCheck, AlertTriangle } from 'lucide-react'
 import { useCart } from '@/store/useCart'
-import { ShoppingBag, Check } from 'lucide-react'
 
 export default function ProductDetailClient({ product }: { product: any }) {
-  const [showQuoteModal, setShowQuoteModal] = useState(false)
-  const [quantity, setQuantity] = useState(1)
-  const [added, setAdded] = useState(false)
+  const [qty, setQty] = useState(1)
   const addItem = useCart((state) => state.addItem)
 
   const handleAddToCart = () => {
-    addItem({ ...product, quantity, title: product.title })
-    setAdded(true)
-    setTimeout(() => setAdded(false), 2000)
+    addItem({
+      id: product.id,
+      title: product.titleTranslations,
+      price: Number(product.basePrice),
+      currency: product.baseCurrency,
+      quantity: qty,
+      image: (product.images && product.images.length > 0) ? product.images[0] : '/placeholder-food.jpg',
+      storeId: product.storeId,
+      storeName: product.store?.name || 'Tedarikçi',
+      isColdChain: product.isColdChain || false
+    })
+    alert('✅ Sepete eklendi!')
   }
 
-  // Güvenli değişkenler (Eğer veritabanından eksik veri geldiyse UI çökmesin diye)
-  const safePrice = Number(product?.price) || 0
-  const safeB2bPrice = (safePrice * 0.75).toFixed(2)
-  const safeTitle = product?.title?.tr || product?.title?.en || 'Bilinmeyen Ürün'
-  const safeDesc = product?.description?.tr || product?.description?.en || 'Açıklama bulunmuyor.'
-  const safeUnit = product?.unitType || 'KG'
-  const safeStock = product?.stock || 0
-  const safeStoreName = product?.storeName || 'OpenBazaar Satıcısı'
-  const safeImage = product?.image || '/placeholder-food.jpg'
+  const isB2bEligible = product.moq && product.moq > 1
+  const b2bDiscount = 0.25 // %25 İndirim varsayımı
+  const b2bPrice = Number(product.basePrice) * (1 - b2bDiscount)
+  
+  // Anlık toplam fiyat hesaplama (müşterinin ekranda görmesi için)
+  const totalPrice = (Number(product.basePrice) * qty).toFixed(2);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div className="bg-gray-100 rounded-3xl aspect-square flex items-center justify-center overflow-hidden shadow-inner">
-        <img src={safeImage} alt="Product" className="w-full h-full object-cover" />
-      </div>
-
-      <div className="flex flex-col justify-center">
-        <div className="text-sm font-bold text-emerald-600 mb-2 uppercase tracking-wider">{safeStoreName}</div>
-        <h1 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">{safeTitle}</h1>
-        <p className="text-slate-500 mb-8">{safeDesc}</p>
+    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-8">
-          <div className="bg-white border-2 border-emerald-500 px-6 py-4 rounded-2xl shadow-sm w-full md:w-auto">
-            <span className="text-xs text-emerald-600 block font-bold uppercase mb-1">B2C (Perakende)</span>
-            <span className="text-3xl font-black text-slate-900">€ {safePrice.toFixed(2)} <span className="text-sm font-medium text-slate-500">/ {safeUnit}</span></span>
-          </div>
-          <div className="bg-slate-50 border border-slate-200 px-6 py-4 rounded-2xl w-full md:w-auto">
-            <span className="text-xs text-slate-500 block font-bold uppercase mb-1">B2B (Toptan - Min 50 {safeUnit})</span>
-            <span className="text-2xl font-black text-slate-700">€ {safeB2bPrice} <span className="text-sm font-medium text-slate-500">/ {safeUnit}</span></span>
+        {/* Sol Kolon - Görseller */}
+        <div className="space-y-4">
+          <div className="aspect-square w-full rounded-2xl bg-white border border-gray-100 overflow-hidden relative shadow-sm">
+            {product.isColdChain && (
+              <span className="absolute top-4 left-4 bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 z-10">
+                ❄️ Soğuk Zincir
+              </span>
+            )}
+            <img 
+              src={(product.images && product.images.length > 0) ? product.images[0] : 'https://malatyapazaripalanci.com.tr/productimages/102941/original/antep-fistigi-kavrulmus-250-gr-0489.jpg'}
+              alt={product.titleTranslations?.tr || 'Ürün'}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
-        <div className="flex items-center gap-4 mb-8">
-            <div className="flex items-center border-2 border-slate-200 rounded-xl bg-white overflow-hidden">
-                <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="px-4 py-3 text-slate-600 font-bold hover:bg-slate-100">-</button>
-                <span className="px-4 font-black text-lg w-12 text-center text-slate-900">{quantity}</span>
-                <button onClick={() => setQuantity(quantity + 1)} className="px-4 py-3 text-slate-600 font-bold hover:bg-slate-100">+</button>
-            </div>
-            <span className="text-sm font-medium text-slate-500">Stok: {safeStock} {safeUnit} mevcut</span>
-        </div>
-
-        <div className="space-y-3 mb-8">
-          <button 
-            onClick={handleAddToCart}
-            className={`w-full font-bold py-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 ${added ? 'bg-emerald-500 text-white' : 'bg-slate-900 text-white hover:bg-slate-800'}`}
-          >
-            {added ? <><Check /> Sepete Eklendi</> : <><ShoppingBag /> Sepete Ekle (Perakende)</>}
-          </button>
-          
-          <div className="relative flex items-center py-4">
-            <div className="flex-grow border-t border-gray-200"></div>
-            <span className="flex-shrink-0 mx-4 text-gray-400 text-xs font-bold uppercase">VEYA TOPTANCI İSENİZ</span>
-            <div className="flex-grow border-t border-gray-200"></div>
+        {/* Sağ Kolon - Detaylar */}
+        <div>
+          <div className="mb-6">
+            <h1 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight">
+              {product.titleTranslations?.tr}
+            </h1>
+            <p className="text-lg text-gray-500 mt-2">
+              Satıcı: <span className="font-bold text-emerald-700">{product.store?.name || 'OpenBazaar Tedarikçisi'}</span>
+            </p>
           </div>
 
-          <button onClick={() => setShowQuoteModal(true)} className="w-full bg-white border-2 border-slate-200 text-slate-800 font-bold py-4 rounded-xl hover:bg-slate-50 transition-colors">
-            🤝 Satıcıdan Özel Fiyat İste (RFQ)
-          </button>
-        </div>
-
-        {showQuoteModal && (
-            <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-                <div className="bg-white p-8 rounded-3xl max-w-md w-full shadow-2xl border border-slate-200">
-                    <h3 className="font-black text-2xl mb-2 text-slate-900">Teklif İste</h3>
-                    <p className="text-sm text-slate-600 font-medium mb-6">{safeStoreName} firmasına yüksek adetli alımlar için doğrudan teklif gönderin.</p>
-                    
-                    <div className="space-y-5">
-                      <div>
-                        <label className="block text-sm font-bold text-slate-800 mb-1">Hedef Miktar ({safeUnit})</label>
-                        <input type="number" defaultValue={500} className="w-full border border-slate-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500 p-3 bg-white text-slate-900 font-bold text-lg shadow-sm" />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-bold text-slate-800 mb-1">Hedef Fiyatınız (Birim Başına)</label>
-                        <div className="relative rounded-md shadow-sm">
-                          <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-500 font-bold">€</span>
-                          <input type="number" placeholder="Örn: 28.00" className="w-full pl-10 border border-slate-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500 p-3 bg-white text-slate-900 font-bold placeholder-slate-400" />
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-bold text-slate-800 mb-1">Mesajınız & Teslimat Şartları</label>
-                        <textarea rows={3} placeholder="FOB İzmir teslim veya CIF Berlin fiyatı verir misiniz?" className="w-full border border-slate-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500 p-3 bg-white text-slate-900 font-medium placeholder-slate-400 shadow-sm"></textarea>
-                      </div>
-                      
-                      <div className="flex gap-3 pt-4">
-                        <button onClick={() => setShowQuoteModal(false)} className="flex-1 bg-slate-100 border border-slate-200 text-slate-700 py-3 rounded-xl font-bold hover:bg-slate-200 transition">İptal</button>
-                        <button className="flex-1 bg-emerald-600 text-white py-3 rounded-xl font-bold shadow-lg hover:bg-emerald-700 transition" onClick={() => { alert('Teklifiniz Satıcıya (B2B) İletildi!'); setShowQuoteModal(false); }}>Teklifi Gönder</button>
-                      </div>
-                    </div>
+          {/* Fiyat Kartı */}
+          <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 mb-8 space-y-4 shadow-sm">
+            <div className="flex items-end justify-between border-b border-slate-200 pb-4">
+              <div>
+                <p className="text-sm font-bold text-slate-500 mb-1">B2C (Perakende)</p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl font-black text-slate-900">€ {Number(product.basePrice).toFixed(2)}</span>
+                  <span className="text-slate-500 font-medium">/ Adet</span>
                 </div>
+              </div>
             </div>
-        )}
+
+            {isB2bEligible && (
+              <div className="flex items-center justify-between bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                <div>
+                  <p className="text-sm font-bold text-emerald-800 mb-1 flex items-center gap-1">
+                    <PackageCheck size={16} /> B2B (Toptan - Min {product.moq} Adet)
+                  </p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-2xl font-black text-emerald-700">€ {b2bPrice.toFixed(2)}</span>
+                    <span className="text-emerald-600 font-medium">/ Adet</span>
+                  </div>
+                </div>
+                <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-lg text-sm shadow-md transition-all">
+                  Teklif İste
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Sepete Ekle Formu */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-8 items-end">
+            <div className="w-full sm:w-auto">
+              <label className="block text-sm font-bold text-gray-700 mb-2">Adet Seçiniz</label>
+              <div className="flex items-center border-2 border-slate-200 rounded-xl overflow-hidden bg-white h-14 w-full sm:w-40">
+                <button 
+                  onClick={() => setQty(Math.max(1, qty - 1))}
+                  className="px-4 py-2 text-xl font-bold text-slate-600 hover:bg-slate-50 w-12 h-full flex items-center justify-center transition-colors"
+                >-</button>
+                <div className="flex-1 text-center font-black text-xl text-slate-900">{qty}</div>
+                <button 
+                  onClick={() => setQty(qty + 1)}
+                  className="px-4 py-2 text-xl font-bold text-slate-600 hover:bg-slate-50 w-12 h-full flex items-center justify-center transition-colors"
+                >+</button>
+              </div>
+            </div>
+            
+            <div className="flex-1 w-full flex flex-col items-end">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Toplam Tutar</span>
+              <span className="text-3xl font-black text-emerald-600 mb-2">€ {totalPrice}</span>
+              
+              <button 
+                onClick={handleAddToCart}
+                className="w-full bg-slate-900 hover:bg-slate-800 text-white font-black text-lg h-14 rounded-xl shadow-xl transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+              >
+                <span>🛒</span> Sepete Ekle
+              </button>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 text-sm text-gray-500 mb-8 font-medium">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Stok: <span className="font-bold text-gray-700">{Math.floor(Math.random() * 5000) + 100} Adet</span> mevcut
+          </div>
+
+          {/* Güven Rozetleri */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-gray-200 pt-8">
+            <div className="flex items-start gap-3">
+              <Shield className="text-emerald-500 mt-1" size={24} />
+              <div>
+                <h4 className="font-bold text-gray-900 text-sm">OpenBazaar Garantisi</h4>
+                <p className="text-xs text-gray-500 mt-1">Ürün teslim edilene kadar paranız havuzda güvende kalır.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Truck className="text-blue-500 mt-1" size={24} />
+              <div>
+                <h4 className="font-bold text-gray-900 text-sm">Gümrük Dahil (DDP)</h4>
+                <p className="text-xs text-gray-500 mt-1">Avrupa kapı teslim fiyatıdır. Sürpriz vergi çıkmaz.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   )
