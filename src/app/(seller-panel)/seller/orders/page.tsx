@@ -10,9 +10,9 @@ export default function SellerOrdersPage() {
 
       {/* Sipariş Filtreleri */}
       <div className="flex gap-4 mb-6">
-        <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="px-4 py-2 bg-emerald-600 text-white rounded-md text-sm font-medium shadow-sm">Yeni (2)</button>
-        <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-50">Hazırlanıyor (1)</button>
-        <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-50">Kargoya Verildi (45)</button>
+        <button  className="px-4 py-2 bg-emerald-600 text-white rounded-md text-sm font-medium shadow-sm">Yeni (2)</button>
+        <button  className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-50">Hazırlanıyor (1)</button>
+        <button  className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-50">Kargoya Verildi (45)</button>
       </div>
 
       {/* Sipariş Tablosu */}
@@ -53,7 +53,7 @@ export default function SellerOrdersPage() {
                 <div className="text-xs text-gray-500">Ödendi (Havuzda Bekliyor)</div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="bg-blue-600 text-white px-4 py-2 rounded-md shadow hover:bg-blue-700 transition flex items-center gap-2 ml-auto">
+                <button  className="bg-blue-600 text-white px-4 py-2 rounded-md shadow hover:bg-blue-700 transition flex items-center gap-2 ml-auto">
                   <span>🖨️</span> DHL Barkodu Yazdır
                 </button>
               </td>

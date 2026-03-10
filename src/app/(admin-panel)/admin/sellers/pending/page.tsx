@@ -106,7 +106,7 @@ export default function PendingSellersPage() {
                   <button onClick={() => handleApprove(seller.id, seller.name)} className="px-4 py-1.5 bg-blue-600 text-white rounded text-sm font-bold shadow-sm hover:bg-blue-700 transition-colors">Tüm Evrakları Onayla</button>
                 </>
               ) : (
-                <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="px-4 py-1.5 bg-slate-100 text-slate-400 rounded text-sm font-bold border border-slate-200 cursor-not-allowed">İşlem Yapılamaz</button>
+                <button  className="px-4 py-1.5 bg-slate-100 text-slate-400 rounded text-sm font-bold border border-slate-200 cursor-not-allowed">İşlem Yapılamaz</button>
               )}
             </div>
           </div>

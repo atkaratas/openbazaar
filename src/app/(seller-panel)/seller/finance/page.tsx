@@ -13,7 +13,7 @@ export default function SellerFinancePage() {
         <div className="bg-white p-6 rounded-xl shadow-sm border border-emerald-200 border-l-4 border-l-emerald-500">
           <p className="text-sm font-medium text-gray-500">Kullanılabilir Bakiye</p>
           <p className="text-3xl font-black text-gray-900 mt-2">₺ 45,250.00</p>
-          <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="mt-4 w-full bg-slate-900 text-white py-2 rounded-md text-sm font-bold hover:bg-slate-800 transition">
+          <button  className="mt-4 w-full bg-slate-900 text-white py-2 rounded-md text-sm font-bold hover:bg-slate-800 transition">
             Parayı Çek (Payout)
           </button>
         </div>

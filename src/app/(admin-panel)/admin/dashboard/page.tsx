@@ -17,7 +17,7 @@ export default function AdminDashboardPage() {
             <option>Bu Ay</option>
             <option>Tüm Zamanlar</option>
           </select>
-          <button onClick={() => alert("Monkey Test: Bu butonun arkasındaki API / Fonksiyon şu an geliştirme aşamasındadır.")} className="bg-slate-900 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-slate-800 transition">Rapor İndir</button>
+          <button  className="bg-slate-900 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-slate-800 transition">Rapor İndir</button>
         </div>
       </div>
 
