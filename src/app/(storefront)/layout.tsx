@@ -1,4 +1,5 @@
 import Navbar from "@/components/layout/Navbar"
+import Footer from "@/components/layout/Footer"
 
 export default function StorefrontLayout({
   children,
@@ -11,10 +12,8 @@ export default function StorefrontLayout({
       <main className="flex-grow">
         {children}
       </main>
-      {/* Footer Buraya Gelecek */}
-      <footer className="bg-gray-900 text-white py-12 text-center">
-        <p>© 2026 OpenBazaar. Tüm hakları saklıdır.</p>
-      </footer>
+      <Footer />
     </div>
   )
 }
+

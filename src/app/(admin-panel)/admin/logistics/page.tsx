@@ -52,7 +52,7 @@ export default function AdminLogisticsPage() {
             <tr>
               <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase">Takip Kodu (AWB)</th>
               <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase">Taşıyıcı</th>
-              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase">Rota (Origin -> Dest)</th>
+              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase">Rota (Origin &gt; Dest)</th>
               <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase">Durum</th>
               <th className="px-6 py-3 text-right text-xs font-bold text-slate-500 uppercase">Son Güncelleme</th>
             </tr>
