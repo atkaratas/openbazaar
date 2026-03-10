@@ -1,25 +1,24 @@
-// --- KOD ADI: OB | VERİTABANI TOHUMLAMA (SEED) ---
-// Sistemi kurduğumuzda ilk açılışta veritabanını test datasıyla dolduracak script.
-
 import { PrismaClient, Role } from '@prisma/client'
+import * as dotenv from 'dotenv'
+
+dotenv.config()
+
 const prisma = new PrismaClient()
 
 async function main() {
   console.log('Seeding database with test data...')
 
-  // 1. Admin Kullanıcı (Sen)
   const admin = await prisma.user.upsert({
     where: { email: 'admin@openbazaar.com' },
     update: {},
     create: {
       email: 'admin@openbazaar.com',
-      passwordHash: 'hashed_password_123', // Gerçekte bcrypt ile şifrelenir
+      passwordHash: 'hashed_password_123',
       role: Role.ADMIN,
       name: 'Talha (System Owner)',
     },
   })
 
-  // 2. Örnek Bir Satıcı Firma
   const sellerUser = await prisma.user.upsert({
     where: { email: 'export@marmarabirlik.com' },
     update: {},
@@ -44,9 +43,10 @@ async function main() {
     },
   })
 
-  // 3. Kategoriler
-  const category = await prisma.category.create({
-    data: {
+  const category = await prisma.category.upsert({
+    where: { slug: 'olive-oils' },
+    update: {},
+    create: {
       slug: 'olive-oils',
       nameTranslations: {
         tr: 'Zeytinyağı',
@@ -56,13 +56,14 @@ async function main() {
     }
   })
 
-  // 4. Test Ürünleri
-  await prisma.product.create({
-    data: {
+  await prisma.product.upsert({
+    where: { slug: 'erken-hasat-soguk-sikim-5l' },
+    update: {},
+    create: {
       slug: 'erken-hasat-soguk-sikim-5l',
       storeId: store.id,
       categoryId: category.id,
-      basePrice: 1500.00, // TRY bazında
+      basePrice: 1500.00,
       baseCurrency: 'TRY',
       stock: 500,
       isPublished: true,

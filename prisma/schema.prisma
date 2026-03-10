@@ -7,7 +7,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 enum Role {
@@ -168,103 +167,4 @@ model ErpSyncLog {
   status      String   // "SUCCESS", "FAILED"
   message     String?
   createdAt   DateTime @default(now())
-}
-
-// --- GIDA E-İHRACATI ÖZEL ALANLARI (Ek Tablolar) ---
-model FoodAttributes {
-  id                String   @id @default(uuid())
-  productId         String   @unique
-  product           Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
-  
-  ingredients       Json?    // İçindekiler ve Alerjen Uyarıları (Çoklu dil)
-  certifications    String[] // Örn: ["HALAL", "ORGANIC", "FDA_APPROVED", "ISO22000"]
-  shelfLifeDays     Int?     // Raf ömrü (Gün)
-  storageConditions String?  // Örn: "Keep refrigerated", "Store in a cool dry place"
-  isColdChain       Boolean  @default(false) // Soğuk Zincir lojistiği gerektirir mi?
-  weightPerUnit     Decimal  @db.Decimal(10, 2) // KG/GR cinsinden net ağırlık (Kargo hesabı için şart)
-  moq               Int      @default(1) // B2B için Minimum Sipariş Adedi (Minimum Order Quantity)
-}
-
-// 11. PAZARLAMA VE KAMPANYA MOTORU (Promotions & Banners)
-model Campaign {
-  id              String   @id @default(uuid())
-  title           String   // Örn: "Black Friday Food Fest", "Ramadan Specials"
-  description     String?
-  bannerUrl       String?  // Vitrinde gösterilecek afişin CDN linki
-  discountPercent Decimal? @db.Decimal(5, 2) // Örn: 15.00
-  discountAmount  Decimal? @db.Decimal(10, 2) // Örn: 50.00 USD
-  couponCode      String?  @unique // Örn: "WELCOME10"
-  
-  startDate       DateTime
-  endDate         DateTime
-  isActive        Boolean  @default(false)
-  
-  // Sadece belirli kategorilerde veya mağazalarda mı geçerli?
-  applicableCategories String[] // Kategori ID'leri
-  applicableStores     String[] // Mağaza ID'leri
-
-  createdAt       DateTime @default(now())
-}
-
-// 12. GÜMRÜK VE İHRACAT (Customs & E-Export)
-model CustomsInfo {
-  id              String   @id @default(uuid())
-  productId       String   @unique
-  product         Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
-  
-  gtipCode        String   // GTİP (HS Code) - Ticaret Bakanlığı ve Gümrük için zorunlu ürün kodu
-  originCountry   String   @default("TR") // Menşei
-  
-  // Gıda spesifik gümrük bilgileri
-  netWeight       Decimal  @db.Decimal(10, 2)
-  isRestricted    Boolean  @default(false) // Hedef ülkede kotası/yasağı olan bir ürün mü?
-}
-
-// Order tablosuna ETGB (Mikro İhracat) beyanname numarası eklenecek (Kavramsal Not)
-
-// --- SMS DOĞRULAMA EKLENTİSİ ---
-// User modeline cep telefonu ve OTP doğrulama alanları eklenecek
-model PhoneNumber {
-  id          String   @id @default(uuid())
-  userId      String   @unique
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  
-  countryCode String   // Örn: "+90", "+49"
-  number      String   // Örn: "5551234567"
-  isVerified  Boolean  @default(false)
-  
-  // OTP (One Time Password) Yönetimi
-  lastOtpCode String?  
-  otpExpiry   DateTime?
-  
-  createdAt   DateTime @default(now())
-}
-
-// 13. B2B TEKLİF SİSTEMİ (Request For Quote - RFQ)
-model QuoteRequest {
-  id              String   @id @default(uuid())
-  productId       String
-  product         Product  @relation(fields: [productId], references: [id])
-  
-  buyerId         String
-  buyer           User     @relation(fields: [buyerId], references: [id])
-  
-  storeId         String
-  store           Store    @relation(fields: [storeId], references: [id])
-
-  requestedQty    Int      // Alıcının istediği miktar (Örn: 5000 şişe)
-  targetPrice     Decimal? @db.Decimal(10, 2) // Alıcının umduğu/teklif ettiği birim fiyat
-  currency        String   @default("USD")
-  
-  buyerMessage    String?  // "Eğer 5000 alırsam nakliye kime ait?" gibi notlar
-  
-  status          String   @default("PENDING") // PENDING, RESPONDED, ACCEPTED, REJECTED
-  
-  // Satıcının cevabı
-  offeredPrice    Decimal? @db.Decimal(10, 2) // Satıcının verdiği nihai teklif
-  sellerMessage   String?
-  validUntil      DateTime? // Teklifin geçerlilik süresi (Örn: 3 gün)
-
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
 }
