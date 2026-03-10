@@ -11,6 +11,8 @@ const DHL_API_URL = process.env.NODE_ENV === 'production'
 const DHL_API_KEY = process.env.DHL_API_KEY!
 const DHL_ACCOUNT = process.env.DHL_ACCOUNT_NUMBER!
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: Request) {
   try {
     const { orderId, storeId } = await req.json()

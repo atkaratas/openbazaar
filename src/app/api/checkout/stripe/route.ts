@@ -9,6 +9,8 @@ const stripe = new Stripe(stripeKey, {
   apiVersion: '2023-10-16',
 })
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: Request) {
   try {
     const { items, customerId, currency = 'USD' } = await req.json()
