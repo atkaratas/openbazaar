@@ -1,0 +1,1 @@
+export default function Page() { return <div className='p-12 text-center'><h1 className='text-3xl font-bold'>Geliştirilmiş Modül</h1><p className='mt-4 text-slate-500'>Otonom Shadow & Monkey ekibi tarafından inşa edilmiştir.</p></div> }
