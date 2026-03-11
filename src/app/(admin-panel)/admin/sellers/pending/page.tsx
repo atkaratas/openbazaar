@@ -112,6 +112,26 @@ export default function PendingSellersPage() {
           </div>
         ))}
       </div>
+
+      {approvedSellers.length > 0 && (
+        <div className="mt-12 bg-emerald-50 rounded-xl shadow-sm border border-emerald-100 overflow-hidden">
+          <div className="px-6 py-5 border-b border-emerald-200">
+            <h2 className="text-lg font-bold text-emerald-900">Onaylanmış Satıcılar</h2>
+          </div>
+          <div className="p-0">
+            {approvedSellers.map(seller => (
+              <div key={seller.id} className="p-6 border-b border-emerald-100 flex justify-between items-center">
+                <div>
+                  <h3 className="font-bold text-emerald-900">{seller.name}</h3>
+                  <p className="text-xs font-mono text-emerald-700 mt-1">VKN: {seller.vkn}</p>
+                </div>
+                <span className="bg-emerald-200 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Aktif Satışta</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
+
   )
 }

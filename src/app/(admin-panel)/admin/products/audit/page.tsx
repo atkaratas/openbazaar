@@ -28,8 +28,8 @@ export default function AdminProductsAudit() {
             <p className="text-xl font-black text-emerald-600">€ 18.50</p>
           </div>
           <div className="flex gap-2 ml-4">
-             <button  className="px-4 py-2 border border-rose-200 text-rose-600 rounded-lg text-sm font-bold hover:bg-rose-50">Reddet</button>
-             <button  className="px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-bold hover:bg-slate-800">Yayına Al</button>
+             <button  onClick={() => alert("Ürün reddedildi (Mock)")} className="px-4 py-2 border border-rose-200 text-rose-600 rounded-lg text-sm font-bold hover:bg-rose-50">Reddet</button>
+             <button  onClick={() => alert("Ürün başarıyla yayına alındı (Mock)")} className="px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-bold hover:bg-slate-800">Yayına Al</button>
           </div>
         </div>
       </div>
