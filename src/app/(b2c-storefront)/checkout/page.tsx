@@ -2,13 +2,38 @@
 
 import { useState } from 'react'
 import { useCart } from '@/store/useCart'
-import { ShieldCheck, Truck, CreditCard, Lock, Trash2, Plus, Minus } from 'lucide-react'
+import { ShieldCheck, Truck, CreditCard, Lock, Trash2, Plus, Minus, Tag } from 'lucide-react'
 
 export default function CheckoutPage() {
   const { items, getTotal, removeItem, updateQuantity } = useCart()
   const [isProcessing, setIsProcessing] = useState(false)
+  
+  // Kampanya State'leri
+  const [discountCode, setDiscountCode] = useState('')
+  const [discountApplied, setDiscountApplied] = useState(0) // Yüzde olarak (örn: 15)
+  const [campaignError, setCampaignError] = useState('')
 
   const requiresColdChain = items.some(item => (item as any).isColdChain)
+
+  // Hesaplamalar
+  const subtotal = getTotal()
+  const shipping = items.length === 0 ? 0 : (requiresColdChain ? 45 : 24.5)
+  const discountAmount = (subtotal * discountApplied) / 100
+  const grandTotal = subtotal - discountAmount + shipping
+  const originalGrandTotal = subtotal + shipping
+
+  const handleApplyDiscount = () => {
+    if (discountCode.toUpperCase() === 'B2B20') {
+      setDiscountApplied(20)
+      setCampaignError('')
+    } else if (discountCode.toUpperCase() === 'OPENBAZAAR15') {
+      setDiscountApplied(15)
+      setCampaignError('')
+    } else {
+      setDiscountApplied(0)
+      setCampaignError('Geçersiz kampanya kodu.')
+    }
+  }
 
   const handlePayment = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -118,14 +143,12 @@ export default function CheckoutPage() {
             <div className="bg-slate-900 p-8 rounded-3xl shadow-2xl border border-slate-800 sticky top-24 text-white">
               <h2 className="text-xl font-black mb-6 border-b border-slate-800 pb-4">Sipariş Özeti</h2>
               
-              <div className="space-y-4 mb-6 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+              <div className="space-y-4 mb-6 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                 {items.length === 0 ? (
                   <p className="text-sm text-slate-400 font-medium text-center py-4">Sepetiniz boş.</p>
                 ) : (
                   items.map(item => (
                     <div key={item.id} className="flex flex-col gap-3 bg-slate-800/50 p-4 rounded-xl border border-slate-700 relative group">
-                      
-                      {/* Ürünü Kaldır Butonu */}
                       <button 
                         onClick={() => removeItem(item.id)}
                         className="absolute -top-2 -right-2 bg-rose-500 hover:bg-rose-600 text-white p-1.5 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
@@ -145,8 +168,6 @@ export default function CheckoutPage() {
                       </div>
 
                       <div className="flex items-center justify-between border-t border-slate-700/50 pt-3 mt-1">
-                        
-                        {/* Adet Seçici */}
                         <div className="flex items-center gap-3 bg-slate-900 rounded-lg p-1 border border-slate-700">
                           <button 
                             onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
@@ -170,20 +191,50 @@ export default function CheckoutPage() {
                           </p>
                         </div>
                       </div>
-
                     </div>
                   ))
                 )}
               </div>
 
+              {/* KAMPANYA MODÜLÜ */}
+              <div className="border-t border-slate-800 pt-6 pb-2">
+                <label className="block text-sm font-bold text-slate-300 mb-2 flex items-center gap-2">
+                  <Tag size={16} className="text-emerald-400" /> Kampanya Kodu
+                </label>
+                <div className="flex gap-2">
+                  <input 
+                    type="text" 
+                    value={discountCode}
+                    onChange={(e) => setDiscountCode(e.target.value)}
+                    placeholder="B2B20 veya OPENBAZAAR15" 
+                    className="flex-1 bg-slate-800 border-2 border-slate-700 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 text-sm p-3 text-white font-bold placeholder-slate-500 uppercase" 
+                  />
+                  <button 
+                    type="button"
+                    onClick={handleApplyDiscount}
+                    className="bg-slate-700 hover:bg-slate-600 text-white px-4 rounded-lg font-bold text-sm transition-colors"
+                  >
+                    Uygula
+                  </button>
+                </div>
+                {campaignError && <p className="text-rose-400 text-xs mt-2 font-bold">{campaignError}</p>}
+                {discountApplied > 0 && <p className="text-emerald-400 text-xs mt-2 font-bold">% {discountApplied} İndirim Uygulandı!</p>}
+              </div>
+
               <div className="border-t border-slate-800 pt-6 space-y-4">
                 <div className="flex justify-between text-sm text-slate-300 font-medium">
                   <span>Ara Toplam (Subtotal)</span>
-                  <span>€{getTotal().toFixed(2)}</span>
+                  <span>€{subtotal.toFixed(2)}</span>
                 </div>
+                {discountApplied > 0 && (
+                  <div className="flex justify-between text-sm text-emerald-400 font-bold bg-emerald-900/20 p-2 rounded-lg -mx-2 px-2">
+                    <span>Kampanya İndirimi (%{discountApplied})</span>
+                    <span>- €{discountAmount.toFixed(2)}</span>
+                  </div>
+                )}
                 <div className="flex justify-between text-sm text-slate-300 font-medium">
                   <span>Uluslararası Kargo (Shipping)</span>
-                  <span>€{items.length === 0 ? '0.00' : (requiresColdChain ? '45.00' : '24.50')}</span>
+                  <span>€{shipping.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-sm text-emerald-400 font-bold bg-emerald-900/30 p-2 rounded-lg">
                   <span>Gümrük Vergisi (DDP)</span>
@@ -191,11 +242,18 @@ export default function CheckoutPage() {
                 </div>
               </div>
 
-              <div className="border-t border-slate-800 mt-6 pt-6 flex justify-between items-center mb-8">
+              <div className="border-t border-slate-800 mt-6 pt-6 flex justify-between items-end mb-8">
                 <span className="text-lg font-bold text-slate-300">Genel Toplam</span>
-                <span className="text-4xl font-black text-white">
-                  €{items.length === 0 ? '0.00' : (getTotal() + (requiresColdChain ? 45 : 24.5)).toFixed(2)}
-                </span>
+                <div className="text-right flex flex-col items-end">
+                  {discountApplied > 0 && (
+                    <span className="text-slate-500 line-through text-xl font-bold mb-1">
+                      €{originalGrandTotal.toFixed(2)}
+                    </span>
+                  )}
+                  <span className="text-4xl font-black text-white">
+                    €{items.length === 0 ? '0.00' : grandTotal.toFixed(2)}
+                  </span>
+                </div>
               </div>
 
               <button 
