@@ -29,6 +29,16 @@ export default function CheckoutPage() {
     } else if (discountCode.toUpperCase() === 'OPENBAZAAR15') {
       setDiscountApplied(15)
       setCampaignError('')
+    } else if (discountCode.toUpperCase().startsWith('AI-DEAL-')) {
+      // Dinamik AI pazarlık kodu simülasyonu: AI-DEAL-30 => %30 İndirim
+      const match = discountCode.match(/AI-DEAL-(\d+)/i)
+      if (match && match[1]) {
+        setDiscountApplied(parseInt(match[1]))
+        setCampaignError('')
+      } else {
+        setDiscountApplied(30) // Fallback
+        setCampaignError('')
+      }
     } else {
       setDiscountApplied(0)
       setCampaignError('Geçersiz kampanya kodu.')
@@ -206,7 +216,7 @@ export default function CheckoutPage() {
                     type="text" 
                     value={discountCode}
                     onChange={(e) => setDiscountCode(e.target.value)}
-                    placeholder="B2B20 veya OPENBAZAAR15" 
+                    placeholder="AI-DEAL-30 veya B2B20" 
                     className="flex-1 bg-slate-800 border-2 border-slate-700 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 text-sm p-3 text-white font-bold placeholder-slate-500 uppercase" 
                   />
                   <button 

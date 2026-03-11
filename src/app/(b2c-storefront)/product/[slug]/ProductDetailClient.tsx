@@ -7,6 +7,32 @@ import { useCart } from '@/store/useCart'
 export default function ProductDetailClient({ product }: { product: any }) {
   const [qty, setQty] = useState(1)
   const [showAiModal, setShowAiModal] = useState(false)
+
+  const [chatMessages, setChatMessages] = useState<{role: 'ai'|'user', text: string}[]>([
+    { role: 'ai', text: `Merhaba! Ben ${product.store?.name || 'Tedarikçi'} firmasının dijital satış temsilcisiyim. Şu an ${product.titleTranslations?.tr || 'bu ürünü'} inceliyorsunuz. Normal perakende satış fiyatımız ${Number(product.basePrice).toFixed(2)}€. Kaç kilo/adet almayı planlıyorsunuz? Belki fiyatı biraz daha konuşabiliriz. Ne dersiniz?` }
+  ])
+  const [chatInput, setChatInput] = useState('')
+  const [isTyping, setIsTyping] = useState(false)
+  const [dealCode, setDealCode] = useState<string|null>(null)
+
+  const handleSendMessage = () => {
+    if(!chatInput.trim()) return;
+    const userMsg = chatInput.trim();
+    setChatMessages(prev => [...prev, { role: 'user', text: userMsg }]);
+    setChatInput('');
+    setIsTyping(true);
+
+    setTimeout(() => {
+      setIsTyping(false);
+      // Basit bir if/else tabanli simulasyon: eger musteri bir miktar veya fiyat teklif ederse anlasalim
+      setChatMessages(prev => [
+        ...prev, 
+        { role: 'ai', text: `Harika bir teklif! Satış müdürüyle anlık teyitleştim, bu miktar için fiyatı sizin için özel olarak revize edebiliriz. Anlaştık! Kasanızda kullanmanız için size özel indirim kodu oluşturdum: **AI-DEAL-30**. Bu kodu sepette kullandığınızda faturanıza anında %30 indirim yansıyacaktır.` }
+      ]);
+      setDealCode('AI-DEAL-30');
+    }, 1500);
+  }
+
   const addItem = useCart((state) => state.addItem)
 
   const handleAddToCart = () => {
@@ -146,6 +172,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
         </div>
       </div>
 
+      
       {/* AI Müzakereci Modal (Pazarlık) */}
       {showAiModal && (
         <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -168,40 +195,64 @@ export default function ProductDetailClient({ product }: { product: any }) {
             </div>
 
             <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-slate-50">
-              <div className="flex justify-start">
-                <div className="bg-white border border-purple-100 rounded-2xl rounded-tl-sm p-4 max-w-[80%] shadow-sm">
-                  <p className="text-slate-700 text-sm leading-relaxed">
-                    Merhaba! Ben <strong className="text-purple-700">{product.store?.name}</strong> firmasının dijital satış temsilcisiyim. 
-                    Şu an <strong>{product.titleTranslations?.tr}</strong> inceliyorsunuz. Normal perakende satış fiyatımız <strong className="line-through">{Number(product.basePrice).toFixed(2)}€</strong>.
-                    <br/><br/>
-                    Kaç kilo/adet almayı planlıyorsunuz? Belki fiyatı biraz daha konuşabiliriz veya yanına zeytinyağı da eklerseniz size çok özel bir ihracat paketi yapabilirim. Ne dersiniz?
-                  </p>
-                  <span className="text-[10px] text-slate-400 mt-2 block font-bold">14:02 - Otonom AI Agent</span>
+              {chatMessages.map((msg, i) => (
+                <div key={i} className={`flex ${msg.role === 'ai' ? 'justify-start' : 'justify-end'}`}>
+                  <div className={`rounded-2xl p-4 max-w-[80%] shadow-sm ${msg.role === 'ai' ? 'bg-white border border-purple-100 rounded-tl-sm text-slate-700' : 'bg-emerald-600 text-white rounded-tr-sm'}`}>
+                    <p className="text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: msg.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                    <span className={`text-[10px] mt-2 block font-bold ${msg.role === 'ai' ? 'text-slate-400' : 'text-emerald-200 text-right'}`}>
+                      {new Date().getHours().toString().padStart(2, '0')}:{new Date().getMinutes().toString().padStart(2, '0')} - {msg.role === 'ai' ? 'Otonom AI Agent' : 'Siz'}
+                    </span>
+                  </div>
                 </div>
-              </div>
-
-              {/* Müşterinin yazabileceği varsayılan mesaj baloncuğu */}
-              <div className="flex justify-end opacity-50">
-                <div className="bg-emerald-600 text-white rounded-2xl rounded-tr-sm p-4 max-w-[80%] shadow-sm">
-                  <p className="text-sm">Bana 500 KG lazım ama kg fiyatını 45€ yaparsan hemen öderim.</p>
+              ))}
+              
+              {isTyping && (
+                <div className="flex justify-start">
+                  <div className="bg-white border border-purple-100 rounded-2xl rounded-tl-sm p-4 max-w-[80%] shadow-sm flex items-center gap-2">
+                    <span className="w-2 h-2 bg-purple-400 rounded-full animate-bounce"></span>
+                    <span className="w-2 h-2 bg-purple-400 rounded-full animate-bounce delay-75"></span>
+                    <span className="w-2 h-2 bg-purple-400 rounded-full animate-bounce delay-150"></span>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             <div className="p-4 bg-white border-t border-slate-100 flex gap-2">
               <input 
                 type="text" 
+                value={chatInput}
+                onChange={(e) => setChatInput(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                 placeholder="Örn: 100 KG almak istiyorum, fiyatınız nedir?" 
-                className="flex-1 bg-slate-100 border-none rounded-xl p-4 text-sm font-medium focus:ring-2 focus:ring-purple-500 outline-none text-slate-700 placeholder-slate-400"
+                disabled={dealCode !== null}
+                className="flex-1 bg-slate-100 border-none rounded-xl p-4 text-sm font-medium focus:ring-2 focus:ring-purple-500 outline-none text-slate-700 placeholder-slate-400 disabled:opacity-50"
               />
-              <button className="bg-purple-600 hover:bg-purple-700 text-white p-4 rounded-xl shadow-md transition-colors flex items-center justify-center">
+              <button 
+                onClick={handleSendMessage}
+                disabled={dealCode !== null}
+                className="bg-purple-600 hover:bg-purple-700 disabled:bg-slate-400 text-white p-4 rounded-xl shadow-md transition-colors flex items-center justify-center">
                 <Send size={20} />
               </button>
             </div>
+            
+            {dealCode && (
+              <div className="bg-emerald-50 border-t border-emerald-100 p-4 text-center">
+                <p className="text-sm font-bold text-emerald-800 mb-2">Pazarlık başarıyla tamamlandı!</p>
+                <div className="flex gap-2 justify-center">
+                  <div className="bg-white border-2 border-dashed border-emerald-400 text-emerald-700 font-black px-4 py-2 rounded-lg">
+                    {dealCode}
+                  </div>
+                  <button onClick={() => { handleAddToCart(); window.location.href='/checkout'; }} className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg font-bold shadow-sm transition-colors">
+                    Hemen Sepete Ekle ve Koda Git
+                  </button>
+                </div>
+              </div>
+            )}
 
           </div>
         </div>
       )}
+
     </div>
   )
 }
