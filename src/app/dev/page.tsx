@@ -86,20 +86,33 @@ export const metadata = {
   description: "B2B Supplier and Logistics Integration API Reference",
 };
 
-export default function ApiDocumentationPage() {
+export default function DeveloperPortalPage() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800">
+    <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
       {/* Header */}
-      <header className="bg-white border-b shadow-sm sticky top-0 z-10 px-8 py-6">
-        <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">OpenBazaar B2B API</h1>
-        <p className="text-gray-500 mt-2 text-sm">
-          Integrate your supplier and logistics systems with the OpenBazaar Gateway (v1).
-        </p>
+      <header className="bg-gray-900 border-b border-gray-800 shadow-sm sticky top-0 z-10 px-8 py-6">
+        <div className="max-w-5xl mx-auto flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-extrabold text-white tracking-tight flex items-center gap-2">
+              <span className="text-blue-500">{"</>"}</span> OpenBazaar Developer Portal
+            </h1>
+            <p className="text-gray-400 mt-2 text-sm">
+              Integrate your supplier and logistics systems with the OpenBazaar Gateway (v1).
+            </p>
+          </div>
+          <a href="/" className="text-sm text-gray-400 hover:text-white transition-colors">Back to Storefront</a>
+        </div>
       </header>
 
       {/* Main Content */}
       <main className="max-w-5xl mx-auto p-8 space-y-12">
-        {apiEndpoints.map((endpoint, idx) => (
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">API Reference</h2>
+          <p className="text-gray-600">Browse the available endpoints to connect your business tools directly to OpenBazaar's infrastructure.</p>
+        </div>
+        
+        <div className="space-y-8">
+          {apiEndpoints.map((endpoint, idx) => (
           <section key={idx} className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
             {/* Endpoint Title & Path */}
             <div className="bg-gray-50 px-6 py-4 border-b flex items-center justify-between">
@@ -143,6 +156,7 @@ export default function ApiDocumentationPage() {
             </div>
           </section>
         ))}
+        </div>
       </main>
     </div>
   );
