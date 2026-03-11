@@ -10,6 +10,7 @@ interface CartItem {
   storeId: string
   storeName: string
   image: string
+  isColdChain?: boolean
 }
 
 interface CartStore {

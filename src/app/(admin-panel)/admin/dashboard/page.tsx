@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   Users, DollarSign, Package, AlertTriangle, CheckCircle, 
-  XCircle, FileText, ArrowUpRight, TrendingUp, Settings2 
+  XCircle, FileText, ArrowUpRight, TrendingUp, Settings2, BarChart3, Truck
 } from 'lucide-react';
 
 export default function AdminDashboardPage() {

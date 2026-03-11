@@ -121,7 +121,7 @@ export default function DeveloperPortalPage() {
                 <p className="text-gray-500 text-sm mt-1">{endpoint.description}</p>
               </div>
               <div className="flex items-center space-x-3 text-sm">
-                <span className={\`font-mono font-bold px-3 py-1 rounded-full text-white \${endpoint.method === 'GET' ? 'bg-blue-600' : 'bg-green-600'}\`}>
+                <span className={`font-mono font-bold px-3 py-1 rounded-full text-white ${endpoint.method === 'GET' ? 'bg-blue-600' : 'bg-green-600'}`}>
                   {endpoint.method}
                 </span>
                 <code className="font-mono text-gray-700 bg-gray-200 px-3 py-1 rounded">

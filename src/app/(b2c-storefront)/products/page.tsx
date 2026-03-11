@@ -69,7 +69,7 @@ export default async function ProductsPage(props: any) {
         <div className="flex justify-between items-end mb-6 border-b border-gray-200 pb-4">
           <div>
             <h1 className="text-3xl font-black text-gray-900">
-              {query ? `"${query}" için Arama Sonuçları` : (activeCategory ? activeCategory.nameTranslations?.tr : 'Tüm Global İhracat Kataloğu')}
+              {query ? `"${query}" için Arama Sonuçları` : (activeCategory ? (activeCategory.nameTranslations as any)?.tr : 'Tüm Global İhracat Kataloğu')}
             </h1>
             <p className="text-slate-500 mt-2 font-medium">{mappedProducts.length} adet ürün listeleniyor.</p>
           </div>
@@ -80,7 +80,7 @@ export default async function ProductsPage(props: any) {
             <span className="text-sm font-bold text-slate-500">Aktif Filtreler:</span>
             {catSlug && (
               <Link href="/products" className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full hover:bg-rose-100 hover:text-rose-800 transition">
-                Kategori: {activeCategory?.nameTranslations?.tr || catSlug} ✕
+                Kategori: {(activeCategory?.nameTranslations as any)?.tr || catSlug} ✕
               </Link>
             )}
             {query && (

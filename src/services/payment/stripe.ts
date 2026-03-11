@@ -1,8 +1,8 @@
 import Stripe from 'stripe';
 
 // Initialize Stripe with secret key
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-  apiVersion: '2023-10-16', // Use the version compatible with your setup
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_123', {
+  apiVersion: '2026-02-25.clover', // Use the version compatible with your setup
 });
 
 export const createSplitPaymentSession = async ({
