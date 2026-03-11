@@ -1,6 +1,40 @@
 'use client'
 
 export default function SellerOrdersPage() {
+  const handleDownloadPDF = async (type: string) => {
+    try {
+      const orderData = {
+        invoiceNumber: "INV-2026-0001",
+        date: new Date().toISOString(),
+        seller: { name: "Anadolu Organik", address: "Malatya, TR", taxId: "1234567890" },
+        buyer: { name: "Klaus Müller", address: "Berlin, DE", vatId: "DE123456" },
+        items: [{ description: "Erken Hasat Zeytinyağı", hscode: "1509.10", quantity: 2, unitPrice: 22.50, total: 45.00 }],
+        currency: "EUR",
+        totalAmount: 45.00,
+        incoterms: "DAP",
+        reasonForExport: "E-commerce Sale (Micro-Export)"
+      };
+
+      const res = await fetch('/api/v1/logistics/documents/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, orderData })
+      });
+
+      if (!res.ok) throw new Error('Failed to generate PDF');
+
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${type}_${orderData.invoiceNumber}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    } catch (e) {
+      alert("PDF Motoru Hatası: Lütfen sistem loglarını kontrol edin.");
+    }
+  };
   return (
     <div className="max-w-7xl mx-auto">
       <div className="mb-6">
@@ -52,9 +86,12 @@ export default function SellerOrdersPage() {
                 <div className="text-sm font-bold text-gray-900">₺ 3,250.00</div>
                 <div className="text-xs text-gray-500">Ödendi (Havuzda Bekliyor)</div>
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <button  className="bg-blue-600 text-white px-4 py-2 rounded-md shadow hover:bg-blue-700 transition flex items-center gap-2 ml-auto">
-                  <span>🖨️</span> DHL Barkodu Yazdır
+              <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex flex-col gap-2 items-end">
+                <button onClick={() => handleDownloadPDF('waybill')} className="bg-blue-600 text-white px-4 py-2 rounded-md shadow hover:bg-blue-700 transition flex items-center gap-2 w-full justify-center">
+                  <span>🖨️</span> DHL ETGB Barkodu (AWB)
+                </button>
+                <button onClick={() => handleDownloadPDF('invoice')} className="bg-slate-800 text-white px-4 py-2 rounded-md shadow hover:bg-slate-700 transition flex items-center gap-2 w-full justify-center">
+                  <span>📄</span> Proforma Fatura (PDF)
                 </button>
               </td>
             </tr>
