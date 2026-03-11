@@ -18,10 +18,10 @@ export async function POST(req: Request) {
     const updatedProduct = await prisma.product.update({
       where: { id: productId },
       data: {
-        titleTranslations: translations.titleTranslations,
-        descriptionTranslations: translations.descriptionTranslations,
-        ingredientsTranslations: translations.ingredientsTranslations ?? {},
-        allergensTranslations: translations.allergensTranslations ?? {},
+        titleTranslations: translations.titleTranslations as any,
+        descriptionTranslations: translations.descriptionTranslations as any,
+        ingredientsTranslations: (translations.ingredientsTranslations ?? {}) as any,
+        allergensTranslations: (translations.allergensTranslations ?? {}) as any,
       }
     });
 

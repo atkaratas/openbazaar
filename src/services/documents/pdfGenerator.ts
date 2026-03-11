@@ -101,7 +101,7 @@ export async function generateCommercialInvoice(order: OrderData): Promise<Buffe
       if (order.reasonForExport) doc.text(`Reason for Export: ${order.reasonForExport}`);
       
       doc.moveDown();
-      doc.text('This invoice is generated automatically for ETGB customs declaration purposes.', { align: 'center', italic: true });
+      doc.text('This invoice is generated automatically for ETGB customs declaration purposes.', { align: 'center' });
 
       doc.end();
     } catch (error) {

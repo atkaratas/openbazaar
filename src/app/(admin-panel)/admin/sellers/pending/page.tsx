@@ -25,8 +25,14 @@ export default function PendingSellersPage() {
     }
   ])
 
+  const [approvedSellers, setApprovedSellers] = useState<any[]>([])
+
   const handleApprove = (id: number, name: string) => {
     alert(`✅ ${name} firmasının tüm gümrük evrakları onaylandı. Satıcı mağazası global yayına açıldı!`)
+    const seller = sellers.find(s => s.id === id)
+    if (seller) {
+      setApprovedSellers([...approvedSellers, seller])
+    }
     setSellers(sellers.filter(s => s.id !== id))
   }
 

@@ -35,7 +35,7 @@ export async function POST(req: Request) {
     headers.set('Content-Type', 'application/pdf');
     headers.set('Content-Disposition', `attachment; filename="${fileName}"`);
 
-    return new NextResponse(pdfBuffer, {
+    return new NextResponse(pdfBuffer as any, {
       status: 200,
       headers,
     });
