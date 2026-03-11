@@ -7,7 +7,7 @@ export default async function FreshSidebar() {
     categories = await prisma.category.findMany({
       where: { parentId: null },
       take: 15,
-      orderBy: { createdAt: 'desc' }
+      orderBy: { id: 'desc' }
     });
   } catch (e) {
     console.error("Sidebar category fetch error:", e);
