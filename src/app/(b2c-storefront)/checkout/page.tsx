@@ -48,11 +48,29 @@ export default function CheckoutPage() {
   const handlePayment = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsProcessing(true)
-    
-    // UI TEST MOCK: Doğrudan kendi yaptığımız efsanevi success sayfasına yönlendir
-    setTimeout(() => {
-        window.location.href = '/checkout/success'
-    }, 1500)
+
+    try {
+      const res = await fetch('/api/checkout/stripe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          items,
+          currency: 'EUR',
+          discountApplied
+        })
+      });
+      
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert('Payment session failed: ' + (data.error || 'Unknown error'));
+        setIsProcessing(false);
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      setIsProcessing(false);
+    }
   }
 
   return (
