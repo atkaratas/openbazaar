@@ -37,18 +37,14 @@ export default async function ProductsPage(props: any) {
       products = await prisma.product.findMany({
         // Vercel DB'de yeni kolonlar yok, select ile sadece var olanlari cek
         select: { id: true, titleTranslations: true, basePrice: true, baseCurrency: true, storeId: true, store: true, category: true, images: true },
-
-        where: { id: { in: productIds } },
-        include: { store: true, category: true }
+        where: { id: { in: productIds } }
       });
 
     } else {
       products = await prisma.product.findMany({
         // Vercel DB'de yeni kolonlar yok, select ile sadece var olanlari cek
         select: { id: true, titleTranslations: true, basePrice: true, baseCurrency: true, storeId: true, store: true, category: true, images: true },
-
-        where: catSlug ? { category: { slug: catSlug }, isPublished: true } : { isPublished: true },
-        include: { store: true, category: true },
+        where: catSlug ? { category: { slug: catSlug } } : {},
         take: 70,
         orderBy: { createdAt: 'desc' }
       })
