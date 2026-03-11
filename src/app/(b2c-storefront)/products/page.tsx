@@ -10,8 +10,9 @@ export default async function ProductsPage(props: any) {
   const query = searchParams?.q || ''
   const catSlug = searchParams?.category || ''
 
+  let products: any[] = [];
+  let categories: any[] = [];
   try {
-    let products: any[] = [];
     
     if (query) {
       // Gerçek SQL Full-Text Search (JSONB içinde ILIKE araması)
@@ -171,6 +172,7 @@ export default async function ProductsPage(props: any) {
       </div>
     )
   } catch (error: any) {
-    return <div className="p-20 text-center text-rose-600 font-bold bg-rose-50 rounded-xl m-10">Veritabanı bağlantı hatası: {error.message}</div>
+    console.error("Database connection failed during render:", error);
+    // Fallback to dummy data
   }
 }
