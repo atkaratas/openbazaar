@@ -60,3 +60,20 @@ Checkout sayfası, güvenli ödeme adımını ve kampanya yönetimini içerir.
 
 ---
 *Bu dokümantasyon, /tmp/openbazaar dizinindeki kaynak kodlar incelenerek oluşturulmuştur.*
+## 6. Bağımlılıklar ve Altyapı (Dependencies & Infrastructure)
+
+Sistemin kurulumu ve yerel geliştirme ortamı için gerekli tüm bağımlılıklar aşağıdaki gibidir:
+
+### Çekirdek Paketler (package.json)
+- **Framework:** Next.js `v16.1.6` (App Router)
+- **UI & Stil:** React `v19.2.3`, Tailwind CSS `v4`, Lucide React `v0.577.0` (İkon Seti)
+- **State Yönetimi:** Zustand `v5.0.11` (Özellikle Sepet/Cart yönetimi için)
+- **Veritabanı & ORM:** Prisma `v7.4.2` (`@prisma/client`, `@prisma/adapter-pg`), PostgreSQL Node.js Driver (`pg v8.20.0`)
+- **Kimlik Doğrulama:** NextAuth `v4.24.13`, `bcryptjs`
+- **Ödeme:** Stripe `v20.4.1`
+
+### Veritabanı ve Docker Altyapısı (docker-compose.yml)
+- **PostgreSQL (`postgres:15-alpine`):** Ana veritabanı sunucusu. (Port: 5432)
+- **Redis (`redis:7-alpine`):** Geçici veri depolama veya session/queue işlemleri için potansiyel altyapı. (Port: 6379)
+
+Bu bağımlılıklarla, projeyi yeni bir geliştiricinin ayağa kaldırması için `docker-compose up -d` ile veritabanını başlatması ve ardından `npm install && npx prisma db push && npm run dev` komutlarını çalıştırması yeterlidir.
