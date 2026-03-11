@@ -1,14 +1,11 @@
-with open('/tmp/openbazaar/src/app/(b2c-storefront)/products/page.tsx', 'r') as f:
+with open('/tmp/openbazaar/src/lib/db.ts', 'r') as f:
     content = f.read()
 
-# Try-catch icini basitlestirelim ki Vercel uzerinde yeni kolonlar acilmadigi icin cokmesin
-new_content = content.replace("products = await prisma.$queryRawUnsafe(rawQuery, searchKeyword);", "products = [] // Vercel DB migration bekliyor").replace("products = await prisma.product.findMany({", """products = await prisma.product.findMany({
-        // Vercel DB'de yeni kolonlar yok, select ile sadece var olanlari cek
-        select: { id: true, titleTranslations: true, basePrice: true, baseCurrency: true, storeId: true, store: true, category: true, images: true },
-""").replace("const categories = await prisma.category.findMany({ take: 20 })", """const categories = await prisma.category.findMany({ take: 20 })
-    
-    // YENI EKLENEN KOLONLARI SIL:
-    products = products.map(p => ({...p, isColdChain: false}));""")
+new_content = content.replace("import { Pool } from 'pg'\nimport { PrismaPg } from '@prisma/adapter-pg'\n", "")
+new_content = new_content.replace("""  const connectionString = process.env.DATABASE_URL || "postgresql://mockuser:mockpass@localhost:5432/mockdb"
+  const pool = new Pool({ connectionString })
+  const adapter = new PrismaPg(pool)
+  return new PrismaClient({ adapter, log: ['error'] })""", "  return new PrismaClient()")
 
-with open('/tmp/openbazaar/src/app/(b2c-storefront)/products/page.tsx', 'w') as f:
+with open('/tmp/openbazaar/src/lib/db.ts', 'w') as f:
     f.write(new_content)
