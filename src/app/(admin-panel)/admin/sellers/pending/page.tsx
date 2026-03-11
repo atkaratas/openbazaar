@@ -3,44 +3,84 @@ import { useState } from 'react'
 
 export default function PendingSellersPage() {
   // Satıcıları bir state (durum) içine alalım ki onaylayınca ekrandan kaybolsunlar (Gerçekçi UI hissi)
-  const [sellers, setSellers] = useState([
-    {
-      id: 1,
-      name: 'Ege İncir & Zeytin A.Ş.',
-      vkn: '1029384756',
-      category: 'Kuru Gıda / Yağlar',
-      docs: ['FDA_Approval.pdf', 'Halal_Cert_2026.pdf'],
-      stripe: 'Verified',
-      status: 'ready'
-    },
-    {
-      id: 2,
-      name: 'Anadolu Süt Ürünleri',
-      vkn: '9988776655',
-      category: 'Süt ve Süt Ürünleri',
-      docs: [],
-      stripe: 'Pending',
-      status: 'missing',
-      coldChain: true
-    }
-  ])
+  const [sellers, setSellers] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
+
+  import { useEffect } from 'react'
+
+  useEffect(() => {
+    fetch('/api/v1/admin/sellers')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          const pending = data.sellers.filter((s: any) => !s.isVerified).map((s: any) => ({
+            id: s.id,
+            name: s.name,
+            vkn: s.taxId || 'N/A',
+            category: 'Genel',
+            docs: ['FDA_Approval.pdf', 'Halal_Cert.pdf'],
+            stripe: s.stripeAccountId ? 'Linked' : 'Pending',
+            status: s.stripeAccountId ? 'ready' : 'missing',
+            owner: s.owner?.email
+          }))
+          const approved = data.sellers.filter((s: any) => s.isVerified).map((s: any) => ({
+            id: s.id,
+            name: s.name,
+            vkn: s.taxId || 'N/A'
+          }))
+          setSellers(pending)
+          setApprovedSellers(approved)
+        }
+        setLoading(false)
+      })
+      .catch(e => {
+        console.error(e)
+        setLoading(false)
+      })
+  }, [])
 
   const [approvedSellers, setApprovedSellers] = useState<any[]>([])
 
-  const handleApprove = (id: number, name: string) => {
-    alert(`✅ ${name} firmasının tüm gümrük evrakları onaylandı. Satıcı mağazası global yayına açıldı!`)
-    const seller = sellers.find(s => s.id === id)
-    if (seller) {
-      setApprovedSellers([...approvedSellers, seller])
+  const handleApprove = async (id: string, name: string) => {
+    try {
+      const res = await fetch('/api/v1/admin/sellers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, action: 'approve' })
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert(`✅ ${name} firmasının tüm gümrük evrakları onaylandı. Satıcı mağazası global yayına açıldı!`);
+        const seller = sellers.find(s => s.id === id);
+        if (seller) setApprovedSellers([...approvedSellers, seller]);
+        setSellers(sellers.filter(s => s.id !== id));
+      } else {
+        alert("Hata: " + data.error);
+      }
+    } catch (e) {
+      alert("Sistem Hatası");
     }
-    setSellers(sellers.filter(s => s.id !== id))
   }
 
-  const handleReject = (id: number, name: string) => {
-    const reason = prompt(`${name} firmasını reddetme sebebinizi girin (Örn: Evraklar sahte/eksik):`)
+  const handleReject = async (id: string, name: string) => {
+    const reason = prompt(`${name} firmasını reddetme sebebinizi girin (Örn: Evraklar sahte/eksik):`);
     if (reason) {
-      alert(`❌ Firma reddedildi ve sistemden uzaklaştırıldı. Sebep: ${reason}`)
-      setSellers(sellers.filter(s => s.id !== id))
+      try {
+        const res = await fetch('/api/v1/admin/sellers', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id, action: 'reject', reason })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert(`❌ Firma reddedildi ve sistemden uzaklaştırıldı. Sebep: ${reason}`);
+          setSellers(sellers.filter(s => s.id !== id));
+        } else {
+          alert("Hata: " + data.error);
+        }
+      } catch (e) {
+        alert("Sistem Hatası");
+      }
     }
   }
 
