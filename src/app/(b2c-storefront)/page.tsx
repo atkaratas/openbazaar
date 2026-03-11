@@ -2,18 +2,25 @@ import Link from 'next/link'
 import ProductCard from '@/components/storefront/ProductCard'
 import prisma from '@/lib/db'
 
-export const revalidate = 60 
+export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
-  const products = await prisma.product.findMany({
-    where: { isPublished: true },
-    include: { store: true },
-    take: 8,
-    orderBy: { createdAt: 'desc' }
-  })
+  let products: any[] = [];
+  let categories: any[] = [];
 
-  // Veritabanından dinamik kategorileri çek
-  const categories = await prisma.category.findMany({ take: 8 })
+  try {
+    products = await prisma.product.findMany({
+      where: { isPublished: true },
+      include: { store: true },
+      take: 8,
+      orderBy: { createdAt: 'desc' }
+    });
+
+    categories = await prisma.category.findMany({ take: 8 });
+  } catch (error) {
+    console.error("Database connection failed during render:", error);
+    // Fallback empty arrays during build time if DB is not available
+  }
 
   const mappedProducts = products.map(p => ({
     id: p.id,
