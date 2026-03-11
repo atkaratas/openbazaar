@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server';
 import { localizeProductData } from '@/services/ai/localization';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '@/lib/db';
 
 export async function POST(req: Request) {
   try {

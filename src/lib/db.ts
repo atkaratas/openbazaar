@@ -3,10 +3,10 @@ import { PrismaPg } from '@prisma/adapter-pg'
 import { PrismaClient } from '@prisma/client'
 
 const prismaClientSingleton = () => {
-  const connectionString = `${process.env.DATABASE_URL}`
+  const connectionString = process.env.DATABASE_URL || "postgresql://mockuser:mockpass@localhost:5432/mockdb"
   const pool = new Pool({ connectionString })
   const adapter = new PrismaPg(pool)
-  return new PrismaClient({ adapter })
+  return new PrismaClient({ adapter, log: ['error'] })
 }
 
 declare global {
