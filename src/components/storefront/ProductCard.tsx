@@ -59,7 +59,10 @@ export default function ProductCard({ product, locale = 'en' }: ProductCardProps
 
       <div className="p-5 flex flex-col flex-grow">
         <div className="text-xs font-medium text-emerald-600 mb-2 flex items-center justify-between">
-          <span className="truncate">{product.storeName}</span>
+          <Link href={`/store/${product.storeId}`} className="truncate hover:underline flex items-center gap-1" onClick={(e) => e.stopPropagation()}>
+            <span className="bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded text-[10px] font-bold">Verified</span>
+            {product.storeName}
+          </Link>
           <div className="flex gap-1 text-gray-400 flex-shrink-0">
              {product.certifications?.includes('HALAL') && <span title="Halal">☪️</span>}
              {product.certifications?.includes('FDA') && <span title="FDA">🇺🇸</span>}

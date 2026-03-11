@@ -1,15 +1,33 @@
 import { withAuth } from "next-auth/middleware"
+import { NextResponse } from "next/server"
 
-export default withAuth({
-  callbacks: {
-    authorized: ({ req, token }) => {
-      // --- DİKKAT: ARAYÜZ (UI) TEST AŞAMASINDA OLDUĞUMUZ İÇİN GÜVENLİK DUVARI GEÇİCİ OLARAK İNDİRİLDİ ---
-      // Gerçek production'da burası eski haline (token kontrolüne) dönecek.
-      return true
+export default withAuth(
+  function middleware(req) {
+    const { token } = req.nextauth
+    const path = req.nextUrl.pathname
+
+    if (path.startsWith("/admin")) {
+      if (token?.role !== "ADMIN") {
+        return NextResponse.redirect(new URL("/unauthorized", req.url))
+      }
+    }
+
+    if (path.startsWith("/seller")) {
+      if (token?.role !== "SELLER" && token?.role !== "ADMIN") {
+        return NextResponse.redirect(new URL("/unauthorized", req.url))
+      }
+    }
+  },
+  {
+    callbacks: {
+      authorized: ({ req, token }) => {
+        // Oturum açılmışsa true döner
+        return !!token
+      }
     }
   }
-})
+)
 
 export const config = {
-  matcher: ["/admin/:path*", "/seller/:path*", "/checkout"]
+  matcher: ["/admin/:path*", "/seller/:path*"]
 }

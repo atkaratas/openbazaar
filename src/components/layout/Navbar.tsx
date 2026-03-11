@@ -48,9 +48,6 @@ export default function Navbar() {
             <Link href="/products" className="hidden sm:block text-sm font-bold text-gray-700 hover:text-emerald-600">
               Tüm Kataloğu Gör
             </Link>
-            <Link href="/register/seller" className="hidden md:block text-sm font-bold text-emerald-600 hover:text-emerald-800">
-              Tedarikçi Ol
-            </Link>
             <Link href="/login" className="text-sm font-bold text-gray-700 hover:text-slate-900">
               Giriş
             </Link>
