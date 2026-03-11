@@ -1,4 +1,5 @@
 import ProductCard from '@/components/storefront/ProductCard'
+import FacetedSidebar from '@/components/storefront/FacetedSidebar'
 import prisma from '@/lib/db'
 import Link from 'next/link'
 
@@ -118,6 +119,9 @@ export default async function ProductsPage(props: any) {
                 )}
               </ul>
             </div>
+            
+            <FacetedSidebar />
+            
           </aside>
 
           <div className="flex-1">
