@@ -47,7 +47,7 @@ export default async function HomePage() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center w-full">
       
       {/* Hero Banner */}
       <section className="w-full bg-emerald-700 text-white py-20 px-4 text-center">
