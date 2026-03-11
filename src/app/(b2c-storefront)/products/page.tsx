@@ -55,6 +55,9 @@ export default async function ProductsPage(props: any) {
     
     // YENI EKLENEN KOLONLARI SIL:
     products = products.map(p => ({...p, isColdChain: false}));
+  } catch (error: any) {
+    console.error("Database connection failed during render:", error);
+  }
     const activeCategory = categories.find((c: any) => c.slug === catSlug)
 
 
@@ -171,8 +174,5 @@ export default async function ProductsPage(props: any) {
         </div>
       </div>
     )
-  } catch (error: any) {
-    console.error("Database connection failed during render:", error);
-    // Fallback to dummy data
-  }
+
 }
