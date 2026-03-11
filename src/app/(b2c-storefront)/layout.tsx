@@ -1,5 +1,6 @@
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
+import FreshSidebar from "@/components/storefront/FreshSidebar"
 
 export default function StorefrontLayout({
   children,
@@ -7,13 +8,30 @@ export default function StorefrontLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col font-sans text-slate-900">
+      {/* Top Banner for Delivery/Logistics */}
+      <div className="bg-[#5B821D] text-white text-xs md:text-sm font-semibold py-2.5 px-6 flex justify-between items-center shadow-inner z-50 relative">
+        <span className="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+          </svg>
+          Uluslararası Soğuk Zincir & ETGB Garantili Teslimat
+        </span>
+        <span className="hidden md:flex items-center gap-2">
+          Sonraki Teslimat: <span className="underline decoration-white/50 underline-offset-2">Yarın 09:00 - 18:00 (DHL Express)</span>
+        </span>
+      </div>
+      
       <Navbar />
-      <main className="flex-grow">
-        {children}
-      </main>
+      
+      <div className="flex flex-1 max-w-[1600px] w-full mx-auto relative">
+        <FreshSidebar />
+        <main className="flex-1 w-full bg-[#f8f9fa] pb-16 min-h-screen">
+          {children}
+        </main>
+      </div>
+      
       <Footer />
     </div>
   )
 }
-
