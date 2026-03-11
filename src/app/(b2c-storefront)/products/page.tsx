@@ -62,8 +62,9 @@ export default async function ProductsPage(props: any) {
 
 
   // Veritabanı henüz boşsa veya migration yapılmadıysa ekranda ürün görünmesi için Dummy (Mock) Veriler
+
   if (products.length === 0) {
-    products = [
+    let dummyProducts = [
       { id: '1', titleTranslations: { tr: 'Malatya Gün Kurusu Jumbo Kayısı' }, basePrice: 12.50, baseCurrency: 'EUR', store: { name: 'Anadolu Organik' } },
       { id: '2', titleTranslations: { tr: 'Soğuk Sıkım Erken Hasat Zeytinyağı' }, basePrice: 45.00, baseCurrency: 'EUR', store: { name: 'Ege Bahçesi' } },
       { id: '3', titleTranslations: { tr: 'Antep Fıstığı Çifte Kavrulmuş (1 KG)' }, basePrice: 28.00, baseCurrency: 'EUR', store: { name: 'Antep Pazarı' } },
@@ -73,7 +74,14 @@ export default async function ProductsPage(props: any) {
       { id: '7', titleTranslations: { tr: 'Doğal Maraş Tarhanası' }, basePrice: 18.00, baseCurrency: 'EUR', store: { name: 'Yöresel Lezzetler' } },
       { id: '8', titleTranslations: { tr: 'Acı Pul Biber (İpek)' }, basePrice: 9.00, baseCurrency: 'EUR', store: { name: 'Baharatçı' } }
     ];
+    
+    if (query) {
+      products = dummyProducts.filter(p => p.titleTranslations.tr.toLowerCase().includes(query.toLowerCase()));
+    } else {
+      products = dummyProducts;
+    }
   }
+
   
   if (categories.length === 0) {
     categories = [
