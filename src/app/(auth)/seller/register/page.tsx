@@ -9,20 +9,42 @@ export default function SellerRegisterPage() {
   const router = useRouter();
   const [agreed, setAgreed] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const [taxId, setTaxId] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMsg('');
     if (!agreed) {
       alert("Lütfen hukuki yükümlülük sözleşmesini onaylayınız.");
       return;
     }
     setLoading(true);
-    // Simulate API call
-    setTimeout(() => {
+    
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, companyName, taxId, role: 'SELLER' })
+      });
+      const data = await res.json();
+      
+      if (!res.ok) {
+        setErrorMsg(data.error || 'Kayıt başarısız oldu.');
+        setLoading(false);
+        return;
+      }
+      
+      alert("Satıcı başvurunuz başarıyla alındı! Şimdi giriş yapabilirsiniz.");
+      router.push('/login');
+    } catch (err) {
+      setErrorMsg('Sunucuya bağlanılamadı.');
       setLoading(false);
-      alert("Satıcı başvurunuz başarıyla alındı! Belgeleriniz incelendikten sonra bilgilendirileceksiniz.");
-      router.push('/');
-    }, 1500);
+    }
   };
 
   return (
@@ -46,13 +68,25 @@ export default function SellerRegisterPage() {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label className="block text-sm font-medium text-gray-700">Firma Adı</label>
-                <input required type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border" placeholder="Örn: Anadolu Gıda A.Ş." />
+                <input required type="text" value={companyName} onChange={e => setCompanyName(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border" placeholder="Örn: Anadolu Gıda A.Ş." />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">Vergi Numarası / TCKN</label>
-                <input required type="text" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border" placeholder="10 Haneli VN / 11 Haneli TCKN" />
+                <input required type="text" value={taxId} onChange={e => setTaxId(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border" placeholder="10 Haneli VN / 11 Haneli TCKN" />
               </div>
             </div>
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mt-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">E-Posta (Kurumsal)</label>
+                <input required type="email" value={email} onChange={e => setEmail(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border" placeholder="satis@firma.com" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Şifre</label>
+                <input required type="password" value={password} onChange={e => setPassword(e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border" placeholder="••••••••" />
+              </div>
+            </div>
+            {errorMsg && <div className="text-red-600 text-sm mt-2 font-bold p-3 bg-red-50 rounded-lg">{errorMsg}</div>}
           </div>
 
           <div className="border-t border-gray-200 pt-6 space-y-4">
