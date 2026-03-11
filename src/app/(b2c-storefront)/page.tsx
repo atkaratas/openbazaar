@@ -10,6 +10,8 @@ export default async function HomePage() {
 
   try {
     products = await prisma.product.findMany({
+      select: { id: true, titleTranslations: true, basePrice: true, baseCurrency: true, storeId: true, store: true, images: true, createdAt: true },
+
       where: { isPublished: true },
       include: { store: true },
       take: 8,

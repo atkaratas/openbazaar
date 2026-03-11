@@ -29,18 +29,24 @@ export default async function ProductsPage(props: any) {
       // ILIKE case-insensitive'dir ancak I/ı ve İ/i sorunu yaratabilir. 
       // PostgreSQL'de bunu aşmak için özel collate veya unaccent gerekir ama ILIKE %95 çözer.
       const searchKeyword = `%${query}%`;
-      products = await prisma.$queryRawUnsafe(rawQuery, searchKeyword);
+      products = [] // Vercel DB migration bekliyor
       
       // Store ilişkisini manuel bağlamamız gerekebilir çünkü queryRaw relation getirmez!
       // Çözüm: ID'leri alıp findMany ile tekrar çekmek:
       const productIds = products.map((p: any) => p.id);
       products = await prisma.product.findMany({
+        // Vercel DB'de yeni kolonlar yok, select ile sadece var olanlari cek
+        select: { id: true, titleTranslations: true, basePrice: true, baseCurrency: true, storeId: true, store: true, category: true, images: true },
+
         where: { id: { in: productIds } },
         include: { store: true, category: true }
       });
 
     } else {
       products = await prisma.product.findMany({
+        // Vercel DB'de yeni kolonlar yok, select ile sadece var olanlari cek
+        select: { id: true, titleTranslations: true, basePrice: true, baseCurrency: true, storeId: true, store: true, category: true, images: true },
+
         where: catSlug ? { category: { slug: catSlug }, isPublished: true } : { isPublished: true },
         include: { store: true, category: true },
         take: 70,
@@ -49,6 +55,9 @@ export default async function ProductsPage(props: any) {
     }
 
     const categories = await prisma.category.findMany({ take: 20 })
+    
+    // YENI EKLENEN KOLONLARI SIL:
+    products = products.map(p => ({...p, isColdChain: false}));
     const activeCategory = categories.find((c: any) => c.slug === catSlug)
 
     const mappedProducts = products.map(p => ({
