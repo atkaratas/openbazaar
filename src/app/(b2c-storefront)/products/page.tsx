@@ -50,7 +50,7 @@ export default async function ProductsPage(props: any) {
       })
     }
 
-    const categories = await prisma.category.findMany({ take: 20 })
+    let categories = await prisma.category.findMany({ take: 20 })
     
     // YENI EKLENEN KOLONLARI SIL:
     products = products.map(p => ({...p, isColdChain: false}));

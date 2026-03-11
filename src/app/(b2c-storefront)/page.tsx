@@ -51,7 +51,7 @@ export default async function HomePage() {
     currency: p.baseCurrency,
     storeId: p.storeId,
     storeName: p.store?.name || 'OpenBazaar Satıcısı',
-    image: p.images?.[0] || 'https://malatyapazaripalanci.com.tr/productimages/102941/original/antep-fistigi-kavrulmus-250-gr-0489.jpg',
+    image: (p.images && p.images.length > 0) ? p.images[0] : 'https://malatyapazaripalanci.com.tr/productimages/102941/original/antep-fistigi-kavrulmus-250-gr-0489.jpg',
     certifications: ['HALAL', 'ISO'], 
     isColdChain: false 
   }));
