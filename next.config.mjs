@@ -1,19 +1,15 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    unoptimized: true,
-    remotePatterns: [
+  async redirects() {
+    return [
       {
-        protocol: 'https',
-        hostname: 'malatyapazaripalanci.com.tr',
+        source: '/',
+        destination: '/products',
+        permanent: false, // Şimdilik geçici, sonra kalıcı yapılabilir
       },
-    ],
+    ]
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  }
 };
+
 export default nextConfig;
