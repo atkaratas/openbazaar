@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { LayoutDashboard, Package, Settings, LogOut, ExternalLink, Bot } from 'lucide-react'
+import { LayoutDashboard, Package, Settings, LogOut, ExternalLink, Bot, Webhook } from 'lucide-react'
 
 export default function SellerPanelLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -22,6 +22,9 @@ export default function SellerPanelLayout({ children }: { children: React.ReactN
           </Link>
           <Link href="/seller/ai-agent" className="flex items-center gap-3 px-3 py-2 text-emerald-400 hover:text-emerald-300 hover:bg-emerald-900/30 rounded-lg transition-colors font-bold bg-slate-800/50">
             <Bot size={20} /> AI Satış Botu (Yeni)
+          </Link>
+          <Link href="/seller/api-settings" className="flex items-center gap-3 px-3 py-2 text-indigo-400 hover:text-indigo-300 hover:bg-indigo-900/30 rounded-lg transition-colors font-medium">
+            <Webhook size={20} /> API & Webhooks
           </Link>
           <Link href="/seller/settings" className="flex items-center gap-3 px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors font-medium">
             <Settings size={20} /> Mağaza Ayarları
