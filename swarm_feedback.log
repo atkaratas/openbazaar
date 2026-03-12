@@ -935,3 +935,9 @@
 2026-03-12 10:56:37,589 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Gümrük onayı] - HATA: React TypeError in ProductCard Component
 2026-03-12 10:56:47,737 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kargo takibi] - BAŞARILI
 2026-03-12 10:56:58,823 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 10:57:08,972 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Yorum ve puanlama] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 10:57:21,003 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 10:57:27,091 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Stripe ödemesi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 10:57:36,107 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 10:57:48,174 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 10:58:00,242 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI

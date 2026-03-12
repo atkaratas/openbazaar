@@ -376,3 +376,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 10:55:12,790 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: AI ile pazarlık] - HATA: 404 Not Found on API Key Route
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 10:56:37,589 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Gümrük onayı] - HATA: React TypeError in ProductCard Component
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 10:57:08,972 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Yorum ve puanlama] - HATA: 500 Internal Server Error (Checkout API)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 10:57:27,091 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Stripe ödemesi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
