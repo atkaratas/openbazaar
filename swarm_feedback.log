@@ -6162,3 +6162,10 @@
 2026-03-13 01:37:07,614 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
 2026-03-13 01:37:18,764 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Gümrük onayı] - BAŞARILI
 2026-03-13 01:37:23,907 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-13 01:37:31,008 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-13 01:37:38,117 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-13 01:37:52,255 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-13 01:37:57,404 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-13 01:38:08,470 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 01:38:18,612 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Gümrük onayı] - HATA: React TypeError in ProductCard Component
+2026-03-13 01:38:28,762 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
