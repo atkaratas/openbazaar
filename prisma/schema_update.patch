@@ -1,0 +1,43 @@
+--- prisma/schema.prisma
++++ prisma/schema.prisma
+@@ -102,6 +102,30 @@
+   createdAt DateTime @default(now())
+ }
+ 
++model Quote {
++  id            String      @id @default(uuid())
++  productId     String
++  product       Product     @relation(fields: [productId], references: [id])
++  buyerId       String
++  buyer         User        @relation("BuyerQuotes", fields: [buyerId], references: [id])
++  sellerId      String
++  seller        User        @relation("SellerQuotes", fields: [sellerId], references: [id])
++  status        QuoteStatus @default(PENDING) // PENDING, ACCEPTED, REJECTED, NEGOTIATING
++  targetPrice   Decimal
++  quantity      Int
++  aiNegotiated  Boolean     @default(false)
++  messages      QuoteMessage[]
++  createdAt     DateTime    @default(now())
++  updatedAt     DateTime    @updatedAt
++}
++
++model QuoteMessage {
++  id        String   @id @default(uuid())
++  quoteId   String
++  quote     Quote    @relation(fields: [quoteId], references: [id])
++  senderId  String   // System (AI), Buyer, or Seller
++  content   String
++  isAiReply Boolean  @default(false)
++  createdAt DateTime @default(now())
++}
++
++enum QuoteStatus {
++  PENDING
++  NEGOTIATING
++  ACCEPTED
++  REJECTED
++}
++
+ model Order {
+   id              String      @id @default(uuid())
+   orderNumber     String      @unique
