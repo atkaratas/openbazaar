@@ -175,3 +175,14 @@
 2026-03-12 08:47:12,379 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Stripe ödemesi] - BAŞARILI
 2026-03-12 08:47:20,383 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
 2026-03-12 08:47:33,517 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Kargo takibi] - HATA: Timeout on Stripe Webhook
+2026-03-12 08:47:48,577 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 08:47:59,627 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 08:48:11,651 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 08:48:26,673 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 08:48:36,786 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 08:48:43,935 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 08:48:57,083 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - HATA: React TypeError in ProductCard Component
+2026-03-12 08:49:02,224 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 08:49:07,324 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 08:49:12,371 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 08:49:27,472 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - HATA: Timeout on Stripe Webhook
