@@ -6096,3 +6096,15 @@
 2026-03-13 01:25:45,038 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: API Key üretimi] - BAŞARILI
 2026-03-13 01:25:59,160 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
 2026-03-13 01:26:14,161 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: API Key üretimi] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-13 01:26:25,305 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-13 01:26:37,452 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-13 01:26:50,553 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-13 01:27:01,561 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-13 01:27:09,599 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 01:27:23,726 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-13 01:27:28,844 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-13 01:27:38,993 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-13 01:27:49,063 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: AI ile pazarlık] - HATA: 404 Not Found on API Key Route
+2026-03-13 01:27:58,187 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-13 01:28:05,271 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-13 01:28:11,422 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
