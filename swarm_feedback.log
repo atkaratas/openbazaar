@@ -3456,3 +3456,9 @@
 2026-03-12 18:03:56,238 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sepete ürün ekleme] - BAŞARILI
 2026-03-12 18:04:02,386 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
 2026-03-12 18:04:16,490 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 18:04:23,639 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 18:04:34,652 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 18:04:41,780 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 18:04:53,833 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 18:05:07,938 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Destek talebi oluşturma] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 18:05:16,022 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Stripe ödemesi] - BAŞARILI
