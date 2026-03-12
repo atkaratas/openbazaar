@@ -6042,3 +6042,9 @@
 2026-03-13 01:16:32,222 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kullanıcı kaydı] - BAŞARILI
 2026-03-13 01:16:43,373 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - HATA: 500 Internal Server Error (Checkout API)
 2026-03-13 01:16:55,463 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-13 01:17:03,596 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-13 01:17:14,693 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-13 01:17:22,830 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - HATA: 404 Not Found on API Key Route
+2026-03-13 01:17:31,971 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 01:17:47,114 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-13 01:17:55,256 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
