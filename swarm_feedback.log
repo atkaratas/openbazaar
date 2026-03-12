@@ -5964,3 +5964,9 @@
 2026-03-13 01:03:21,353 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
 2026-03-13 01:03:32,500 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
 2026-03-13 01:03:42,582 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-13 01:03:52,595 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-13 01:04:01,742 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-13 01:04:11,815 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-13 01:04:22,912 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 01:04:28,062 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-13 01:04:41,069 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Stripe ödemesi] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
