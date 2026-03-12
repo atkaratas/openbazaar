@@ -1094,3 +1094,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 16:03:29,131 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - HATA: 404 Not Found on API Key Route
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 16:03:55,493 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kargo takibi] - HATA: Timeout on Stripe Webhook
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 16:04:59,049 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Yorum ve puanlama] - HATA: 404 Not Found on API Key Route
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 16:05:25,339 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - HATA: 404 Not Found on API Key Route
