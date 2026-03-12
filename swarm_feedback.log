@@ -3139,3 +3139,9 @@
 2026-03-12 17:11:57,569 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - HATA: 500 Internal Server Error (Checkout API)
 2026-03-12 17:12:02,702 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - HATA: 500 Internal Server Error (Checkout API)
 2026-03-12 17:12:07,851 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 17:12:23,001 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 17:12:28,101 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 17:12:43,227 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 17:12:53,359 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-12 17:12:58,499 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Yorum ve puanlama] - HATA: React TypeError in ProductCard Component
+2026-03-12 17:13:07,564 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Giriş yapma] - BAŞARILI
