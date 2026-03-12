@@ -547,3 +547,14 @@
 2026-03-12 09:51:34,989 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
 2026-03-12 09:51:44,064 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Kargo takibi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
 2026-03-12 09:51:50,212 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 09:52:03,356 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 09:52:08,369 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 09:52:17,456 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 09:52:25,605 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 09:52:31,748 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 09:52:44,793 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 09:52:56,932 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 09:53:10,057 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: API Key üretimi] - HATA: 404 Not Found on API Key Route
+2026-03-12 09:53:25,124 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 09:53:32,272 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 09:53:44,398 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
