@@ -1489,3 +1489,9 @@
 2026-03-12 12:31:28,195 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Giriş yapma] - HATA: 404 Not Found on API Key Route
 2026-03-12 12:31:33,341 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
 2026-03-12 12:31:47,490 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 12:32:02,579 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 12:32:12,659 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 12:32:21,679 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: API Key üretimi] - HATA: 404 Not Found on API Key Route
+2026-03-12 12:32:28,828 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 12:32:40,978 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 12:32:49,126 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
