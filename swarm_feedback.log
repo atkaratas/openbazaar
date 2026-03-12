@@ -5958,3 +5958,9 @@
 2026-03-13 01:02:09,724 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: API Key üretimi] - BAŞARILI
 2026-03-13 01:02:23,776 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Ürün arama] - BAŞARILI
 2026-03-13 01:02:36,778 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 01:02:47,928 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - HATA: 404 Not Found on API Key Route
+2026-03-13 01:03:03,073 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-13 01:03:14,209 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-13 01:03:21,353 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-13 01:03:32,500 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-13 01:03:42,582 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
