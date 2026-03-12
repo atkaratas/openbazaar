@@ -3190,3 +3190,22 @@
 2026-03-12 17:19:53,906 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Kargo takibi] - HATA: Timeout on Stripe Webhook
 2026-03-12 17:20:05,915 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
 2026-03-12 17:20:18,020 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 17:20:28,150 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 17:20:37,291 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 17:20:52,441 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 17:20:58,476 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 17:21:08,609 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-12 17:21:18,703 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 17:21:27,850 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 17:21:34,862 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 17:21:50,008 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 17:21:59,158 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 17:22:13,179 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 17:22:25,328 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 17:22:32,465 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 17:22:38,609 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 17:22:45,615 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 17:22:59,706 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 17:23:07,738 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 17:23:13,816 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - HATA: React TypeError in ProductCard Component
+2026-03-12 17:23:22,965 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
