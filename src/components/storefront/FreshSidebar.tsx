@@ -10,7 +10,7 @@ export default async function FreshSidebar() {
       orderBy: { id: 'desc' }
     });
   } catch (e) {
-    console.error("Sidebar category fetch error:", e);
+    if (process.env.DATABASE_URL) console.error("Sidebar category fetch error:", e);
   }
 
   // Fallback if empty

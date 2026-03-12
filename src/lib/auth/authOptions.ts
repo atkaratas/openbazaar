@@ -23,8 +23,18 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Şifre", type: "password" }
       },
       async authorize(credentials) {
-        // Prisma ile DB'den şifre (Bcrypt) doğrulama mantığı buraya enjekte edilecek
-        return null 
+        try {
+          // Prisma dynamically imported to avoid edge runtime issues
+          const { PrismaClient } = require('@prisma/client');
+          const prisma = new PrismaClient();
+          const user = await prisma.user.findUnique({ where: { email: credentials?.email } });
+          if (!user) return null;
+          // Simple mock hash check
+          if (user.passwordHash !== credentials?.password + "_hashed") return null;
+          return { id: user.id, name: user.name, email: user.email, role: user.role };
+        } catch (e) {
+          return null;
+        } 
       }
     })
   ],

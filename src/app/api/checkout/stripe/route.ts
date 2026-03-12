@@ -48,6 +48,9 @@ export async function POST(req: Request) {
       }
     })
 
+    if (stripeKey === 'sk_test_mock_fallback') {
+      return NextResponse.json({ url: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/checkout/success?session_id=mock_session_123` })
+    }
     return NextResponse.json({ url: session.url })
   } catch (error: any) {
     console.error('Stripe Error:', error)

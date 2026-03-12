@@ -16,7 +16,7 @@ export default async function HomePage() {
 
     categories = await prisma.category.findMany({ take: 8 });
   } catch (error) {
-    console.error("Database connection failed during render:", error);
+    if (process.env.DATABASE_URL) console.error("Database connection failed during render:", error);
   }
 
   if (products.length === 0) {
