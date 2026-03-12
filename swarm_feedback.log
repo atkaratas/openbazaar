@@ -905,3 +905,10 @@
 2026-03-12 10:51:26,719 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
 2026-03-12 10:51:38,793 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: İndirim kodu uygulama] - HATA: Timeout on Stripe Webhook
 2026-03-12 10:51:47,886 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 10:52:01,952 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Stripe ödemesi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 10:52:12,047 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - HATA: 404 Not Found on API Key Route
+2026-03-12 10:52:19,072 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Stripe ödemesi] - HATA: Timeout on Stripe Webhook
+2026-03-12 10:52:25,102 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 10:52:36,124 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 10:52:49,153 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Ürün arama] - HATA: Timeout on Stripe Webhook
+2026-03-12 10:52:57,299 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
