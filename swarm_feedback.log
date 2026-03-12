@@ -4217,3 +4217,10 @@
 2026-03-12 20:09:57,474 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
 2026-03-12 20:10:04,625 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
 2026-03-12 20:10:18,760 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 20:10:32,899 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 20:10:47,959 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 20:10:52,961 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - HATA: Timeout on Stripe Webhook
+2026-03-12 20:10:58,110 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - HATA: 404 Not Found on API Key Route
+2026-03-12 20:11:11,260 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 20:11:17,403 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 20:11:28,551 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
