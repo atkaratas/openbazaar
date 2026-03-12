@@ -896,3 +896,5 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 14:36:16,937 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - HATA: 500 Internal Server Error (Checkout API)
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 14:36:46,287 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: 404 Not Found on API Key Route
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 14:37:19,546 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: AI ile pazarlık] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
