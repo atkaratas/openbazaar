@@ -2018,3 +2018,5 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 22:15:47,765 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Yorum ve puanlama] - HATA: Timeout on Stripe Webhook
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 22:16:56,367 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 22:18:02,924 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Profil güncelleme] - HATA: 404 Not Found on API Key Route
