@@ -3596,3 +3596,9 @@
 2026-03-12 18:26:22,426 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Favorilere ekleme] - HATA: React TypeError in ProductCard Component
 2026-03-12 18:26:35,572 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
 2026-03-12 18:26:44,708 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 18:26:59,846 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Favorilere ekleme] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-12 18:27:14,979 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 18:27:21,061 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 18:27:34,195 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 18:27:41,241 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 18:27:47,387 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Ürün arama] - BAŞARILI
