@@ -5309,3 +5309,9 @@
 2026-03-12 23:13:15,892 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sepete ürün ekleme] - BAŞARILI
 2026-03-12 23:13:24,990 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
 2026-03-12 23:13:34,122 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Kargo takibi] - HATA: 404 Not Found on API Key Route
+2026-03-12 23:13:41,259 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 23:13:51,404 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 23:14:02,411 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 23:14:11,554 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 23:14:20,704 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 23:14:34,803 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Giriş yapma] - HATA: 500 Internal Server Error (Checkout API)
