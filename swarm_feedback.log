@@ -210,3 +210,10 @@
 2026-03-12 08:53:17,019 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Destek talebi oluşturma] - BAŞARILI
 2026-03-12 08:53:32,168 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Gümrük onayı] - BAŞARILI
 2026-03-12 08:53:41,305 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 08:53:50,332 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 08:53:59,355 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 08:54:04,482 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Giriş yapma] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-12 08:54:09,591 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 08:54:23,730 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - HATA: Timeout on Stripe Webhook
+2026-03-12 08:54:34,874 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: API Key üretimi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 08:54:44,930 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
