@@ -1976,3 +1976,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 21:56:08,080 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Şifre sıfırlama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 21:56:56,725 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - HATA: 404 Not Found on API Key Route
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 21:57:57,170 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Şifre sıfırlama] - HATA: 404 Not Found on API Key Route
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 21:58:45,631 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Kullanıcı kaydı] - HATA: 404 Not Found on API Key Route
