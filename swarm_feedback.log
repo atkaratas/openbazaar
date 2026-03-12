@@ -3821,3 +3821,13 @@
 2026-03-12 19:03:23,907 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
 2026-03-12 19:03:29,004 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
 2026-03-12 19:03:35,147 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 19:03:48,286 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 19:04:01,434 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 19:04:06,582 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 19:04:17,634 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 19:04:29,745 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 19:04:44,847 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 19:04:53,981 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Şifre sıfırlama] - HATA: React TypeError in ProductCard Component
+2026-03-12 19:05:05,118 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-12 19:05:14,230 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 19:05:29,380 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
