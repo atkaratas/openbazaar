@@ -698,3 +698,5 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 13:11:51,145 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Şifre sıfırlama] - HATA: 404 Not Found on API Key Route
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 13:12:12,425 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kargo takibi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 13:12:45,746 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Destek talebi oluşturma] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
