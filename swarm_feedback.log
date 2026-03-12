@@ -5137,3 +5137,7 @@
 2026-03-12 22:42:28,048 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - HATA: React TypeError in ProductCard Component
 2026-03-12 22:42:43,120 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - HATA: 404 Not Found on API Key Route
 2026-03-12 22:42:58,270 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 22:43:13,403 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Giriş yapma] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 22:43:28,553 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 22:43:40,672 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 22:43:54,772 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
