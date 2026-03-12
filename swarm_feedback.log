@@ -3151,3 +3151,9 @@
 2026-03-12 17:13:43,981 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
 2026-03-12 17:13:59,068 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
 2026-03-12 17:14:09,216 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Kargo takibi] - HATA: 404 Not Found on API Key Route
+2026-03-12 17:14:20,297 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Destek talebi oluşturma] - HATA: React TypeError in ProductCard Component
+2026-03-12 17:14:26,440 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 17:14:40,506 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 17:14:52,607 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 17:15:07,705 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 17:15:15,765 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
