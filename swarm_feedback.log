@@ -2693,3 +2693,9 @@
 2026-03-12 15:56:02,121 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - HATA: React TypeError in ProductCard Component
 2026-03-12 15:56:12,151 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
 2026-03-12 15:56:26,279 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 15:56:41,424 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Ürün arama] - HATA: Timeout on Stripe Webhook
+2026-03-12 15:56:48,486 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 15:56:57,586 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 15:57:09,730 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 15:57:19,757 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Kargo takibi] - HATA: React TypeError in ProductCard Component
+2026-03-12 15:57:27,767 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: 500 Internal Server Error (Checkout API)
