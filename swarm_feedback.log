@@ -3715,3 +3715,9 @@
 2026-03-12 18:45:57,982 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
 2026-03-12 18:46:07,078 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
 2026-03-12 18:46:16,223 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 18:46:27,368 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 18:46:39,482 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 18:46:44,615 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 18:46:54,699 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 18:47:07,833 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Favorilere ekleme] - HATA: React TypeError in ProductCard Component
+2026-03-12 18:47:12,977 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Yorum ve puanlama] - BAŞARILI
