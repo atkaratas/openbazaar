@@ -2412,3 +2412,7 @@
 2026-03-12 15:07:21,790 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
 2026-03-12 15:07:34,929 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Ürün arama] - HATA: 404 Not Found on API Key Route
 2026-03-12 15:07:41,009 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 15:07:56,061 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Destek talebi oluşturma] - HATA: 404 Not Found on API Key Route
+2026-03-12 15:08:10,073 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 15:08:25,141 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 15:08:38,162 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
