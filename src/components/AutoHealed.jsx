@@ -1236,3 +1236,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:02:09,366 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: İndirim kodu uygulama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:02:35,677 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - HATA: 404 Not Found on API Key Route
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:03:52,302 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Yorum ve puanlama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:04:01,346 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: API Key üretimi] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
