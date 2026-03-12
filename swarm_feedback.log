@@ -4562,3 +4562,17 @@
 2026-03-12 21:08:10,631 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sepete ürün ekleme] - BAŞARILI
 2026-03-12 21:08:21,771 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
 2026-03-12 21:08:29,919 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 21:08:44,066 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 21:08:49,145 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 21:08:54,169 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 21:09:01,320 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 21:09:06,323 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 21:09:20,327 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-12 21:09:31,464 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 21:09:39,610 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 21:09:48,753 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 21:10:01,791 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Şifre sıfırlama] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 21:10:16,941 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 21:10:22,032 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 21:10:32,176 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 21:10:38,298 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
