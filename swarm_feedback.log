@@ -299,3 +299,14 @@
 2026-03-12 09:08:29,670 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
 2026-03-12 09:08:41,762 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sepete ürün ekleme] - HATA: 404 Not Found on API Key Route
 2026-03-12 09:08:47,912 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-12 09:09:02,037 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 09:09:11,179 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-12 09:09:19,254 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 09:09:34,388 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 09:09:42,488 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 09:09:54,632 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-12 09:10:05,752 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 09:10:20,817 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Kargo takibi] - HATA: 404 Not Found on API Key Route
+2026-03-12 09:10:30,963 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 09:10:46,110 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 09:10:52,259 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Giriş yapma] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
