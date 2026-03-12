@@ -6006,3 +6006,15 @@
 2026-03-13 01:10:31,685 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
 2026-03-13 01:10:36,686 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
 2026-03-13 01:10:50,822 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Giriş yapma] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 01:10:57,847 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-13 01:11:12,995 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 01:11:21,022 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-13 01:11:27,155 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 01:11:37,270 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 01:11:50,390 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 01:12:00,405 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 01:12:12,472 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-13 01:12:20,607 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-13 01:12:32,756 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: 404 Not Found on API Key Route
+2026-03-13 01:12:39,872 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-13 01:12:51,984 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
