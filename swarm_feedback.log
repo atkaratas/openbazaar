@@ -2161,3 +2161,15 @@
 2026-03-12 14:24:39,227 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - HATA: Timeout on Stripe Webhook
 2026-03-12 14:24:44,315 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
 2026-03-12 14:24:52,331 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Kargo takibi] - HATA: 404 Not Found on API Key Route
+2026-03-12 14:25:05,474 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 14:25:11,619 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 14:25:18,675 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 14:25:23,780 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 14:25:37,908 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 14:25:48,944 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 14:25:53,975 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 14:26:05,010 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 14:26:19,026 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-12 14:26:24,027 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 14:26:30,162 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 14:26:45,311 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: İndirim kodu uygulama] - HATA: Timeout on Stripe Webhook
