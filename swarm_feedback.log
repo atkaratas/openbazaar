@@ -2381,3 +2381,10 @@
 2026-03-12 15:02:15,771 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Ürün arama] - BAŞARILI
 2026-03-12 15:02:23,782 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
 2026-03-12 15:02:29,922 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Stripe ödemesi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 15:02:35,958 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: İndirim kodu uygulama] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-12 15:02:45,108 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 15:02:52,181 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 15:02:59,303 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 15:03:07,314 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 15:03:22,449 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: API Key üretimi] - HATA: React TypeError in ProductCard Component
+2026-03-12 15:03:36,544 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Şifre sıfırlama] - BAŞARILI
