@@ -7,8 +7,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
@@ -29,6 +29,8 @@ enum OrderStatus {
 
 // 1. KULLANICILAR
 model User {
+  buyerQuotes  Quote[]  @relation("BuyerQuotes")
+  sellerQuotes Quote[]  @relation("SellerQuotes")
   id           String   @id @default(uuid())
   email        String   @unique
   passwordHash String
@@ -71,8 +73,9 @@ model Category {
 
 // 4. ÜRÜNLER (B2C, Çoklu Dil, Ana Para Birimi)
 model Product {
-  id                      String @id @default(uuid())
-  slug                    String @unique
+  quotes                  Quote[]
+  id                      String  @id @default(uuid())
+  slug                    String  @unique
   titleTranslations       Json // { "en": "Leather Jacket", "tr": "Deri Ceket" }
   descriptionTranslations Json // { "en": "High quality...", "tr": "Yüksek kalite..." }
 
@@ -208,3 +211,37 @@ model RlEventLog {
 
 // Product tablosuna RL Optimizasyon puanı eklenecek
 // model Product { ... rlRankScore Decimal @default(0) ... }
+
+model Quote {
+  id           String         @id @default(uuid())
+  productId    String
+  product      Product        @relation(fields: [productId], references: [id])
+  buyerId      String
+  buyer        User           @relation("BuyerQuotes", fields: [buyerId], references: [id])
+  sellerId     String
+  seller       User           @relation("SellerQuotes", fields: [sellerId], references: [id])
+  status       QuoteStatus    @default(PENDING)
+  targetPrice  Decimal
+  quantity     Int
+  aiNegotiated Boolean        @default(false)
+  messages     QuoteMessage[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model QuoteMessage {
+  id        String   @id @default(uuid())
+  quoteId   String
+  quote     Quote    @relation(fields: [quoteId], references: [id])
+  senderId  String
+  content   String
+  isAiReply Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+enum QuoteStatus {
+  PENDING
+  NEGOTIATING
+  ACCEPTED
+  REJECTED
+}
