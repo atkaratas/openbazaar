@@ -1263,3 +1263,10 @@
 2026-03-12 11:53:37,732 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
 2026-03-12 11:53:48,824 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kullanıcı kaydı] - BAŞARILI
 2026-03-12 11:53:54,974 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Stripe ödemesi] - HATA: 404 Not Found on API Key Route
+2026-03-12 11:54:10,095 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Destek talebi oluşturma] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 11:54:20,178 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 11:54:27,328 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 11:54:32,443 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 11:54:46,584 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 11:54:53,703 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 11:55:02,717 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Stripe ödemesi] - BAŞARILI
