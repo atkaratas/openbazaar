@@ -3287,3 +3287,16 @@
 2026-03-12 17:36:22,414 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Stripe ödemesi] - HATA: 404 Not Found on API Key Route
 2026-03-12 17:36:33,435 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Giriş yapma] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
 2026-03-12 17:36:41,584 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: API Key üretimi] - HATA: React TypeError in ProductCard Component
+2026-03-12 17:36:46,701 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 17:36:53,834 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 17:37:08,974 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 17:37:17,036 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 17:37:25,161 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 17:37:35,302 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 17:37:40,435 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 17:37:51,570 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 17:37:57,716 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 17:38:08,752 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 17:38:16,886 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-12 17:38:26,972 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - HATA: React TypeError in ProductCard Component
+2026-03-12 17:38:35,039 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Gümrük onayı] - BAŞARILI
