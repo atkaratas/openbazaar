@@ -518,3 +518,8 @@
 2026-03-12 09:46:18,910 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
 2026-03-12 09:46:27,981 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
 2026-03-12 09:46:35,113 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 09:46:49,187 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 09:47:00,272 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Profil güncelleme] - HATA: React TypeError in ProductCard Component
+2026-03-12 09:47:13,392 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 09:47:19,539 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 09:47:30,626 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: AI ile pazarlık] - HATA: 404 Not Found on API Key Route
