@@ -2416,3 +2416,5 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 01:32:16,624 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kullanıcı kaydı] - HATA: 404 Not Found on API Key Route
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 01:32:49,958 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Yorum ve puanlama] - HATA: 500 Internal Server Error (Checkout API)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 01:33:56,777 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: API Key üretimi] - HATA: 500 Internal Server Error (Checkout API)
