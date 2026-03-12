@@ -186,3 +186,21 @@
 2026-03-12 08:49:07,324 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sepete ürün ekleme] - BAŞARILI
 2026-03-12 08:49:12,371 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
 2026-03-12 08:49:27,472 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - HATA: Timeout on Stripe Webhook
+2026-03-12 08:49:41,620 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 08:49:46,680 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-12 08:49:53,824 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 08:50:02,974 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 08:50:18,122 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 08:50:28,251 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-12 08:50:42,353 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 08:50:55,497 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 08:51:03,625 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-12 08:51:13,726 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 08:51:24,806 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 08:51:29,850 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 08:51:38,984 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 08:51:53,018 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 08:52:05,153 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 08:52:15,303 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 08:52:22,443 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 08:52:37,587 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
