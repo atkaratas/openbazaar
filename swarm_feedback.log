@@ -588,3 +588,9 @@
 2026-03-12 09:58:32,650 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
 2026-03-12 09:58:46,800 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Giriş yapma] - HATA: 500 Internal Server Error (Checkout API)
 2026-03-12 09:58:51,950 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 09:59:02,098 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 09:59:14,236 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kargo takibi] - HATA: 404 Not Found on API Key Route
+2026-03-12 09:59:23,309 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 09:59:37,457 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 09:59:46,600 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 09:59:56,602 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
