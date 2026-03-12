@@ -1348,3 +1348,19 @@
 2026-03-12 12:08:03,493 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
 2026-03-12 12:08:08,639 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
 2026-03-12 12:08:17,776 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - HATA: Timeout on Stripe Webhook
+2026-03-12 12:08:31,856 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 12:08:41,005 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 12:08:52,007 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 12:09:06,144 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 12:09:13,199 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 12:09:27,346 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 12:09:40,410 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 12:09:53,518 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-12 12:09:59,547 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 12:10:11,697 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 12:10:22,846 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 12:10:33,879 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 12:10:46,981 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 12:10:59,088 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 12:11:11,217 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 12:11:17,357 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI

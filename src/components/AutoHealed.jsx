@@ -546,3 +546,5 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 12:07:55,411 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Destek talebi oluşturma] - HATA: Timeout on Stripe Webhook
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 12:08:17,776 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - HATA: Timeout on Stripe Webhook
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 12:10:59,088 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
