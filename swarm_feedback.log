@@ -68,3 +68,10 @@
 2026-03-12 08:27:45,063 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
 2026-03-12 08:27:50,892 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Ürün arama] - HATA: Timeout on Stripe Webhook
 2026-03-12 08:28:02,029 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 08:28:15,179 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 08:28:30,389 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Ürün arama] - HATA: Timeout on Stripe Webhook
+2026-03-12 08:28:45,507 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 08:28:52,607 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 08:29:05,695 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-12 08:29:13,709 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 08:29:26,825 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
