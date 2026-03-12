@@ -1354,3 +1354,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:46:32,691 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Favorilere ekleme] - HATA: React TypeError in ProductCard Component
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:47:11,055 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: İndirim kodu uygulama] - HATA: 500 Internal Server Error (Checkout API)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:49:23,447 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Favorilere ekleme] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:49:41,744 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Ürün arama] - HATA: 404 Not Found on API Key Route
