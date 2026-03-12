@@ -2356,3 +2356,15 @@
 2026-03-12 14:58:12,235 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
 2026-03-12 14:58:22,289 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kargo takibi] - BAŞARILI
 2026-03-12 14:58:28,438 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 14:58:34,581 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 14:58:46,720 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 14:58:55,860 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 14:59:07,010 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 14:59:14,019 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 14:59:28,126 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 14:59:33,260 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 14:59:47,398 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 14:59:58,522 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: AI ile pazarlık] - HATA: React TypeError in ProductCard Component
+2026-03-12 15:00:13,572 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 15:00:22,617 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 15:00:28,767 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Giriş yapma] - BAŞARILI
