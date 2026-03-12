@@ -5569,3 +5569,13 @@
 2026-03-12 23:58:20,362 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
 2026-03-12 23:58:25,511 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Profil güncelleme] - HATA: Timeout on Stripe Webhook
 2026-03-12 23:58:33,598 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 23:58:45,668 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 23:59:00,794 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 23:59:10,865 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 23:59:25,013 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 23:59:33,157 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 23:59:41,270 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-12 23:59:56,420 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-13 00:00:07,562 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-13 00:00:15,619 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-13 00:00:28,704 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Destek talebi oluşturma] - BAŞARILI
