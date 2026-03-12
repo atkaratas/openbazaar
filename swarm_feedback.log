@@ -1214,3 +1214,9 @@
 2026-03-12 11:45:46,793 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: API Key üretimi] - BAŞARILI
 2026-03-12 11:45:51,924 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kullanıcı kaydı] - BAŞARILI
 2026-03-12 11:45:56,981 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Ürün arama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 11:46:12,053 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 11:46:18,192 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 11:46:26,235 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 11:46:41,346 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: AI ile pazarlık] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 11:46:48,495 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 11:46:54,644 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Şifre sıfırlama] - BAŞARILI
