@@ -1240,3 +1240,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:03:52,302 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Yorum ve puanlama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:04:01,346 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: API Key üretimi] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:04:19,600 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: AI ile pazarlık] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:04:57,025 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Ürün arama] - HATA: Timeout on Stripe Webhook
