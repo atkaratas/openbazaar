@@ -1868,3 +1868,9 @@
 2026-03-12 13:35:38,257 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
 2026-03-12 13:35:46,390 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - BAŞARILI
 2026-03-12 13:35:59,412 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 13:36:10,562 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 13:36:25,690 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 13:36:34,826 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - HATA: Timeout on Stripe Webhook
+2026-03-12 13:36:39,948 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 13:36:46,098 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 13:36:58,135 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
