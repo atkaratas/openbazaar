@@ -29,15 +29,18 @@ enum OrderStatus {
 
 // 1. KULLANICILAR
 model User {
-  buyerQuotes  Quote[]  @relation("BuyerQuotes")
-  sellerQuotes Quote[]  @relation("SellerQuotes")
-  id           String   @id @default(uuid())
-  email        String   @unique
-  passwordHash String
-  role         Role     @default(BUYER)
-  name         String?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  activities        UserActivity[] @relation("UserActivities")
+  emailVerified     DateTime?
+  verificationToken String?        @unique
+  buyerQuotes       Quote[]        @relation("BuyerQuotes")
+  sellerQuotes      Quote[]        @relation("SellerQuotes")
+  id                String         @id @default(uuid())
+  email             String         @unique
+  passwordHash      String
+  role              Role           @default(BUYER)
+  name              String?
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
 
   store   Store?
   orders  Order[]
@@ -99,20 +102,21 @@ model Product {
   updatedAt  DateTime    @updatedAt
 
   // PIM B2B & Logistics Fields
-  sku                     String?  @unique
+  sku                     String?        @unique
   gtipCode                String?
-  moq                     Int      @default(1)
-  floorPrice              Decimal? @db.Decimal(10, 2)
+  moq                     Int            @default(1)
+  floorPrice              Decimal?       @db.Decimal(10, 2)
   ingredientsTranslations Json?
   allergensTranslations   Json?
   shelfLifeDays           Int?
   certifications          String[]
   dietaryTags             String[]
-  weightKg                Decimal? @db.Decimal(10, 3)
-  lengthCm                Decimal? @db.Decimal(10, 2)
-  widthCm                 Decimal? @db.Decimal(10, 2)
-  heightCm                Decimal? @db.Decimal(10, 2)
-  isColdChain             Boolean  @default(false)
+  weightKg                Decimal?       @db.Decimal(10, 3)
+  lengthCm                Decimal?       @db.Decimal(10, 2)
+  widthCm                 Decimal?       @db.Decimal(10, 2)
+  heightCm                Decimal?       @db.Decimal(10, 2)
+  isColdChain             Boolean        @default(false)
+  UserActivity            UserActivity[]
 }
 
 // 5. SİPARİŞLER (Gerçekleşen Kur ve Tutarın Kaydı)
@@ -244,4 +248,15 @@ enum QuoteStatus {
   NEGOTIATING
   ACCEPTED
   REJECTED
+}
+
+model UserActivity {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation("UserActivities", fields: [userId], references: [id])
+  action    String // VIEW_PRODUCT, ADD_TO_CART, REMOVE_FROM_CART, PURCHASE, SEARCH
+  productId String?
+  product   Product? @relation(fields: [productId], references: [id])
+  metadata  Json? // Ekstra detaylar: arama kelimeleri, sepet tutarı vb.
+  createdAt DateTime @default(now())
 }
