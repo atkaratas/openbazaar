@@ -5847,3 +5847,9 @@
 2026-03-13 00:44:04,238 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Profil güncelleme] - HATA: React TypeError in ProductCard Component
 2026-03-13 00:44:14,384 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sepete ürün ekleme] - BAŞARILI
 2026-03-13 00:44:22,525 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-13 00:44:28,670 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Sepete ürün ekleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-13 00:44:37,819 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-13 00:44:46,960 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Ürün arama] - BAŞARILI
+2026-03-13 00:44:59,075 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: AI ile pazarlık] - HATA: Timeout on Stripe Webhook
+2026-03-13 00:45:11,216 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-13 00:45:18,358 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI

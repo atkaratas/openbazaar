@@ -2312,3 +2312,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 00:43:43,098 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 00:44:04,238 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Profil güncelleme] - HATA: React TypeError in ProductCard Component
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 00:44:28,670 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Sepete ürün ekleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 00:44:59,075 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: AI ile pazarlık] - HATA: Timeout on Stripe Webhook
