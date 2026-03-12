@@ -28,12 +28,10 @@ export async function POST(req: Request) {
       });
       return NextResponse.json({ success: true, store, message: 'Store approved' });
     } else if (action === 'reject') {
-      // In a real app, you might email the user the reason, or set a rejected status.
-      // We'll just delete the unverified store for this simulation
       await prisma.store.delete({
         where: { id }
       });
-      return NextResponse.json({ success: true, message: \`Store rejected. Reason: \${reason}\` });
+      return NextResponse.json({ success: true, message: `Store rejected. Reason: ${reason}` });
     }
   } catch (error: any) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });

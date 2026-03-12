@@ -126,7 +126,7 @@ export default function PendingSellersPage() {
             
             <div className="col-span-3 flex flex-wrap gap-2">
               {seller.docs.length > 0 ? (
-                seller.docs.map(doc => (
+                seller.docs.map((doc: string) => (
                   <button onClick={() => openDoc(doc)} key={doc} className="inline-flex items-center px-2 py-1 rounded text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200 cursor-pointer hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 transition-all shadow-sm">
                     📄 {doc}
                   </button>
