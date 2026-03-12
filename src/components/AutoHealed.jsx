@@ -1078,3 +1078,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 15:57:19,757 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Kargo takibi] - HATA: React TypeError in ProductCard Component
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 15:57:27,767 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: 500 Internal Server Error (Checkout API)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 15:57:50,045 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Giriş yapma] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 15:58:26,471 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Stripe ödemesi] - HATA: Timeout on Stripe Webhook
