@@ -5690,3 +5690,16 @@
 2026-03-13 00:18:35,442 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sepete ürün ekleme] - HATA: 500 Internal Server Error (Checkout API)
 2026-03-13 00:18:40,578 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
 2026-03-13 00:18:54,635 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Yorum ve puanlama] - HATA: Timeout on Stripe Webhook
+2026-03-13 00:19:01,636 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 00:19:12,672 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-13 00:19:24,747 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-13 00:19:32,898 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-13 00:19:46,032 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-13 00:20:00,146 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-13 00:20:07,294 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 00:20:13,440 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 00:20:24,499 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-13 00:20:29,641 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-13 00:20:34,729 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-13 00:20:48,756 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-13 00:20:56,793 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
