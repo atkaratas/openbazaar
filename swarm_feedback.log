@@ -1707,3 +1707,9 @@
 2026-03-12 13:08:06,456 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Şifre sıfırlama] - BAŞARILI
 2026-03-12 13:08:15,488 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Destek talebi oluşturma] - HATA: React TypeError in ProductCard Component
 2026-03-12 13:08:20,504 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 13:08:33,646 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: AI ile pazarlık] - HATA: Timeout on Stripe Webhook
+2026-03-12 13:08:41,790 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-12 13:08:47,938 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-12 13:08:58,072 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 13:09:12,129 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 13:09:19,275 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kargo takibi] - BAŞARILI
