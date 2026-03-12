@@ -965,3 +965,9 @@
 2026-03-12 11:01:52,276 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
 2026-03-12 11:02:01,313 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
 2026-03-12 11:02:06,463 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 11:02:18,517 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - HATA: 404 Not Found on API Key Route
+2026-03-12 11:02:25,566 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: API Key üretimi] - HATA: Timeout on Stripe Webhook
+2026-03-12 11:02:39,592 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 11:02:48,660 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: API Key üretimi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 11:02:57,760 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 11:03:12,793 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
