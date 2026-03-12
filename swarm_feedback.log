@@ -4707,3 +4707,11 @@
 2026-03-12 21:33:02,867 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
 2026-03-12 21:33:12,016 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
 2026-03-12 21:33:17,136 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 21:33:29,187 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 21:33:34,335 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 21:33:39,378 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 21:33:44,383 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 21:33:51,423 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 21:33:58,571 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - HATA: React TypeError in ProductCard Component
+2026-03-12 21:34:11,716 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 21:34:17,866 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: React TypeError in ProductCard Component
