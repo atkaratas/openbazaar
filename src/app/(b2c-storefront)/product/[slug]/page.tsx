@@ -31,7 +31,7 @@ export default async function ProductDetailPage(props: any) {
         storeName: product.store?.name ? String(product.store.name) : 'OpenBazaar Satıcısı',
         image: (product.images && Array.isArray(product.images) && product.images.length > 0) 
                ? String(product.images[0]) 
-               : 'https://malatyapazaripalanci.com.tr/productimages/102941/original/antep-fistigi-kavrulmus-250-gr-0489.jpg',
+               : '/placeholder-food.jpg',
         unitType: String((product.titleTranslations as any)?.tr || '').toLowerCase().includes('zeytinyağı') ? 'Teneke' : 'KG',
         stock: Number(product.stock) || 0
       };
@@ -45,7 +45,7 @@ export default async function ProductDetailPage(props: any) {
         currency: 'EUR',
         storeId: 'store_test',
         storeName: 'OpenBazaar Sistem',
-        image: 'https://malatyapazaripalanci.com.tr/productimages/102941/original/antep-fistigi-kavrulmus-250-gr-0489.jpg',
+        image: '/placeholder-food.jpg',
         unitType: 'KG',
         stock: 10
       };
@@ -68,7 +68,7 @@ export default async function ProductDetailPage(props: any) {
         currency: 'EUR',
         storeId: 'error',
         storeName: 'Sistem Uyarısı',
-        image: 'https://malatyapazaripalanci.com.tr/productimages/102941/original/antep-fistigi-kavrulmus-250-gr-0489.jpg',
+        image: '/placeholder-food.jpg',
         unitType: 'KG',
         stock: 0
     };

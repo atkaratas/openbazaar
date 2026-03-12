@@ -67,7 +67,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
               </span>
             )}
             <img 
-              src={(product.images && product.images.length > 0) ? product.images[0] : 'https://malatyapazaripalanci.com.tr/productimages/102941/original/antep-fistigi-kavrulmus-250-gr-0489.jpg'}
+              src={(product.images && product.images.length > 0) ? product.images[0] : '/placeholder-food.jpg'}
               alt={product.titleTranslations?.tr || 'Ürün'}
               className="w-full h-full object-cover"
             />
