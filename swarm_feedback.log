@@ -1511,3 +1511,14 @@
 2026-03-12 12:35:26,593 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
 2026-03-12 12:35:35,742 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kargo takibi] - HATA: 500 Internal Server Error (Checkout API)
 2026-03-12 12:35:49,815 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-12 12:36:01,914 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 12:36:16,057 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 12:36:28,159 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 12:36:37,293 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 12:36:51,418 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 12:37:02,515 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 12:37:11,662 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 12:37:20,797 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 12:37:30,945 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-12 12:37:43,095 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Ürün arama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 12:37:54,223 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Stripe ödemesi] - HATA: Timeout on Stripe Webhook
