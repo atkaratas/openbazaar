@@ -763,3 +763,20 @@
 2026-03-12 10:27:08,771 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - HATA: 500 Internal Server Error (Checkout API)
 2026-03-12 10:27:15,911 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
 2026-03-12 10:27:31,050 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: AI ile pazarlık] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-12 10:27:37,186 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 10:27:51,336 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 10:28:04,389 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-12 10:28:11,535 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 10:28:21,562 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 10:28:36,563 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 10:28:41,701 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 10:28:50,808 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-12 10:28:59,840 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 10:29:08,889 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 10:29:14,038 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-12 10:29:28,169 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 10:29:42,317 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 10:29:57,439 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 10:30:11,440 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 10:30:17,452 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sepete ürün ekleme] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 10:30:32,594 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Şifre sıfırlama] - BAŞARILI
