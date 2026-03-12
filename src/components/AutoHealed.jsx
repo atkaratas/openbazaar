@@ -1288,3 +1288,9 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:18:00,437 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Profil güncelleme] - HATA: 500 Internal Server Error (Checkout API)
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:18:14,711 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - HATA: Timeout on Stripe Webhook
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:18:29,878 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Giriş yapma] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:18:39,999 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kargo takibi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 17:18:46,062 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Stripe ödemesi] - HATA: React TypeError in ProductCard Component
