@@ -1225,3 +1225,10 @@
 2026-03-12 11:47:33,878 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
 2026-03-12 11:47:42,029 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
 2026-03-12 11:47:55,049 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Şifre sıfırlama] - HATA: Timeout on Stripe Webhook
+2026-03-12 11:48:05,192 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kargo takibi] - HATA: 404 Not Found on API Key Route
+2026-03-12 11:48:14,260 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-12 11:48:19,387 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 11:48:29,524 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-12 11:48:36,551 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-12 11:48:43,699 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 11:48:54,849 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
