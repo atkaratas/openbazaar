@@ -1,12 +1,12 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function PendingSellersPage() {
   // Satıcıları bir state (durum) içine alalım ki onaylayınca ekrandan kaybolsunlar (Gerçekçi UI hissi)
   const [sellers, setSellers] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
 
-  import { useEffect } from 'react'
+
 
   useEffect(() => {
     fetch('/api/v1/admin/sellers')
