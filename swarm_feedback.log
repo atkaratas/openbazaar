@@ -1046,3 +1046,8 @@
 2026-03-12 11:16:06,128 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: API Key üretimi] - BAŞARILI
 2026-03-12 11:16:13,257 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Ürün arama] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
 2026-03-12 11:16:23,371 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 11:16:33,507 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 11:16:48,645 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-12 11:17:02,772 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Sepete ürün ekleme] - HATA: React TypeError in ProductCard Component
+2026-03-12 11:17:16,881 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Profil güncelleme] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-12 11:17:26,916 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Stripe ödemesi] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
