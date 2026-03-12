@@ -12,7 +12,7 @@ export async function trackUserActivity(
         userId,
         action,
         productId,
-        metadata: metadata ? JSON.stringify(metadata) : null,
+        metadata: metadata ? JSON.parse(JSON.stringify(metadata)) : undefined,
       }
     });
   } catch (error) {
