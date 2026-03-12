@@ -3396,3 +3396,9 @@
 2026-03-12 17:53:42,932 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
 2026-03-12 17:53:50,946 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
 2026-03-12 17:54:00,088 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Stripe ödemesi] - HATA: Timeout on Stripe Webhook
+2026-03-12 17:54:15,143 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-12 17:54:25,239 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Ürün arama] - HATA: 404 Not Found on API Key Route
+2026-03-12 17:54:32,381 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 17:54:47,526 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 17:54:57,672 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-12 17:55:06,758 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - BAŞARILI
