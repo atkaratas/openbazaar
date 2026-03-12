@@ -1,12 +1,14 @@
 'use client'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useCart } from '@/store/useCart'
 
 export default function Navbar() {
   const items = useCart((state) => state.items)
-  const totalItems = items.reduce((total, item) => total + item.quantity, 0)
+  const [isMounted, setIsMounted] = useState(false)
+  useEffect(() => setIsMounted(true), [])
+  const totalItems = isMounted ? items.reduce((total, item) => total + item.quantity, 0) : 0
   const router = useRouter()
   const [searchQuery, setSearchQuery] = useState('')
 
