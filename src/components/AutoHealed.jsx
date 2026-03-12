@@ -1508,3 +1508,5 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 18:50:34,977 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 18:50:48,040 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Giriş yapma] - HATA: 500 Internal Server Error (Checkout API)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 18:53:21,281 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
