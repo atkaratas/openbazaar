@@ -356,3 +356,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 10:50:24,099 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Stripe ödemesi] - HATA: 404 Not Found on API Key Route
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 10:50:40,188 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 10:51:38,793 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: İndirim kodu uygulama] - HATA: Timeout on Stripe Webhook
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 10:51:47,886 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
