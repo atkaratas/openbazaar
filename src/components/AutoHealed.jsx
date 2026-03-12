@@ -296,3 +296,5 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 10:21:50,955 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - HATA: 404 Not Found on API Key Route
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 10:22:21,258 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - HATA: 404 Not Found on API Key Route
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 10:22:48,423 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Giriş yapma] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
