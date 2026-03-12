@@ -4019,3 +4019,8 @@
 2026-03-12 19:37:13,696 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
 2026-03-12 19:37:21,846 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
 2026-03-12 19:37:31,982 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-12 19:37:46,069 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Ürün arama] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 19:37:59,178 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 19:38:04,320 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 19:38:17,471 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 19:38:26,613 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Ürün arama] - BAŞARILI
