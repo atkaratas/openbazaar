@@ -3831,3 +3831,11 @@
 2026-03-12 19:05:05,118 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
 2026-03-12 19:05:14,230 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
 2026-03-12 19:05:29,380 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 19:05:44,517 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 19:05:50,569 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Kullanıcı kaydı] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 19:06:01,718 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-12 19:06:13,864 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-12 19:06:19,013 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 19:06:26,106 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 19:06:38,221 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-12 19:06:43,371 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
