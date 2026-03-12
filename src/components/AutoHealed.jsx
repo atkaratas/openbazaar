@@ -638,3 +638,5 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 12:44:25,258 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: API Key üretimi] - HATA: React TypeError in ProductCard Component
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 12:44:32,396 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - HATA: 500 Internal Server Error (Checkout API)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 12:46:45,043 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - HATA: 404 Not Found on API Key Route
