@@ -4908,3 +4908,9 @@
 2026-03-12 22:05:49,241 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
 2026-03-12 22:05:58,389 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
 2026-03-12 22:06:04,524 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - HATA: React TypeError in ProductCard Component
+2026-03-12 22:06:13,663 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-12 22:06:25,749 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - HATA: 404 Not Found on API Key Route
+2026-03-12 22:06:39,762 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Ürün arama] - BAŞARILI
+2026-03-12 22:06:46,887 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-12 22:06:54,031 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-12 22:07:04,051 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI

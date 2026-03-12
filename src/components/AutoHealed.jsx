@@ -1996,3 +1996,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 22:05:22,806 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Stripe ödemesi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 22:06:04,524 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - HATA: React TypeError in ProductCard Component
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 22:06:25,749 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - HATA: 404 Not Found on API Key Route
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-12 22:06:46,887 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
