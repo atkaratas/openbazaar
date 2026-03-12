@@ -4555,3 +4555,10 @@
 2026-03-12 21:07:14,929 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
 2026-03-12 21:07:22,067 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: İndirim kodu uygulama] - BAŞARILI
 2026-03-12 21:07:29,211 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 21:07:44,347 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-12 21:07:53,488 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Ürün arama] - HATA: 404 Not Found on API Key Route
+2026-03-12 21:07:58,508 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-12 21:08:05,533 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 21:08:10,631 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-12 21:08:21,771 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-12 21:08:29,919 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Destek talebi oluşturma] - BAŞARILI
