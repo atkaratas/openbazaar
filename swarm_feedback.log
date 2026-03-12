@@ -4634,3 +4634,5 @@
 2026-03-12 21:20:28,971 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Favorilere ekleme] - BAŞARILI
 2026-03-12 21:20:41,099 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Giriş yapma] - BAŞARILI
 2026-03-12 21:20:56,230 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - HATA: 404 Not Found on API Key Route
+2026-03-12 21:21:01,296 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Giriş yapma] - HATA: Timeout on Stripe Webhook
+2026-03-12 21:21:12,444 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
