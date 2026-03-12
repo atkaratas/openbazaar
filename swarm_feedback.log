@@ -239,3 +239,9 @@
 2026-03-12 08:58:28,116 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
 2026-03-12 08:58:39,248 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
 2026-03-12 08:58:45,378 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Favorilere ekleme] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-12 08:58:56,384 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-12 08:59:06,527 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 08:59:18,656 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-12 08:59:32,804 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - HATA: 404 Not Found on API Key Route
+2026-03-12 08:59:42,954 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-12 08:59:50,094 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Favorilere ekleme] - BAŞARILI
