@@ -90,7 +90,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
                 <p className="text-sm font-bold text-slate-500 mb-1">B2C (Perakende)</p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-4xl font-black text-slate-900">€ {Number(product.price).toFixed(2)}</span>
-                  <span className="text-slate-500 font-medium">/ Adet</span>
+                  <span className="text-slate-500 font-medium">/ {product.unitType || 'KG'}</span>
                 </div>
               </div>
             </div>
@@ -100,12 +100,12 @@ export default function ProductDetailClient({ product }: { product: any }) {
                 <div className="absolute right-0 top-0 bottom-0 w-32 bg-purple-100 transform skew-x-12 translate-x-10 group-hover:translate-x-0 transition-transform"></div>
                 <div className="relative z-10">
                   <p className="text-sm font-bold text-purple-900 mb-1 flex items-center gap-1">
-                    <PackageCheck size={16} /> B2B (Toptan - Min {product.moq} Adet)
+                    <PackageCheck size={16} /> B2B (Toptan - Min {product.moq} {product.unitType || 'KG'})
                   </p>
                   <div className="flex items-baseline gap-2">
                     <span className="text-xl font-bold text-purple-700 line-through opacity-70">€ {Number(product.price).toFixed(2)}</span>
                     <span className="text-2xl font-black text-purple-700">€ ??.??</span>
-                    <span className="text-purple-600 font-medium">/ Adet</span>
+                    <span className="text-purple-600 font-medium">/ {product.unitType || 'KG'}</span>
                   </div>
                 </div>
                 <button 
@@ -120,7 +120,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
 
           <div className="flex flex-col sm:flex-row gap-4 mb-8 items-end">
             <div className="w-full sm:w-auto">
-              <label className="block text-sm font-bold text-gray-700 mb-2">Adet Seçiniz</label>
+              <label className="block text-sm font-bold text-gray-700 mb-2">{product.unitType || 'KG'} Seçiniz</label>
               <div className="flex items-center border-2 border-slate-200 rounded-xl overflow-hidden bg-white h-14 w-full sm:w-40">
                 <button 
                   onClick={() => setQty(Math.max(1, qty - 1))}
@@ -149,7 +149,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
 
           <div className="flex items-center gap-2 text-sm text-gray-500 mb-8 font-medium">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Stok: <span className="font-bold text-gray-700">{Math.floor(Math.random() * 5000) + 100} Adet</span> mevcut
+            Stok: <span className="font-bold text-gray-700">{product.stock || 0} {product.unitType || 'KG'}</span> mevcut
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-gray-200 pt-8">
