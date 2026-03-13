@@ -1,0 +1,55 @@
+{
+  "slug": "packaging-logistics",
+  "names": {
+    "tr": "Paketleme ve Lojistik",
+    "en": "Packaging & Logistics"
+  },
+  "children": [
+    {
+      "slug": "food-packaging",
+      "names": {
+        "tr": "Gıda Paketleme",
+        "en": "Food Packaging"
+      },
+      "children": [
+        {
+          "slug": "vacuum-bags",
+          "names": {
+            "tr": "Vakum Torbaları",
+            "en": "Vacuum Bags"
+          }
+        },
+        {
+          "slug": "glass-jars",
+          "names": {
+            "tr": "Cam Kaplar",
+            "en": "Glass Jars"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "pallets-crates",
+      "names": {
+        "tr": "Paletler ve Kasalar",
+        "en": "Pallets & Crates"
+      },
+      "children": [
+        {
+          "slug": "wooden-pallets",
+          "names": {
+            "tr": "Ahşap Paletler",
+            "en": "Wooden Pallets"
+          }
+        },
+        {
+          "slug": "plastic-crates",
+          "names": {
+            "tr": "Plastik Kasalar",
+            "en": "Plastic Crates"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "beverages",
+  "names": {
+    "tr": "İçecekler",
+    "en": "Beverages"
+  },
+  "children": [
+    {
+      "slug": "hot-beverages",
+      "names": {
+        "tr": "Sıcak İçecekler",
+        "en": "Hot Beverages"
+      },
+      "children": [
+        {
+          "slug": "coffee",
+          "names": {
+            "tr": "Kahve",
+            "en": "Coffee"
+          },
+          "children": [
+            {
+              "slug": "turkish-coffee",
+              "names": {
+                "tr": "Türk Kahvesi",
+                "en": "Turkish Coffee"
+              }
+            },
+            {
+              "slug": "espresso",
+              "names": {
+                "tr": "Espresso",
+                "en": "Espresso"
+              }
+            }
+          ]
+        },
+        {
+          "slug": "tea",
+          "names": {
+            "tr": "Çay",
+            "en": "Tea"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "cold-beverages",
+      "names": {
+        "tr": "Soğuk İçecekler",
+        "en": "Cold Beverages"
+      },
+      "children": [
+        {
+          "slug": "water",
+          "names": {
+            "tr": "Su ve Maden Suyu",
+            "en": "Water & Mineral Water"
+          }
+        },
+        {
+          "slug": "juice",
+          "names": {
+            "tr": "Meyve Suyu",
+            "en": "Juice"
+          }
+        }
+      ]
+    }
+  ]
+}

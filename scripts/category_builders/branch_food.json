@@ -1,0 +1,152 @@
+{
+  "slug": "food",
+  "names": {
+    "tr": "Gıda",
+    "en": "Food"
+  },
+  "children": [
+    {
+      "slug": "fruit-veg",
+      "names": {
+        "tr": "Meyve ve Sebze",
+        "en": "Fruits & Vegetables"
+      },
+      "children": [
+        {
+          "slug": "dried-fruits",
+          "names": {
+            "tr": "Kuru Meyve",
+            "en": "Dried Fruits"
+          },
+          "children": [
+            {
+              "slug": "apricot",
+              "names": {
+                "tr": "Kayısı",
+                "en": "Apricot"
+              }
+            },
+            {
+              "slug": "fig",
+              "names": {
+                "tr": "İncir",
+                "en": "Fig"
+              }
+            }
+          ]
+        },
+        {
+          "slug": "fresh-fruits",
+          "names": {
+            "tr": "Taze Meyve",
+            "en": "Fresh Fruits"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "slug": "snacks",
+      "names": {
+        "tr": "Atıştırmalıklar",
+        "en": "Snacks"
+      },
+      "children": [
+        {
+          "slug": "nuts",
+          "names": {
+            "tr": "Kuruyemiş",
+            "en": "Nuts"
+          },
+          "children": [
+            {
+              "slug": "pistachio",
+              "names": {
+                "tr": "Antep Fıstığı",
+                "en": "Pistachio"
+              }
+            },
+            {
+              "slug": "hazelnut",
+              "names": {
+                "tr": "Fındık",
+                "en": "Hazelnut"
+              }
+            },
+            {
+              "slug": "walnut",
+              "names": {
+                "tr": "Ceviz",
+                "en": "Walnut"
+              }
+            }
+          ]
+        },
+        {
+          "slug": "chocolate",
+          "names": {
+            "tr": "Çikolata",
+            "en": "Chocolate"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "pantry",
+      "names": {
+        "tr": "Temel Gıda",
+        "en": "Pantry"
+      },
+      "children": [
+        {
+          "slug": "legumes",
+          "names": {
+            "tr": "Bakliyat",
+            "en": "Legumes"
+          }
+        },
+        {
+          "slug": "oils",
+          "names": {
+            "tr": "Sıvı Yağlar",
+            "en": "Oils"
+          },
+          "children": [
+            {
+              "slug": "olive-oils",
+              "names": {
+                "tr": "Zeytinyağı",
+                "en": "Olive Oil"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "dairy",
+      "names": {
+        "tr": "Süt ve Süt Ürünleri",
+        "en": "Dairy"
+      },
+      "children": [
+        {
+          "slug": "cheese",
+          "names": {
+            "tr": "Peynir",
+            "en": "Cheese"
+          },
+          "children": [
+            {
+              "slug": "tulum-cheese",
+              "names": {
+                "tr": "Tulum Peyniri",
+                "en": "Tulum Cheese"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

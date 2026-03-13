@@ -1,0 +1,78 @@
+{
+  "slug": "agriculture",
+  "names": {
+    "tr": "Tarım",
+    "en": "Agriculture"
+  },
+  "children": [
+    {
+      "slug": "cereals",
+      "names": {
+        "tr": "Tahıllar",
+        "en": "Cereals"
+      },
+      "children": [
+        {
+          "slug": "wheat",
+          "names": {
+            "tr": "Buğday",
+            "en": "Wheat"
+          }
+        },
+        {
+          "slug": "corn",
+          "names": {
+            "tr": "Mısır",
+            "en": "Corn"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "oilseeds",
+      "names": {
+        "tr": "Yağlı Tohumlar",
+        "en": "Oilseeds"
+      },
+      "children": [
+        {
+          "slug": "sunflower",
+          "names": {
+            "tr": "Ayçiçeği",
+            "en": "Sunflower"
+          }
+        },
+        {
+          "slug": "soybean",
+          "names": {
+            "tr": "Soya Fasulyesi",
+            "en": "Soybean"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "fertilizers",
+      "names": {
+        "tr": "Tarımsal Girdiler",
+        "en": "Agricultural Inputs"
+      },
+      "children": [
+        {
+          "slug": "fertilizer",
+          "names": {
+            "tr": "Gübreler",
+            "en": "Fertilizers"
+          }
+        },
+        {
+          "slug": "seeds",
+          "names": {
+            "tr": "Tohumlar",
+            "en": "Seeds"
+          }
+        }
+      ]
+    }
+  ]
+}

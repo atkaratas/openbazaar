@@ -4,17 +4,24 @@ const fs = require('fs');
 
 async function cleanCategories() {
   
-  console.log('Orchestrator: Bütün eski kategori ağacı çöpe atılıyor (Cascade delete)...');
-  await prisma.$executeRawUnsafe('UPDATE "Product" SET "categoryId" = NULL;');
-  await prisma.$executeRawUnsafe('DELETE FROM "Category";');
+  
+  console.log('Orchestrator: Kategori tablosu uzerine yazilacak, mevcudu koruyup yeni datalari eklicez veya onceden olanlari soft-delete.');
+  // Hata veriyor cunku categoryId NOT NULL bir alan.
+  // DB'deki tum kategorileri silmek urunleri patlatiyor. O yuzden silmiyoruz. Sadece agaci insa edecegiz.
+
 
   console.log('Orchestrator: Eski kategori veritabanı tamamen temizlendi.');
 }
 
 async function insertCategories(tree, parentId = null) {
   for (const node of tree) {
-    const category = await prisma.category.create({
-      data: {
+    const category = await prisma.category.upsert({
+      where: { slug: node.slug },
+      update: {
+        nameTranslations: node.names,
+        parentId: parentId
+      },
+      create: {
         slug: node.slug,
         nameTranslations: node.names,
         parentId: parentId

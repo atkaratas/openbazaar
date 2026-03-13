@@ -1,0 +1,78 @@
+{
+  "slug": "livestock-meat",
+  "names": {
+    "tr": "Hayvancılık ve Et",
+    "en": "Livestock & Meat"
+  },
+  "children": [
+    {
+      "slug": "live-animals",
+      "names": {
+        "tr": "Canlı Hayvan",
+        "en": "Live Animals"
+      },
+      "children": [
+        {
+          "slug": "cattle",
+          "names": {
+            "tr": "Büyükbaş",
+            "en": "Cattle"
+          }
+        },
+        {
+          "slug": "sheep",
+          "names": {
+            "tr": "Küçükbaş",
+            "en": "Sheep/Goats"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "red-meat",
+      "names": {
+        "tr": "Kırmızı Et",
+        "en": "Red Meat"
+      },
+      "children": [
+        {
+          "slug": "beef",
+          "names": {
+            "tr": "Dana Eti",
+            "en": "Beef"
+          }
+        },
+        {
+          "slug": "lamb",
+          "names": {
+            "tr": "Kuzu Eti",
+            "en": "Lamb"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "white-meat",
+      "names": {
+        "tr": "Beyaz Et",
+        "en": "White Meat"
+      },
+      "children": [
+        {
+          "slug": "chicken",
+          "names": {
+            "tr": "Tavuk",
+            "en": "Chicken"
+          }
+        },
+        {
+          "slug": "turkey",
+          "names": {
+            "tr": "Hindi",
+            "en": "Turkey"
+          }
+        }
+      ]
+    }
+  ]
+}
