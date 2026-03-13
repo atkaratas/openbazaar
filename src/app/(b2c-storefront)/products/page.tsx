@@ -131,31 +131,7 @@ export default async function ProductsPage(props: any) {
 
         <div className="flex flex-col md:flex-row gap-8">
           <aside className="w-full md:w-64 flex-shrink-0">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 sticky top-24">
-              <h3 className="font-black text-slate-900 mb-4 uppercase tracking-wider text-sm border-b pb-2">Kategori Ağacı</h3>
-              <ul className="space-y-3 text-sm font-medium">
-                {!catSlug && <li><span className="text-gray-400 cursor-not-allowed">Lütfen Yandan Seçim Yapın</span></li>}
-                
-                {categories.map((cat: any) => {
-                  const isActive = catSlug === cat.slug;
-                  if (catSlug && !isActive) return null; 
-
-                  return (
-                    <li key={cat.id}>
-                      <Link href={`/products?category=${cat.slug}`} className={`flex items-center justify-between cursor-pointer transition-colors ${isActive ? 'text-emerald-600 font-black text-base border-l-4 border-emerald-500 pl-2 -ml-2' : 'text-slate-600 hover:text-emerald-500'}`}>
-                        {cat.nameTranslations?.tr || cat.slug}
-                        {isActive && <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">{mappedProducts.length}</span>}
-                      </Link>
-                    </li>
-                  )
-                })}
-                {catSlug && (
-                   <li className="pt-4 mt-4 border-t border-gray-100">
-                     <Link href="/products" className="text-blue-600 hover:underline font-bold text-xs">← Tüm Kategorilere Dön</Link>
-                   </li>
-                )}
-              </ul>
-            </div>
+            
             
             <FacetedSidebar />
             
