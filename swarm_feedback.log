@@ -8667,3 +8667,34 @@
 2026-03-13 08:42:35,120 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Destek talebi oluşturma] - BAŞARILI
 2026-03-13 08:42:44,150 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
 2026-03-13 08:42:57,298 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-13 08:43:06,444 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-13 08:43:14,484 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-13 08:43:20,630 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-13 08:43:28,647 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 08:43:33,713 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-13 08:43:48,862 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-13 08:43:55,006 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-13 08:44:07,150 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-13 08:44:22,285 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-13 08:44:35,342 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 08:44:44,488 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-13 08:44:50,579 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Ürün arama] - BAŞARILI
+2026-03-13 08:44:56,725 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-13 08:45:01,847 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 08:45:10,955 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 08:45:25,016 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 08:45:33,158 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-13 08:45:40,273 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-13 08:45:53,422 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 08:46:06,569 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-13 08:46:17,713 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-13 08:46:24,821 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-13 08:46:33,933 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 08:46:45,080 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-13 08:46:55,223 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-13 08:47:09,359 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - HATA: React TypeError in ProductCard Component
+2026-03-13 08:47:20,489 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-13 08:47:32,526 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: API Key üretimi] - HATA: Timeout on Stripe Webhook
+2026-03-13 08:47:39,600 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-13 08:47:47,747 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-13 08:47:54,856 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
