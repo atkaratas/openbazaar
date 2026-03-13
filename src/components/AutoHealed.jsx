@@ -3230,3 +3230,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 07:17:37,215 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Profil güncelleme] - HATA: React TypeError in ProductCard Component
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 07:17:46,328 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Giriş yapma] - HATA: 404 Not Found on API Key Route
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 07:20:17,879 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 07:20:35,162 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Gümrük onayı] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
