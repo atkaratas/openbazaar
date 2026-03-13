@@ -8759,3 +8759,8 @@
 2026-03-13 08:57:52,041 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
 2026-03-13 08:58:01,053 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kullanıcı kaydı] - BAŞARILI
 2026-03-13 08:58:07,059 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Giriş yapma] - HATA: Timeout on Stripe Webhook
+2026-03-13 08:58:19,080 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-13 08:58:33,203 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-13 08:58:41,253 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-13 08:58:55,262 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-13 08:59:10,404 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Ürün arama] - BAŞARILI
