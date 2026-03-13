@@ -8782,3 +8782,12 @@
 2026-03-13 09:01:55,161 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Destek talebi oluşturma] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
 2026-03-13 09:02:06,258 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
 2026-03-13 09:02:15,406 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-13 09:02:25,439 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 09:02:40,572 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-13 09:02:52,723 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-13 09:03:07,861 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 09:03:19,958 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-13 09:03:34,071 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-13 09:03:48,172 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
+2026-03-13 09:03:57,319 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-13 09:04:12,460 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
