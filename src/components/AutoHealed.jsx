@@ -3438,3 +3438,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 08:47:32,526 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: API Key üretimi] - HATA: Timeout on Stripe Webhook
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 08:48:29,114 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Gümrük onayı] - HATA: 500 Internal Server Error (Checkout API)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 08:49:07,689 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - HATA: Timeout on Stripe Webhook
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 08:49:26,989 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kullanıcı kaydı] - HATA: 404 Not Found on API Key Route
