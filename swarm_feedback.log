@@ -9202,3 +9202,9 @@
 2026-03-13 10:12:12,158 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
 2026-03-13 10:12:23,305 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
 2026-03-13 10:12:28,443 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Kargo takibi] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-13 10:12:43,483 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Ürün arama] - BAŞARILI
+2026-03-13 10:12:50,619 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-13 10:13:01,761 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-13 10:13:15,905 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 10:13:26,042 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kullanıcı kaydı] - HATA: Timeout on Stripe Webhook
+2026-03-13 10:13:38,076 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
