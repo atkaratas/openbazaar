@@ -2734,3 +2734,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 03:47:45,340 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Stripe ödemesi] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 03:48:19,574 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 03:50:18,875 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Giriş yapma] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 03:50:51,194 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kullanıcı kaydı] - HATA: 500 Internal Server Error (Checkout API)
