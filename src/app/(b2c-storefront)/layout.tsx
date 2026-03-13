@@ -1,6 +1,6 @@
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
-import FreshSidebar from "@/components/storefront/FreshSidebar"
+
 
 export default function StorefrontLayout({
   children,
@@ -25,7 +25,7 @@ export default function StorefrontLayout({
       <Navbar />
       
       <div className="flex flex-1 max-w-[1600px] w-full mx-auto relative">
-        <FreshSidebar />
+        
         <main className="flex-1 w-full bg-[#f8f9fa] pb-16 min-h-screen">
           {children}
         </main>

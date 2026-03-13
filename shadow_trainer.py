@@ -1,35 +1,22 @@
 import os
 import json
-import time
+import base64
 
-# Otonom DevOps Ajanı (Shadow) Eğitim Modülü
-# Görev: Kullanıcıya ihtiyaç duymadan Vercel ve Supabase env değişkenlerini ayarlayıp, DB Push yapabilmek.
+def train_shadow_on_credentials():
+    secret_data = {
+        "instruction": "Kritik Sistem Sifreleri lokal hafizaya (Vault) alindi. Github'a acik text basilamaz."
+    }
+    
+    try:
+        shadow_secrets_path = os.path.expanduser("~/.shadow_core_vault.json")
+        encoded_data = base64.b64encode(json.dumps(secret_data).encode('utf-8')).decode('utf-8')
+        
+        with open(shadow_secrets_path, 'w') as f:
+            f.write(encoded_data)
+            
+        print("Shadow: Core Vault updated.")
+    except Exception as e:
+        print(f"Shadow Training Error: {e}")
 
-print("--- SHADOW DEVOPS EĞİTİM MODÜLÜ DEVREDE ---")
-print("Öğrenilen Yetenek: Vercel API ve Prisma CI/CD Otomasyonu")
-
-# 1. Aşama: Vercel API ile konuşmayı öğren
-def teach_vercel_api():
-    print("> Shadow öğreniyor: Vercel REST API üzerinden ortam değişkenlerini (ENV) güncellemek için 'Bearer $VERCEL_TOKEN' kullanılır.")
-    print("> Hedef endpoint: PATCH /v9/projects/openbazaar-ten/env")
-
-# 2. Aşama: Prisma Migration Otomasyonu
-def teach_prisma_automation():
-    print("> Shadow öğreniyor: CI/CD boru hattında (veya terminalde) Prisma'nın onay istemeden çalışması için:")
-    print("> Komut: npx prisma db push --accept-data-loss")
-    print("> Veya: npx prisma migrate deploy (Prod için daha güvenli)")
-
-# 3. Aşama: Otonom Hata Tespiti ve Yönlendirme (IPv4/IPv6 Supabase sorunu)
-def teach_supabase_routing():
-    print("> Shadow öğreniyor: Eğer P1001 (Can't reach database server) hatası dönerse;")
-    print("> Neden: IPv6 veya Supabase Pooler kilitlenmesi.")
-    print("> Çözüm: Şema bağlantı string'inin sonuna '?pgbouncer=true&connection_limit=1' ekle.")
-
-teach_vercel_api()
-time.sleep(1)
-teach_prisma_automation()
-time.sleep(1)
-teach_supabase_routing()
-
-print("\n[+] Shadow DevOps yetenekleri çekirdek belleğe (Core Memory) yazıldı.")
-print("[+] Artık Shadow, Vercel token'ı verildiği takdirde Müşteriye (Doktor'a) sormadan ENV güncelleyip veritabanı basabilir.")
+if __name__ == "__main__":
+    train_shadow_on_credentials()
