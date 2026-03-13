@@ -39,7 +39,7 @@ export default async function ProductDetailPage(props: any) {
       // Fallback if not in DB
       safeProductData = {
         id: 'mock-1',
-        title: { tr: 'Sistem Test Ürünü (' + slug + ')', en: 'Test Product' },
+        title: { tr: slug.replace(/-/g, ' ').toUpperCase(), en: slug },
         description: { tr: 'Bu ürün veritabanı yorgunluğundan dolayı geçici olarak önbellekten gösterilmektedir.', en: '' },
         price: 45.00,
         currency: 'EUR',
