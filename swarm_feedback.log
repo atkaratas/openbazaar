@@ -7777,3 +7777,9 @@
 2026-03-13 06:11:38,397 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
 2026-03-13 06:11:50,450 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: İndirim kodu uygulama] - BAŞARILI
 2026-03-13 06:12:04,589 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-13 06:12:09,605 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 06:12:23,755 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-13 06:12:36,899 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-13 06:12:51,025 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-13 06:12:56,153 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Ürün arama] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-13 06:13:07,303 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
