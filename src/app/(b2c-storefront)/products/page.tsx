@@ -29,8 +29,18 @@ export default async function ProductsPage(props: any) {
       `;
       // ILIKE case-insensitive'dir ancak I/ı ve İ/i sorunu yaratabilir. 
       // PostgreSQL'de bunu aşmak için özel collate veya unaccent gerekir ama ILIKE %95 çözer.
-      const searchKeyword = `%${query}%`;
-      products = [] // Vercel DB migration bekliyor
+
+      products = await prisma.$queryRawUnsafe(`
+        SELECT * FROM "Product"
+        WHERE "isPublished" = true
+        AND (
+          "titleTranslations"->>'tr' ILIKE $1 
+          OR "titleTranslations"->>'en' ILIKE $1
+          OR "descriptionTranslations"->>'tr' ILIKE $1
+        )
+        LIMIT 100;
+      `, `%${query}%`);
+
       
       // Store ilişkisini manuel bağlamamız gerekebilir çünkü queryRaw relation getirmez!
       // Çözüm: ID'leri alıp findMany ile tekrar çekmek:
