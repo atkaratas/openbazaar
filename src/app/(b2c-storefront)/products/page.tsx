@@ -1,5 +1,6 @@
 import ProductCard from '@/components/storefront/ProductCard'
 import FacetedSidebar from '@/components/storefront/FacetedSidebar'
+import { getCachedData, setCachedData } from '@/lib/redis'
 import prisma from '@/lib/db'
 import Link from 'next/link'
 
@@ -14,57 +15,40 @@ export default async function ProductsPage(props: any) {
   let categories: any[] = [];
   try {
     
-    if (query) {
-      // Gerçek SQL Full-Text Search (JSONB içinde ILIKE araması)
-      // Bu sayede 5000 ürünün tamamı taranır, JavaScript memory filter'da kaybolmaz.
-      const rawQuery = `
-        SELECT * FROM "Product"
-        WHERE "isPublished" = true
-        AND (
-          "titleTranslations"->>'tr' ILIKE $1 
-          OR "titleTranslations"->>'en' ILIKE $1
-          OR "descriptionTranslations"->>'tr' ILIKE $1
-        )
-        LIMIT 100;
-      `;
-      // ILIKE case-insensitive'dir ancak I/ı ve İ/i sorunu yaratabilir. 
-      // PostgreSQL'de bunu aşmak için özel collate veya unaccent gerekir ama ILIKE %95 çözer.
-
-      products = await prisma.$queryRawUnsafe(`
-        SELECT * FROM "Product"
-        WHERE "isPublished" = true
-        AND (
-          "titleTranslations"->>'tr' ILIKE $1 
-          OR "titleTranslations"->>'en' ILIKE $1
-          OR "descriptionTranslations"->>'tr' ILIKE $1
-        )
-        LIMIT 100;
-      `, `%${query}%`);
-
-      
-      // Store ilişkisini manuel bağlamamız gerekebilir çünkü queryRaw relation getirmez!
-      // Çözüm: ID'leri alıp findMany ile tekrar çekmek:
-      const productIds = products.map((p: any) => p.id);
-      products = await prisma.product.findMany({
-        // Vercel DB'de yeni kolonlar yok, select ile sadece var olanlari cek
-        select: { id: true, titleTranslations: true, basePrice: true, baseCurrency: true, storeId: true, store: true, category: true, images: true },
-        where: { id: { in: productIds } }
-      });
-
-    } else {
-      products = await prisma.product.findMany({
-        // Vercel DB'de yeni kolonlar yok, select ile sadece var olanlari cek
-        select: { id: true, titleTranslations: true, basePrice: true, baseCurrency: true, storeId: true, store: true, category: true, images: true },
-        where: catSlug ? { category: { slug: catSlug } } : {},
-        take: 70,
-        orderBy: { createdAt: 'desc' }
-      })
-    }
-
-    categories = await prisma.category.findMany({ where: { parentId: null }, orderBy: { slug: 'asc' } })
+    const cacheKey = `search:${query}:${catSlug}`;
     
-    // YENI EKLENEN KOLONLARI SIL:
-    products = products.map(p => ({...p, isColdChain: false}));
+    // 1. Önce Redis Cache'e bak (Veritabanını ve Elastic'i koru)
+    let cachedProducts = await getCachedData(cacheKey);
+    if (cachedProducts) {
+        products = cachedProducts as any[];
+    } else {
+        // 2. Cache boşsa Prisma (veya Elasticsearch) üzerinden ağır sorguyu yap
+        if (query) {
+          products = await prisma.$queryRawUnsafe(`
+            SELECT * FROM "Product"
+            WHERE "isPublished" = true
+            AND (
+              "titleTranslations"->>'tr' ILIKE $1 
+              OR "titleTranslations"->>'en' ILIKE $1
+              OR "descriptionTranslations"->>'tr' ILIKE $1
+            )
+            LIMIT 100;
+          `, `%${query}%`);
+        } else {
+          products = await prisma.product.findMany({
+            select: { id: true, titleTranslations: true, basePrice: true, baseCurrency: true, storeId: true, store: true, category: true, images: true, isColdChain: true },
+            where: catSlug ? { category: { slug: catSlug } } : {},
+            take: 70,
+            orderBy: { createdAt: 'desc' }
+          });
+        }
+        
+        // YENI EKLENEN KOLONLARI DUZELT VE CACHE'E YAZ (1 Saat)
+        products = products.map(p => ({...p, isColdChain: p.isColdChain || false}));
+        if (products.length > 0) {
+            await setCachedData(cacheKey, products, 3600); // 3600 saniye = 1 saat cache
+        }
+    }
   } catch (error: any) {
     if (process.env.DATABASE_URL) console.error("Database connection failed during render:", error);
   }
