@@ -9642,3 +9642,11 @@
 2026-03-13 11:26:37,682 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Giriş yapma] - HATA: 404 Not Found on API Key Route
 2026-03-13 11:26:47,391 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
 2026-03-13 11:26:56,743 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-13 11:27:02,147 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-13 11:27:16,690 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-13 11:27:24,049 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-13 11:27:36,860 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-13 11:27:48,336 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Şifre sıfırlama] - HATA: 404 Not Found on API Key Route
+2026-03-13 11:27:58,206 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-13 11:28:11,510 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 11:28:19,164 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: API Key üretimi] - BAŞARILI
