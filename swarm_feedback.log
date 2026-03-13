@@ -9520,3 +9520,8 @@
 2026-03-13 11:05:12,009 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
 2026-03-13 11:05:21,150 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
 2026-03-13 11:05:31,167 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 11:05:44,244 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-13 11:05:53,325 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: API Key üretimi] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 11:06:08,462 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-13 11:06:23,612 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 11:06:32,641 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
