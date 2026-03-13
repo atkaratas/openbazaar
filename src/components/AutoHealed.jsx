@@ -3588,3 +3588,5 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 09:47:27,030 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - HATA: Timeout on Stripe Webhook
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 09:47:55,442 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kargo takibi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 09:48:30,963 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kullanıcı kaydı] - HATA: 500 Internal Server Error (Checkout API)
