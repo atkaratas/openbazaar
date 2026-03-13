@@ -7732,3 +7732,10 @@
 2026-03-13 06:04:16,925 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
 2026-03-13 06:04:31,928 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: İndirim kodu uygulama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
 2026-03-13 06:04:47,070 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-13 06:05:01,217 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-13 06:05:08,367 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-13 06:05:14,490 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-13 06:05:21,498 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-13 06:05:33,516 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: API Key üretimi] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-13 06:05:47,665 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-13 06:05:59,758 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
