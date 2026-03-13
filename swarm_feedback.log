@@ -8442,3 +8442,8 @@
 2026-03-13 08:03:45,896 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Gümrük onayı] - BAŞARILI
 2026-03-13 08:03:59,042 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - HATA: Timeout on Stripe Webhook
 2026-03-13 08:04:11,192 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Çoklu para birimi değişimi] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 08:04:25,268 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 08:04:40,409 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-13 08:04:50,547 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Favorilere ekleme] - HATA: 404 Not Found on API Key Route
+2026-03-13 08:04:58,585 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Favorilere ekleme] - HATA: Timeout on Stripe Webhook
+2026-03-13 08:05:10,643 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
