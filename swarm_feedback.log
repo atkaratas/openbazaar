@@ -9018,3 +9018,10 @@
 2026-03-13 09:41:40,522 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: İndirim kodu uygulama] - BAŞARILI
 2026-03-13 09:41:46,540 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
 2026-03-13 09:41:51,542 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kargo takibi] - HATA: React TypeError in ProductCard Component
+2026-03-13 09:42:01,605 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 09:42:12,680 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-13 09:42:23,755 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Ürün arama] - HATA: React TypeError in ProductCard Component
+2026-03-13 09:42:35,819 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-13 09:42:42,887 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - BAŞARILI
+2026-03-13 09:42:56,944 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Yorum ve puanlama] - HATA: 404 Not Found on API Key Route
+2026-03-13 09:43:02,966 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: API Key üretimi] - HATA: Timeout on Stripe Webhook
