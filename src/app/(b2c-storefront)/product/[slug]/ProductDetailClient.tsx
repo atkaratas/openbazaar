@@ -9,7 +9,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
   const [showAiModal, setShowAiModal] = useState(false)
 
   const [chatMessages, setChatMessages] = useState<{role: 'ai'|'user', text: string}[]>([
-    { role: 'ai', text: `Merhaba! Ben ${product.store?.name || 'Tedarikçi'} firmasının dijital satış temsilcisiyim. Şu an ${product.titleTranslations?.tr || 'bu ürünü'} inceliyorsunuz. Normal perakende satış fiyatımız ${Number(product.basePrice).toFixed(2)}€. Kaç kilo/adet almayı planlıyorsunuz? Belki fiyatı biraz daha konuşabiliriz. Ne dersiniz?` }
+    { role: 'ai', text: `Merhaba! Ben ${product.store?.name || 'Tedarikçi'} firmasının dijital satış temsilcisiyim. Şu an ${product.titleTranslations?.tr || 'bu ürünü'} inceliyorsunuz. Normal perakende satış fiyatımız ${Number(product.price).toFixed(2)}€. Kaç kilo/adet almayı planlıyorsunuz? Belki fiyatı biraz daha konuşabiliriz. Ne dersiniz?` }
   ])
   const [chatInput, setChatInput] = useState('')
   const [isTyping, setIsTyping] = useState(false)
@@ -39,7 +39,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
     addItem({
       id: product.id,
       title: product.titleTranslations,
-      price: Number(product.basePrice),
+      price: Number(product.price),
       currency: product.baseCurrency,
       quantity: qty,
       image: (product.images && product.images.length > 0) ? product.images[0] : '/placeholder-food.jpg',
@@ -52,8 +52,8 @@ export default function ProductDetailClient({ product }: { product: any }) {
 
   const isB2bEligible = product.moq && product.moq > 1
   const b2bDiscount = 0.25 
-  const b2bPrice = Number(product.basePrice) * (1 - b2bDiscount)
-  const totalPrice = (Number(product.basePrice) * qty).toFixed(2);
+  const b2bPrice = Number(product.price) * (1 - b2bDiscount)
+  const totalPrice = (Number(product.price) * qty).toFixed(2);
 
   return (
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -89,7 +89,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
               <div>
                 <p className="text-sm font-bold text-slate-500 mb-1">B2C (Perakende)</p>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-black text-slate-900">€ {Number(product.basePrice).toFixed(2)}</span>
+                  <span className="text-4xl font-black text-slate-900">€ {Number(product.price).toFixed(2)}</span>
                   <span className="text-slate-500 font-medium">/ Adet</span>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
                     <PackageCheck size={16} /> B2B (Toptan - Min {product.moq} Adet)
                   </p>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-xl font-bold text-purple-700 line-through opacity-70">€ {Number(product.basePrice).toFixed(2)}</span>
+                    <span className="text-xl font-bold text-purple-700 line-through opacity-70">€ {Number(product.price).toFixed(2)}</span>
                     <span className="text-2xl font-black text-purple-700">€ ??.??</span>
                     <span className="text-purple-600 font-medium">/ Adet</span>
                   </div>
