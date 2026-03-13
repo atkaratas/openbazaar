@@ -9588,3 +9588,10 @@
 2026-03-13 11:17:23,590 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Giriş yapma] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
 2026-03-13 11:17:29,691 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Favorilere ekleme] - BAŞARILI
 2026-03-13 11:17:40,833 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-13 11:17:55,926 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Giriş yapma] - HATA: Timeout on Stripe Webhook
+2026-03-13 11:18:04,931 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-13 11:18:13,074 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 11:18:18,192 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-13 11:18:33,240 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Gümrük onayı] - HATA: React TypeError in ProductCard Component
+2026-03-13 11:18:44,256 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 11:18:54,404 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kullanıcı kaydı] - BAŞARILI
