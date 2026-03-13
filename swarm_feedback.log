@@ -8530,3 +8530,9 @@
 2026-03-13 08:19:01,761 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Stripe ödemesi] - BAŞARILI
 2026-03-13 08:19:16,861 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
 2026-03-13 08:19:28,873 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 08:19:39,024 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Şifre sıfırlama] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 08:19:54,144 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 08:20:05,291 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-13 08:20:12,441 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-13 08:20:17,443 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 08:20:26,584 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: AI ile pazarlık] - BAŞARILI
