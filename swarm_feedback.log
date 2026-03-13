@@ -6812,3 +6812,8 @@
 2026-03-13 03:28:56,075 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Sepete ürün ekleme] - BAŞARILI
 2026-03-13 03:29:11,106 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: Timeout on Stripe Webhook
 2026-03-13 03:29:17,250 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: React TypeError in ProductCard Component
+2026-03-13 03:29:32,383 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 03:29:45,415 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 03:29:56,494 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-13 03:30:09,642 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-13 03:30:16,792 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Kullanıcı kaydı] - BAŞARILI
