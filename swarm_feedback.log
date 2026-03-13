@@ -9025,3 +9025,9 @@
 2026-03-13 09:42:42,887 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - BAŞARILI
 2026-03-13 09:42:56,944 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Yorum ve puanlama] - HATA: 404 Not Found on API Key Route
 2026-03-13 09:43:02,966 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: API Key üretimi] - HATA: Timeout on Stripe Webhook
+2026-03-13 09:43:11,012 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Şifre sıfırlama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-13 09:43:16,079 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 09:43:28,137 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-13 09:43:36,175 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Profil güncelleme] - HATA: 404 Not Found on API Key Route
+2026-03-13 09:43:50,248 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-13 09:44:02,322 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Stripe ödemesi] - BAŞARILI
