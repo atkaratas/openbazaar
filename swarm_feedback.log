@@ -9620,3 +9620,10 @@
 2026-03-13 11:22:57,792 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Stripe ödemesi] - BAŞARILI
 2026-03-13 11:23:08,423 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
 2026-03-13 11:23:13,553 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: İndirim kodu uygulama] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 11:23:29,447 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 11:23:38,752 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kargo takibi] - BAŞARILI
+2026-03-13 11:23:47,094 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: API Key üretimi] - BAŞARILI
+2026-03-13 11:23:57,857 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-13 11:24:09,274 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Ürün arama] - HATA: Timeout on Stripe Webhook
+2026-03-13 11:24:22,019 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-13 11:24:33,133 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
