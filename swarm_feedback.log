@@ -8999,3 +8999,10 @@
 2026-03-13 09:38:27,577 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Profil güncelleme] - BAŞARILI
 2026-03-13 09:38:41,615 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
 2026-03-13 09:38:47,759 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-13 09:39:00,800 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Favorilere ekleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-13 09:39:11,939 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-13 09:39:23,084 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-13 09:39:29,233 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Kullanıcı kaydı] - BAŞARILI
+2026-03-13 09:39:36,380 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: API Key üretimi] - HATA: React TypeError in ProductCard Component
+2026-03-13 09:39:41,505 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - HATA: 404 Not Found on API Key Route
+2026-03-13 09:39:55,646 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
