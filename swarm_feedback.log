@@ -7911,3 +7911,8 @@
 2026-03-13 06:34:08,738 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Giriş yapma] - BAŞARILI
 2026-03-13 06:34:17,875 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: AI ile pazarlık] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
 2026-03-13 06:34:32,012 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Giriş yapma] - BAŞARILI
+2026-03-13 06:34:45,161 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-13 06:34:56,309 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-13 06:35:03,459 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Şifre sıfırlama] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-13 06:35:18,609 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-13 06:35:27,735 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Gümrük onayı] - HATA: React TypeError in ProductCard Component
