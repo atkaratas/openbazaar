@@ -3,10 +3,11 @@ const prisma = new PrismaClient();
 const fs = require('fs');
 
 async function cleanCategories() {
+  
   console.log('Orchestrator: Bütün eski kategori ağacı çöpe atılıyor (Cascade delete)...');
-  // First disconnect products from categories to avoid foreign key constraints failing
-  await prisma.product.updateMany({ data: { categoryId: null } });
-  await prisma.category.deleteMany({});
+  await prisma.$executeRawUnsafe('UPDATE "Product" SET "categoryId" = NULL;');
+  await prisma.$executeRawUnsafe('DELETE FROM "Category";');
+
   console.log('Orchestrator: Eski kategori veritabanı tamamen temizlendi.');
 }
 
