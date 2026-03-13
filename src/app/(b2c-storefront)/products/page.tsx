@@ -63,13 +63,8 @@ export default async function ProductsPage(props: any) {
 
   // Veritabanı henüz boşsa veya migration yapılmadıysa ekranda ürün görünmesi için Dummy (Mock) Veriler
 
-  if (products.length === 0) {
-      // Placeholder data while DB connection is failing
-      products = [
-        { id: '1', slug: 'erken-hasat-soguk-sikim-5l', titleTranslations: { tr: 'Erken Hasat Soğuk Sıkım Zeytinyağı 5L' }, basePrice: 45.00, baseCurrency: 'EUR', store: { name: 'Ege Bahçesi' }, isColdChain: false },
-        { id: '2', slug: 'antep-fistigi-1kg', titleTranslations: { tr: 'Antep Fıstığı Çifte Kavrulmuş (1 KG)' }, basePrice: 28.00, baseCurrency: 'EUR', store: { name: 'Antep Pazarı' }, isColdChain: false },
-        { id: '3', slug: 'tulum-peyniri', titleTranslations: { tr: 'Erzincan Tulum Peyniri (500 gr)' }, basePrice: 12.00, baseCurrency: 'EUR', store: { name: 'Süt Diyarı' }, isColdChain: true },
-      ];
+  if (products.length === 0 && !query) {
+      products = [];
     }
   }
 
