@@ -6748,3 +6748,13 @@
 2026-03-13 03:16:56,190 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Ürün arama] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
 2026-03-13 03:17:05,304 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Favorilere ekleme] - HATA: Timeout on Stripe Webhook
 2026-03-13 03:17:14,450 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-13 03:17:28,523 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-13 03:17:40,592 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 03:17:49,723 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sepete ürün ekleme] - BAŞARILI
+2026-03-13 03:17:57,826 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-13 03:18:07,972 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-13 03:18:23,115 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-13 03:18:33,203 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-13 03:18:45,218 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Gümrük onayı] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+2026-03-13 03:18:56,325 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-13 03:19:08,465 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Yorum ve puanlama] - BAŞARILI
