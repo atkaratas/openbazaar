@@ -31,10 +31,10 @@ export default function ProductCard({ product, locale = 'en' }: ProductCardProps
     const btn = e.currentTarget as HTMLButtonElement
     const originalText = btn.innerHTML
     btn.innerHTML = '✅'
-    btn.classList.add('bg-emerald-600', 'text-white')
+    btn.classList.add('bg-blue-600', 'text-white')
     setTimeout(() => {
       btn.innerHTML = originalText
-      btn.classList.remove('bg-emerald-600', 'text-white')
+      btn.classList.remove('bg-blue-600', 'text-white')
     }, 1500)
   }
 
@@ -58,7 +58,7 @@ export default function ProductCard({ product, locale = 'en' }: ProductCardProps
       </div>
 
       <div className="p-5 flex flex-col flex-grow">
-        <div className="text-xs font-medium text-emerald-600 mb-2 flex items-center justify-between">
+        <div className="text-xs font-medium text-blue-600 mb-2 flex items-center justify-between">
           <Link href={`/store/${product.storeId}`} className="truncate hover:underline flex items-center gap-1" onClick={(e) => e.stopPropagation()}>
             <span className="bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded text-[10px] font-bold">Verified</span>
             {product.storeName}
@@ -83,7 +83,7 @@ export default function ProductCard({ product, locale = 'en' }: ProductCardProps
           
           <button 
             onClick={handleAddToCart}
-            className="h-8 w-8 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-colors z-10"
+            className="h-8 w-8 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors z-10"
           >
             <ShoppingBag size={14} />
           </button>

@@ -33,24 +33,24 @@ export default async function HomePage() {
   }));
 
   return (
-    <div className="min-h-screen bg-[#FDFCF8] font-sans selection:bg-[#5B821D]/20">
+    <div className="min-h-screen bg-gray-50 font-sans selection:bg-blue-100">
       
       {/* Fresh Hero Section */}
-      <section className="w-full relative bg-[#F3F7ED] p-6 lg:p-12 mb-8 border-b border-[#e1ebd2]">
+      <section className="w-full relative bg-white p-6 lg:p-12 mb-8 border-b border-gray-200">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 justify-between">
           <div className="flex-1 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#5B821D] font-bold text-xs uppercase tracking-widest rounded border border-[#5B821D]/20">
-              <span className="w-2 h-2 rounded-full bg-[#5B821D] animate-pulse"></span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-blue-600 font-bold text-xs uppercase tracking-widest rounded border border-blue-100">
+              <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
               Taze & Lokal
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-slate-900 leading-[1.1] tracking-tight">
-              Anadolu'nun Hasadı <br/> <span className="text-[#5B821D]">Kapınızda.</span>
+              Anadolu'nun Hasadı <br/> <span className="text-blue-600">Kapınızda.</span>
             </h1>
             <p className="text-lg text-slate-600 max-w-xl font-medium">
               Soğuk zincir garantisiyle, tarladan sofranıza taze gıda ihracatı. Gurme ürünleri şimdi global DHL ağıyla sipariş edin.
             </p>
             <div className="pt-2">
-              <Link href="/products" className="inline-flex items-center gap-2 bg-[#5B821D] hover:bg-[#4a6b16] text-white px-8 py-3.5 rounded-full font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+              <Link href="/products" className="inline-flex items-center gap-2 bg-blue-600 hover:bg-[#4a6b16] text-white px-8 py-3.5 rounded-full font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 Kataloğu İncele
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -74,7 +74,7 @@ export default async function HomePage() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
             Haftanın Seçilmiş Ürünleri
           </h2>
-          <Link href="/products" className="text-[#5B821D] font-semibold hover:underline underline-offset-4">
+          <Link href="/products" className="text-blue-600 font-semibold hover:underline underline-offset-4">
             Tümünü Gör
           </Link>
         </div>
@@ -96,7 +96,7 @@ export default async function HomePage() {
                 <span className="text-xs font-bold text-slate-400 mb-1 uppercase tracking-wide">
                   {product.storeName}
                 </span>
-                <Link href={`/product/${product.id}`} className="text-sm md:text-base font-semibold text-slate-900 leading-snug line-clamp-2 mb-3 hover:text-[#5B821D]">
+                <Link href={`/product/${product.id}`} className="text-sm md:text-base font-semibold text-slate-900 leading-snug line-clamp-2 mb-3 hover:text-blue-600">
                   {product.title?.tr || 'İsimsiz Ürün'}
                 </Link>
                 
@@ -106,7 +106,7 @@ export default async function HomePage() {
                   </div>
                   
                   {/* FreshDirect Quick Add Button */}
-                  <button className="w-full bg-white border-2 border-[#5B821D] text-[#5B821D] hover:bg-[#5B821D] hover:text-white font-bold py-2 rounded-lg transition-colors flex items-center justify-center gap-2">
+                  <button className="w-full bg-white border-2 border-[#5B821D] text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-2 rounded-lg transition-colors flex items-center justify-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>
