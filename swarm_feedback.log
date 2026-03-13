@@ -9442,3 +9442,8 @@
 2026-03-13 10:53:08,960 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Yorum ve puanlama] - BAŞARILI
 2026-03-13 10:53:14,060 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
 2026-03-13 10:53:19,131 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Ürün arama] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-13 10:53:29,192 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Stripe ödemesi] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 10:53:40,245 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-13 10:53:50,258 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-13 10:54:05,279 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Gümrük onayı] - HATA: 404 Not Found on API Key Route
+2026-03-13 10:54:12,422 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Profil güncelleme] - BAŞARILI
