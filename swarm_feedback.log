@@ -6764,3 +6764,8 @@
 2026-03-13 03:19:49,879 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Profil güncelleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
 2026-03-13 03:19:56,991 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Stripe ödemesi] - BAŞARILI
 2026-03-13 03:20:11,140 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-13 03:20:22,271 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Destek talebi oluşturma] - HATA: 404 Not Found on API Key Route
+2026-03-13 03:20:36,416 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - HATA: Timeout on Stripe Webhook
+2026-03-13 03:20:50,547 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sepete ürün ekleme] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+2026-03-13 03:21:00,587 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-13 03:21:12,738 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
