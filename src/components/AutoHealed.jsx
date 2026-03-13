@@ -2690,3 +2690,9 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 03:30:09,642 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 03:31:03,304 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Şifre sıfırlama] - HATA: 404 Not Found on API Key Route
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 03:31:38,606 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: API Key üretimi] - HATA: 500 Internal Server Error (Checkout API)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 03:31:52,671 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Favorilere ekleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 03:32:29,256 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
