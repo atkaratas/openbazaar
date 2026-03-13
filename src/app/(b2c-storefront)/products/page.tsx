@@ -76,7 +76,6 @@ export default async function ProductsPage(props: any) {
   if (products.length === 0 && !query) {
       products = [];
     }
-  }
 
   
   if (categories.length === 0) {

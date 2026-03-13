@@ -1,12 +1,20 @@
 'use client'
+import { useEffect } from 'react'
 
 import { useState } from 'react'
 import { useCart } from '@/store/useCart'
 import { ShieldCheck, Truck, CreditCard, Lock, Trash2, Plus, Minus, Tag } from 'lucide-react'
 
 export default function CheckoutPage() {
+  
   const { items, getTotal, removeItem, updateQuantity } = useCart()
+  const [isMounted, setIsMounted] = useState(false)
+  
+  
+  useEffect(() => { setIsMounted(true) }, [])
+
   const [isProcessing, setIsProcessing] = useState(false)
+
   
   // Kampanya State'leri
   const [discountCode, setDiscountCode] = useState('')
@@ -16,8 +24,8 @@ export default function CheckoutPage() {
   const requiresColdChain = items.some(item => (item as any).isColdChain)
 
   // Hesaplamalar
-  const subtotal = getTotal()
-  const shipping = items.length === 0 ? 0 : (requiresColdChain ? 45 : 24.5)
+  const subtotal = isMounted ? getTotal() : 0
+  const shipping = (!isMounted || items.length === 0) ? 0 : (requiresColdChain ? 45 : 24.5)
   const discountAmount = (subtotal * discountApplied) / 100
   const grandTotal = subtotal - discountAmount + shipping
   const originalGrandTotal = subtotal + shipping
