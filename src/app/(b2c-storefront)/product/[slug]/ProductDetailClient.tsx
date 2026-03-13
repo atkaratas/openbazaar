@@ -15,22 +15,37 @@ export default function ProductDetailClient({ product }: { product: any }) {
   const [isTyping, setIsTyping] = useState(false)
   const [dealCode, setDealCode] = useState<string|null>(null)
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if(!chatInput.trim()) return;
     const userMsg = chatInput.trim();
     setChatMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setChatInput('');
     setIsTyping(true);
 
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/v1/quotes/ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          userMessage: userMsg, 
+          productName: product.titleTranslations?.tr || 'Ürün',
+          basePrice: product.price,
+          quantity: qty 
+        })
+      });
+      const data = await res.json();
+      
+      setChatMessages(prev => [...prev, { role: 'ai', text: data.reply }]);
+      
+      const dealMatch = data.reply.match(/AI-DEAL-(\d+)/i);
+      if (dealMatch) {
+        setDealCode(dealMatch[0].toUpperCase());
+      }
+    } catch (e) {
+      setChatMessages(prev => [...prev, { role: 'ai', text: 'Sistem şu an meşgul, pazarlık motoruna ulaşılamıyor.' }]);
+    } finally {
       setIsTyping(false);
-      // Basit bir if/else tabanli simulasyon: eger musteri bir miktar veya fiyat teklif ederse anlasalim
-      setChatMessages(prev => [
-        ...prev, 
-        { role: 'ai', text: `Harika bir teklif! Satış müdürüyle anlık teyitleştim, bu miktar için fiyatı sizin için özel olarak revize edebiliriz. Anlaştık! Kasanızda kullanmanız için size özel indirim kodu oluşturdum: **AI-DEAL-30**. Bu kodu sepette kullandığınızda faturanıza anında %30 indirim yansıyacaktır.` }
-      ]);
-      setDealCode('AI-DEAL-30');
-    }, 1500);
+    }
   }
 
   const addItem = useCart((state) => state.addItem)
