@@ -1,5 +1,5 @@
 const { PrismaClient } = require('@prisma/client')
-require('dotenv').config()
+require('dotenv').config({ path: ".env.local" })
 
 // Prisma v7 uses standard constructor if datasource is in prisma.config.ts but since we run raw script we just omit options that throw
 const prisma = new PrismaClient()
