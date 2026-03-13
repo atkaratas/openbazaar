@@ -9360,3 +9360,9 @@
 2026-03-13 10:39:37,869 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Favorilere ekleme] - HATA: React TypeError in ProductCard Component
 2026-03-13 10:39:48,984 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
 2026-03-13 10:40:03,133 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-13 10:40:18,271 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Çoklu para birimi değişimi] - BAŞARILI
+2026-03-13 10:40:26,353 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Şifre sıfırlama] - BAŞARILI
+2026-03-13 10:40:39,497 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: API Key üretimi] - HATA: Timeout on Stripe Webhook
+2026-03-13 10:40:47,610 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: İndirim kodu uygulama] - BAŞARILI
+2026-03-13 10:41:01,757 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: AI ile pazarlık] - BAŞARILI
+2026-03-13 10:41:08,878 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Kullanıcı kaydı] - BAŞARILI
