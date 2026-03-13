@@ -9301,3 +9301,9 @@
 2026-03-13 10:29:24,630 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
 2026-03-13 10:29:37,768 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Ürün arama] - BAŞARILI
 2026-03-13 10:29:50,918 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
+2026-03-13 10:29:59,065 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - BAŞARILI
+2026-03-13 10:30:07,215 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Favorilere ekleme] - BAŞARILI
+2026-03-13 10:30:15,351 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Kargo takibi] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 10:30:28,480 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Profil güncelleme] - BAŞARILI
+2026-03-13 10:30:36,561 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Gümrük onayı] - BAŞARILI
+2026-03-13 10:30:47,696 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - BAŞARILI
