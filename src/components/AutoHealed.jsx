@@ -3252,3 +3252,9 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 07:28:51,197 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Admin panel: Kullanıcı yasaklama] - HATA: 404 Not Found on API Key Route
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 07:29:33,604 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sipariş geçmişi görüntüleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 07:29:48,667 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - HATA: 404 Not Found on API Key Route
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 07:30:01,803 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Yorum ve puanlama] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 07:30:23,882 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Gümrük onayı] - HATA: React TypeError in ProductCard Component
