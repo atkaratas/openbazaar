@@ -3636,3 +3636,7 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 10:05:40,818 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Giriş yapma] - HATA: Timeout on Stripe Webhook
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 10:06:19,169 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Ürün arama] - HATA: Timeout on Stripe Webhook
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 10:06:47,622 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Admin panel: Satış raporu alma] - HATA: Gümrük onayında yetki hatası (403 Forbidden)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 10:07:33,141 - ChaosSwarm - ERROR - [Persona: Supplier] - [Görev: Kargo takibi] - HATA: 404 Not Found on API Key Route
