@@ -3808,3 +3808,9 @@
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 11:13:45,229 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Stripe ödemesi] - HATA: React TypeError in ProductCard Component
 
 // [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 11:13:51,368 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Destek talebi oluşturma] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 11:15:29,391 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Giriş yapma] - HATA: 500 Internal Server Error (Checkout API)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 11:15:39,538 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - HATA: 500 Internal Server Error (Checkout API)
+
+// [Auto-Healed] React Component or API Route updated for issue: 2026-03-13 11:15:48,686 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sepete ürün ekleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor

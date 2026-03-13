@@ -9571,3 +9571,9 @@
 2026-03-13 11:14:15,814 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Destek talebi oluşturma] - BAŞARILI
 2026-03-13 11:14:26,959 - ChaosSwarm - INFO - [Persona: Admin] - [Görev: Favorilere ekleme] - BAŞARILI
 2026-03-13 11:14:41,005 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Yorum ve puanlama] - BAŞARILI
+2026-03-13 11:14:53,023 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Admin panel: Satış raporu alma] - BAŞARILI
+2026-03-13 11:15:04,172 - ChaosSwarm - INFO - [Persona: Supplier] - [Görev: Ürün arama] - BAŞARILI
+2026-03-13 11:15:17,248 - ChaosSwarm - INFO - [Persona: Customer] - [Görev: Sipariş geçmişi görüntüleme] - BAŞARILI
+2026-03-13 11:15:29,391 - ChaosSwarm - ERROR - [Persona: Customer] - [Görev: Giriş yapma] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 11:15:39,538 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Tedarikçi envanter güncelleme] - HATA: 500 Internal Server Error (Checkout API)
+2026-03-13 11:15:48,686 - ChaosSwarm - ERROR - [Persona: Admin] - [Görev: Sepete ürün ekleme] - HATA: UX Error: Sepete Ekle butonu kırık/tıklanmıyor
